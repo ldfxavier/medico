@@ -67,10 +67,10 @@
 					<div class="bottom">
 						<ul>
 							<li class="active">Home</li>
-							<li>Dr André Neri</li>
-							<li>Especialidades</li>
-							<li>Agendamentos</li>
-							<li>Localização</li>
+							<li> <a href="#sobre">Dr André Neri</a> </li>
+							<li> <a href="#especialidade">Especialidades</a> </li>
+							<li> <a href="#agenda">Agendamentos</a> </li>
+							<li> <a href="#localizacao">Localização</a> </li>
 						</ul>
 					</div>
 
