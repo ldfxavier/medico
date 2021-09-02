@@ -1,0 +1,52 @@
+.input_hidden
+	width: 1px
+	height: 1px
+	position: absolute
+	top: -9999px
+	left: -9999px
+	opacity: 0
+.input_booleano
+.input_booleano_pequeno
+	margin-bottom 20px
+	display: flex
+	flex-direction: row
+	align-items: center
+	cursor: pointer
+	p
+		font-size 1.4em
+		margin-right 10px
+	button
+		width 50px
+		height 30px
+		border-radius: 15px
+		padding 2px
+		border: 1px solid #DDD
+		display: flex
+		flex-direction: row
+		&.inativo
+			justify-content: flex-start
+			background-color: #EEE
+		&.inativo span
+			background-color: #FFF;
+		&.ativo
+			justify-content: flex-end
+			background-color: #FFF
+		&.ativo span
+			background-color: $verde4
+	button span
+		width 24px
+		height 24px
+		border-radius: 50%
+.input_booleano_pequeno button
+	width 35px
+	height 20px
+	padding 1px
+	span
+		width 16px
+		height 16px
+
+textarea.autoresize
+	line-height 1.5em
+	overflow: hidden
+	font-size: 1.4em
+	display: block

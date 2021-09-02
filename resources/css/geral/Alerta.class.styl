@@ -1,0 +1,197 @@
+/*
+|--------------------------------------------------------------------------
+| CSS PARA O BLOCO DE NOTIFICACAO
+|--------------------------------------------------------------------------
+*/
+.fw_notificacao
+	top: 20px
+	right: 20px
+	position: fixed
+	background-color: #FFF
+	border-radius: 5px
+	padding: 15px 0 22px 8px
+	box-shadow: 0 0 3px rgba(0,0,0,.1)
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	z-index: 1999
+	overflow: hidden
+	cursor: default
+	p
+		max-width: 300px
+		padding: 5px 20px 5px 15px
+		font-size: 1.6em
+		line-height: 1.5em
+		color: #333
+		flex-grow: 1
+	.fechar
+		width: 45px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-left: 1px solid #EEE
+	.fechar i
+		width: 30px
+		height: 30px
+		line-height: 30px
+		text-align: center
+		cursor: pointer
+		font-size: 1.4em
+		color: #666
+		background: url(../images/plugins/alerta_fechar.png) no-repeat center center
+		background-size: 8px 8px
+	.tempo
+		width: 100%
+		height: 7px
+		position: absolute
+		left: 0
+		bottom: 0
+		background-color: #E0E0E0
+		display: flex
+	.tempo span
+		width: 0
+		height: 7px
+		background-color: $azul3
+		animation: fw_notificacao_tempo 5.5s linear .5s forwards
+.fw_notificacao:hover .tempo span
+	animation-play-state: paused
+.fw_notificacao.fw_notificacao_alerta
+	background-color: $alerta
+	p
+		font-weight: 700
+		color: #FFF
+	i
+		color: #FFF
+	.tempo
+		background-color: #FFF
+
+@keyframes fw_notificacao_tempo
+	0%
+		width: 0
+	100%
+		width: 100%
+
+/*
+|--------------------------------------------------------------------------
+| CSS PARA O BLOCO DE MENSAGEM
+|--------------------------------------------------------------------------
+*/
+.fw_mensagem
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background-color: rgba(0,0,0,.7)
+	z-index: 1999
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	overflow-y: auto
+	.fw_mensagem_bloco
+		width: calc(100% - 40px)
+		max-width: 350px
+		background: #FFF
+		border-radius: 3px
+		overflow: hidden
+	h1
+		width: 100%
+		height: 40px
+		line-height: 40px
+		font-size: 1.5em
+		font-weight: bold
+		background: #2493FF
+		color: #FFF
+		padding: 0 20px
+		cursor: default
+	h1.titulo_maior
+		height: auto
+		line-height: initial
+		padding: 10px 20px
+	.fw_mensagem_header
+		width: 100%
+		height: 10px
+		background: #2493FF
+	p
+		width: 100%
+		font-size: 1.6em
+		line-height: 1.5em
+		padding: 20px
+		cursor: default
+	.fw_mensagem_bloco .fw_mensagem_footer
+		background-color: #EEE
+		padding: 10px 20px
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+	.fw_mensagem_bloco .fw_mensagem_footer .fw_mensagem_fechar
+		padding: 10px
+		color: #FFF
+		font-size: 1.4em
+		background-color: #00AB45
+		cursor: pointer
+		border-radius: 3px
+
+/*
+|--------------------------------------------------------------------------
+| CSS PARA O BLOCO DE CONFIRMACAO
+|--------------------------------------------------------------------------
+*/
+.fw_confirmar
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background-color: rgba(0,0,0,.7)
+	z-index: 1999
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	overflow-y: auto
+	.fw_confirmar_bloco
+		width: calc(100% - 40px)
+		max-width: 400px
+		background: #FFF
+		border-radius: 3px
+		overflow: hidden
+	h1
+		width: 100%
+		height: 40px
+		line-height: 40px
+		font-size: 1.5em
+		font-weight: bold
+		background: #2493FF
+		color: #FFF
+		padding: 0 20px
+		cursor: default
+	.fw_confirmar_header
+		width: 100%
+		height: 10px
+		background: #2493FF
+	p
+		width: 100%
+		font-size: 1.6em
+		line-height: 1.5em
+		padding: 20px
+		cursor: default
+	.fw_confirmar_bloco .fw_confirmar_footer
+		background-color: #EEE
+		padding: 10px 20px
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+	.fw_confirmar_bloco .fw_confirmar_footer .fw_confirmar_flex_grow
+		flex-grow: 1
+	.fw_confirmar_bloco .fw_confirmar_footer .fw_confirmar_cancelar
+	.fw_confirmar_bloco .fw_confirmar_footer .fw_confirmar_confirmar
+		padding: 10px
+		color: #333
+		font-size: 1.4em
+		background-color: #CCC
+		cursor: pointer
+		border-radius: 3px
+	.fw_confirmar_bloco .fw_confirmar_footer .fw_confirmar_confirmar
+		background-color: #00AB45
+		color: #FFF

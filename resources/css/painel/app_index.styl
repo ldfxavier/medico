@@ -1,0 +1,304 @@
+.bloco_app_padrao
+	width: calc(100% - 40px)
+	display: flex
+	flex-direction: column
+	margin: 10px 20px
+	.bloco
+		width: 100%
+		display: flex
+		flex-direction: column
+
+.bloco_app_padrao .bloco_botao
+	margin-top: 10px
+	flex-direction: row
+	.botao_quadrado
+		width: 40px
+		height: 40px
+		line-height: 40px
+		text-align: center
+		margin-right: 10px
+		color: #FFF
+		border-radius: 50%
+	.botao_quadrado.add
+		background-color: $cor_add
+		font-size: 1.5em
+	.botao_quadrado.relatorio
+		background-color: $cor_relatorio
+		font-size: 1.2em
+	.botao_quadrado.historico
+		background-color: $cor_historico
+		font-size: 1.4em
+	.botao_quadrado.download
+		background-color: $cor_download
+		font-size: 1.2em
+	.botao_quadrado.deletar
+		background-color: #CCC
+		font-size: 1.5em
+		cursor: not-allowed
+		transition: background-color .3s ease-out
+		&.ativo
+			background-color: $cor_deletar
+			cursor: pointer
+	form
+		max-width: 250px
+		height: 40px
+		position: relative
+		display: flex
+		flex-direction: row
+		margin-right: 10px
+		transition: max-width .3s ease-out
+		flex-grow: 1
+		flex-basis: 0
+		&.ativo
+			max-width: 100%
+	form input
+		width: 100%
+		border-radius: 20px
+		background-color: #FFF
+		padding: 0 50px 0 10px
+		font-size: 1.4em
+	form button
+		width: 40px
+		height: 40px
+		position: absolute
+		top: 0
+		right: 0
+		color: #666
+		font-size: 1.4em
+		border-radius: 50%
+	i.filtro
+		width: 40px
+		height: 40px
+		line-height: 42px
+		text-align: center
+		font-size: 1.5em
+		cursor: pointer
+		background-color: #EAEAEA
+		color: #777
+		border-radius: 50%
+
+.bloco_app_padrao .filtro_lista
+	flex-direction: row
+	.filtro
+		height: 20px
+		line-height: 20px
+		padding: 0 3px 0 8px
+		margin: 10px 10px 0 0
+		font-size: 1.2em
+		position: relative
+		background-color: #FFF
+		border-radius: 10px
+		display: flex
+		justify-content: center
+		align-items: center
+		cursor: default
+	.filtro i
+		width: 15px
+		height: 15px
+		line-height: 15px
+		margin-left: 7px
+		position: relative
+		cursor: pointer
+		background-color: #EEE
+		border-radius: 50%
+		text-align: center
+		overflow: hidden
+	.filtro i a
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+	.limpar
+		height: 20px
+		line-height: 20px
+		padding: 0 7px
+		background-color: $cor_deletar
+		color: #FFF
+		font-size: 1.2em
+		display: flex
+		border-radius: 10px
+		margin-top: 10px
+		cursor: pointer
+		font-weight: 600
+
+.bloco_app_padrao .lista_conteudo.lista_titulo
+	height: 30px
+	line-height: 30px
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	margin: 40px 0 5px 0
+	overflow: hidden
+	.td
+		height: 30px
+		line-height: 30px
+		overflow: hidden
+		color: #666
+	.previa
+		border: none
+	a
+		width: 100%
+		text-align: center
+		color: #666
+		display: flex
+	a span.titulo
+		margin-right: 5px
+	.centralizar a
+		justify-content: center
+		align-items: center
+	.bola
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		background-color: #666
+	.td.order
+	.td.order a
+	.td.order a span.titulo
+	.td.order a i
+		color: #000
+		font-weight: bold
+.bloco_app_padrao .lista_conteudo
+	width: 100%
+	li
+		width: 100%
+		position: relative
+		margin-bottom: 10px
+		display: flex
+		flex-direction: row
+		align-items: center
+		background-color: #FFF
+		border: 1px solid #FFF
+		border-radius: 3px
+		padding: 9px 0
+		box-shadow: 0 0 3px rgba(0,0,0,.05)
+		overflow: hidden
+		cursor: default
+		transition: border-color .3s ease-out
+		&.ativo
+			border-color: rgba(35, 185, 169, .3)
+	li .hover
+		width: 4px
+		height: 100%
+		background-color: rgba(35, 185, 169, .4)
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 10
+		opacity: 0
+		transition: opacity .3s ease-out
+	li.ativo .hover
+		opacity: 1
+	.imagem
+		width: 35px
+		height: 35px
+		margin: 0 10px
+		border-radius: 50%
+		background-size: cover
+		background-position: center center
+		
+	figure.imagem
+		background-color: #EEE
+	.linha
+		width: 1px
+		height: 25px
+		background-color: #EEE
+		margin: 0 10px
+		&.sem_borda
+			opacity: 0
+	.td
+		font-size: 1.4em
+		line-height: 1.5em
+	.td.id
+		width: 60px
+		text-align: right
+	.td.id a
+		width: 100%
+		text-align: right
+		display: block
+	.td.centralizar
+		text-align: center
+	.ordem
+		width: 20px
+		display: flex
+		margin-left: 10px
+		justify-content: center
+		align-items: center
+	.ordem i
+		width: 20px
+		height: 20px
+		line-height: 20px
+		text-align: center
+		color: #888
+	.bloco_checkbox
+		margin: 0 10px
+	.numero
+		width: 30px
+		height: 30px
+		display: flex
+		justify-content: center
+		align-items: center
+	.numero span
+		width: 25px
+		height: 25px
+		line-height: 25px
+		text-align: center
+		border-radius: 50%
+	.status
+		width: 30px
+		height: 25px
+		display: flex
+		justify-content: center
+		align-items: center
+	.status span
+		width: 8px
+		height: 8px
+		border-radius: 50%
+	.previa
+		width: 20px
+		height: 25px
+		display: flex
+		justify-content: center
+		align-items: center
+	.previa a
+		color: #666
+	.previa i
+		width: 20px
+		height: 20px
+		line-height: 20px
+		text-align: center
+		cursor: pointer
+		font-size: 1.2em
+	.editar
+		width: 30px
+		margin: 0 15px 0 10px
+		display: flex
+	.editar a
+		width: 30px
+		height: 30px
+		line-height: 28px
+		background-color: $cor_editar
+		color: #FFF
+		text-align: center
+		border-radius: 3px
+.bloco_app_padrao .sem_resgistro
+	width: 100%
+	height: calc(100vh - 220px)
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	margin-top: 5px
+	background-color: #FFF
+	border-radius: 3px
+	box-shadow: 0 0 3px rgba(0,0,0,.05)
+	i
+		font-size: 3.0em
+		color: #CCC
+	h2
+		font-size: 2.0em
+		color: #999
+		margin: 10px 0 5px
+	p
+		font-size: 1.6em
+		color: #CCC

@@ -1,0 +1,5231 @@
+@import "../geral/resetar.styl"
+@import "../geral/variaveis.styl"
+@import "../geral/mixins.styl"
+@import "../geral/plugins.styl"
+
+fonte(painel, 1)
+
+/* TAG / COMECO */
+body
+    font-family: 'Roboto', Arial, sans-serif
+    background-color: #F1F6F9
+.center
+    width: calc(100% - 40px)
+    max-width: 1000px
+    margin: 0 auto
+i:after
+    width: 100%
+    height: 100%
+    text-align: center
+    content: attr(data-font)
+    font-family: painel
+*[data-admin]
+    position: relative
+*[data-admin]:after
+    width: 100%
+    height: 30px
+    position: absolute
+    content: " "
+    top: 0
+    left: 0
+    z-index: 10
+/* TAG / FINAL */
+
+/* TEMPLATE / COMECO */
+#conteudo_site
+    width: 100%
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    align-items: flex-end
+#conteudo_site.mobile .print
+    display: none
+/* menu do topo */
+#menu_topo
+    width: 40px
+    height: 40px
+    line-height: 40px
+    position: fixed
+    top: 5px
+    left: 5px
+    text-align: center
+    color: #FFF
+    font-size: 20px
+    cursor: pointer
+    z-index: 3
+/* bg do topo */
+#bg_topo
+    width: 100%
+    height: 170px
+    position: fixed
+    background-color: $painel
+    z-index: 1
+/* buscar principal */
+#busca_principal
+    width: 100%
+    height: 50px
+    position: fixed
+    top: 0
+    right: 0
+    padding-left: 240px
+    background-color: $painel
+    z-index: 2
+/* menu principal */
+#conteudo_site.aberto #menu_principal
+    left: 0
+#conteudo_site.fechado #menu_principal
+    left: -100%
+#menu_principal
+    width: 100%
+    max-width: 240px
+    height: calc(100vh - 50px)
+    position: fixed
+    top: 50px
+    z-index: 4
+    .conteudo
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        background-color: $painel
+    header
+        width: 100%
+        height: 120px
+        padding: 10px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+    header figure
+        width: 70px
+        height: 70px
+        display: flex
+    header figure a
+        width: 100%
+        height: 100%
+        background-color: #FFF
+        background-size: cover
+        background-position: center center
+        border-radius: 100%
+        overflow: hidden
+    header .dados_linha
+        width: calc(100% - 80px)
+        color: #FFF
+        display: flex
+        flex-direction: column
+    header .dados_linha .texto
+        width: 100%
+        color: #FFF
+    header .dados_linha .nome
+        width: 100%
+        height: 2.2em
+        line-height: 1.1em
+        margin-top: 4px
+        font-weight: bold
+        font-size: 1.8em
+        color: #FFF
+    header .dados_linha .botao
+        margin-top: 10px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    header .dados_linha .botao a
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        color: #FFF
+        text-align: center
+        font-size: 1.1em
+        border: 1px solid rgba(255,255,255,.4)
+    header .dados_linha .botao a i
+        width: 30px
+        height: 30px
+    a.dashboard
+        width: 100%
+        height: 60px
+        line-height: 60px
+        position: relative
+        padding-left: 40px
+        color: $painel
+        background-color: rgba(0,0,0,.1)
+        color: #FFF
+        font-size: 1.2em
+    a.dashboard i
+        width: 40px
+        height: 60px
+        line-height: 55px
+        position: absolute
+        font-weight: normal
+        top: 0
+        left: 0
+        font-size: 1.2em
+        text-align: center
+    ul.menu_principal
+        width: 100%
+        height: calc(100vh - 230px)
+        padding-top: 10px
+        background-color: #FFF
+        overflow-y: auto
+    ul.menu_principal > li
+        width: 100%
+        margin-bottom: 2px
+        display: flex
+        flex-direction: column
+    ul.menu_principal > li a.simples
+        width: 100%
+        height: 50px
+        line-height: 50px
+        position: relative
+        padding: 0 10px 0 15px
+        font-size: 1.1em
+        color: #666
+        cursor: pointer
+    ul.menu_principal > li a.simples.hover,
+    ul.menu_principal > li a.simples:hover
+        background-color: #F4F4F4
+    ul.menu_principal > li a > span.alerta
+        width: 20px
+        height: 20px
+        line-height: 20px
+        position: absolute
+        top: 15px
+        right: 35px
+        text-align: center
+        background-color: $vermelho
+        color: #FFF
+        border-radius: 100%
+    ul.menu_principal .menu_titulo
+        width: 100%
+        height: 50px
+        line-height: 50px
+        position: relative
+        padding: 0 10px 0 15px
+        font-size: 1.1em
+        color: #666
+        cursor: pointer
+    ul.menu_principal .menu_titulo i
+        height: 50px
+        line-height: 50px
+        font-weight: normal
+        position: absolute
+        top: 0
+        right: 20px
+    ul.menu_principal .menu_titulo > span.alerta
+        width: 20px
+        height: 20px
+        line-height: 20px
+        position: absolute
+        top: 15px
+        right: 35px
+        text-align: center
+        background-color: $vermelho2
+        color: #FFF
+        border-radius: 100%
+    ul.menu_principal .menu_titulo.hover,
+    ul.menu_principal .menu_titulo:hover
+        background-color: #F4F4F4
+    ul.menu_principal li ul
+        width: 100%
+        display: none
+        &.hover
+            display: block
+    ul.menu_principal li ul li a
+        width: 100%
+        height: 40px
+        line-height: 40px
+        position: relative
+        padding: 0 20px 0 30px
+        font-size: 1.2em
+        color: #000
+        display: flex
+        &.hover,
+        &:hover
+            background-color: #F4F4F4
+    ul.menu_principal li ul li a i
+        width: 10px
+        height: 40px
+        line-height: 37px
+        position: absolute
+        top: 0
+        left: 20px
+    ul.menu_principal li ul li a span.alerta
+        width: 20px
+        height: 20px
+        line-height: 20px
+        position: absolute
+        top: 10px
+        right: 10px
+        text-align: center
+        background-color: $vermelho2
+        color: #FFF
+        border-radius: 100%
+        overflow: hidden
+/*menu mobile */
+ex_menu()
+    width: 100%
+    max-width: 100%
+    height: 100vh
+    top: 0
+    background-color: rgba(0,0,0,.7)
+    z-index: 99999999920
+ex_menu_cont()
+    max-width: 240px
+    height: 100%
+ex_menu_ul()
+    height: calc(100vh - 180px)
+#conteudo_site.mobile.aberto #menu_principal
+    ex_menu()
+    .conteudo
+        ex_menu_cont()
+    .conteudo ul.menu_principal
+        ex_menu_ul()
+@media screen and (max-width: 1100px)
+    #conteudo_site.aberto #menu_principal
+        ex_menu()
+        .conteudo
+            ex_menu_cont()
+        ul.menu_principal
+            ex_menu_ul()
+
+
+/* conteudo principal */
+#conteudo_principal
+    min-height: calc(100vh - 50px)
+    position: relative
+    margin: 50px 0 0 0
+    background-color: #F1F6F9
+    z-index: 3
+    overflow: hidden
+#conteudo_site.aberto #conteudo_principal
+    width: calc(100% - 250px)
+    border-radius: 5px 5px 0 0
+    margin: 50px 10px 0 0
+    z-index: 3
+    header.header_principal_fixed
+        width: calc(100% - 250px)
+        top: 0
+        right: 10px
+#conteudo_site.fechado #conteudo_principal
+    width: 100%
+    border-radius: 0
+    margin: 50px 0 0 0
+    z-index: 1
+@media screen and (max-width: 1100px)
+    #conteudo_site.aberto #conteudo_principal
+        width: 100%
+
+/* TEMPLATE / FINAL */
+
+/* CLASSES / COMECO */
+.zero_ok
+    width: 100%
+    padding: 100px 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    i
+        width: 100px
+        height: 100px
+        line-height: 100px
+        color: #CCC
+        border: 1px solid #CCC
+        border-radius: 50%
+        font-size: 3.0em
+        text-align: center
+    span
+        margin-top: 30px
+        font-size: 1.5em
+        color: #999
+.zero_geral
+    width: 100%
+    padding: 100px 0
+    font-size: 1.5em
+    color: #999
+    text-align: center
+/*Cores */
+.bg_cor
+    background-color: $painel
+.cor
+    color: $painel
+.border_cor
+    border-color: $painel
+.hide
+    display: none !important
+/* editor de texto */
+.textarea_editor_grande
+    width: 100%
+    height: 100px
+    position: relative
+
+/* titulos */
+.titulo
+    width: 100%
+    font-size: 1.8em
+.titulo_sub
+    width: 100%
+    font-size: 1.4em
+.texto
+    width: 100%
+    font-size: 1.2em
+.titulo_app
+    width: 100%
+    font-size: 1.6em
+    font-weight: bold
+    text-align: center
+    padding-top: 40px
+.bold
+    font-weight: bold
+.flex-grow
+    flex-grow: 1
+.flex-column
+    display: flex
+    flex-direction: column
+.flex-row
+    display: flex
+    flex-direction: row
+.flex-wrap
+    display: flex
+    flex-wrap: wrap
+/* esconde os inputs */
+input.input_zero
+    esconder()
+
+/* Pede senha */
+.bloco_admin
+    width: auto
+    position: relative
+    display: flex
+    flex-direction: column
+    span
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 999
+        cursor: pointer
+/* formulario geral */
+form.form_geral
+    width: 100%
+    display: flex
+    flex-direction: column
+    p.ate
+        height: 40px
+        line-height: 40px
+        margin: 0 10px 0 -10px
+        font-size: 1.3em
+    label
+        width: 100%
+        font-size: 1.4em
+    input[type=password],
+    input[type=number],
+    input[type=email],
+    input[type=tel],
+    input[type=text],
+    input[type=url]
+        width: calc(100% - 20px)
+        height: 40px
+        margin: 0 20px 10px 0
+        padding: 0 10px
+        border: 1px solid #DDD
+        font-size: 1.4em
+        border-radius: 2px
+    /* textarea */
+    textarea
+        width: 100%
+        height: 9em
+        line-height: 1.5em
+        margin: 0 20px 10px 0
+        padding: 10px
+        border: 1px solid #DDD
+        font-size: 1.4em
+        border-radius: 2px
+    /* checkbox */
+    .checkbox
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .checkbox input[type=checkbox]
+        display: none
+    .checkbox label.checkbox
+        width: 100%
+        max-width: 200px
+        position: relative
+        cursor: pointer
+        display: flex
+        margin: 0 10px 10px 0
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        align-items: center
+        overflow: hidden
+    .checkbox label.checkbox span
+        width: calc(100% - 25px)
+    .checkbox label.checkbox::before
+        width: 20px
+        height: 20px
+        line-height: 20px
+        text-align: center
+        font-family: painel
+        content: " "
+        margin-right: 5px
+        color: #FFF
+        background-color: #DDD
+        border-radius: 100%
+    .checkbox input:checked + label.checkbox::before
+        background-color: $verde
+        content: "\e80b"
+    /* booleano */
+    .input_booleano_geral
+        width: auto
+        margin-bottom: 10px
+        cursor: pointer
+        align-items: center
+        display: flex
+    .input_booleano_geral .booleano_titulo
+        height: 30px
+        line-height: 30px
+        margin-right: 10px
+        font-size: 1.3em
+        overflow: hidden
+    .input_booleano_geral .booleano_botao
+        width: 35px
+        height: 10px
+        border-radius: 10px
+        display: flex
+    .input_booleano_geral.ativo .booleano_botao
+        background-color: #90C5F5
+        justify-content: flex-end
+    .input_booleano_geral.inativo .booleano_botao
+        background-color: #DDD
+        justify-content: flex-start
+    .input_booleano_geral .booleano_botao .booleano_bola
+        width: 22px
+        height: 22px
+        margin-top: -6px
+        border-radius: 100%
+        box-shadow: 0 0 2px #CCC
+    .input_booleano_geral.ativo .booleano_botao .booleano_bola
+        background-color: #1490E9
+    .input_booleano_geral.inativo .booleano_botao .booleano_bola
+        background-color: #EEE
+    /* url */
+    .input_url_geral
+        width: 100%
+        display: flex
+        flex-direction: row
+    .input_url_geral select
+        width: 100px
+        max-width: 100px
+        background-color: #18718b
+        color: #FFF
+        padding: 0 10px
+        margin: 0
+        border-right: none
+    .input_url_geral input
+        max-width: 350px
+        margin-right: 0
+        flex-grow: 1
+    /* password */
+    .input_password_geral
+        width: 100%
+    .input_password_geral.completo
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    .input_password_geral .bloco_password
+        width: 100%
+        max-width: 100%
+        position: relative
+    .input_password_geral.completo .bloco_password
+        width: calc(50% - 5px)
+    .input_password_geral .bloco_password input
+        width: 100%
+        max-width: 100%
+        padding: 0 50px 0 10px
+    .input_password_geral .bloco_password .but_password_visualizar
+        width: 40px
+        height: 40px
+        position: absolute
+        top: 0
+        right: 0
+        cursor: pointer
+        display: flex
+    .input_password_geral .bloco_password .but_password_visualizar:after
+        width: 40px
+        height: 40px
+        line-height: 40px
+        color: #FFF
+        font-size: 1.3em
+        text-align: center
+        font-family: painel
+        border-radius: 0 2px 2px 0
+    .input_password_geral .bloco_password .but_password_visualizar[data-password=ativo]:after
+        background-color: $verde5
+        content: "\e802"
+    .input_password_geral .bloco_password .but_password_visualizar[data-password=inativo]:after
+        background-color: $vermelho
+        content: "\e806"
+    .input_password_geral .bloco_password .bloco_verificar
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 1.4em
+        text-align: center
+        cursor: pointer
+        display: flex
+    .input_password_geral .bloco_password .bloco_verificar:after
+        width: 40px
+        height: 40px
+        font-family: painel
+        color: #FFF
+        border-radius: 0 2px 2px 0
+    .input_password_geral .bloco_password .bloco_verificar.correto:after
+        content: "\e80b"
+        background-color: $verde5
+    .input_password_geral .bloco_password .bloco_verificar.incorreto:after
+        content: "\e813"
+        background-color: $vermelho
+    /* data */
+    input[data-mascara=data],
+    input[data-mascara=datahora]
+        width: 100%
+        max-width: 140px
+        padding-left: 45px
+        background: url(../images/painel/calendario.png) no-repeat 3px center
+    .bloco_data
+        position: relative
+    .bloco_data .botao
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 0
+        left: 0
+        color: #FFF
+        background-color: $painel
+        font-size: 1.5em
+        text-align: center
+        z-index: 2
+        cursor: pointer
+    .bloco_data .botao:after
+        content: "\e81b"
+        font-family: painel
+    .bloco_data input[data-mascara=data],
+    .bloco_data input[data-mascara=datahora]
+        width: 100%
+        background: #FFF
+        padding-left: 50px
+    select
+        max-width: calc(100% - 20px)
+        height: 40px
+        position: relative
+        margin: 0 20px 10px 0
+        padding: 0 55px 0 10px
+        border: 1px solid #DDD
+        font-size: 1.3em
+        background: url(../images/painel/select.png) no-repeat center right
+        border-radius: 2px
+    /* input cor */
+    .input_cor_geral
+        width: 100%
+        max-width: 180px
+        position: relative
+        margin-bottom: 10px
+    .input_cor_geral input
+        width: 100%
+        height: 40px
+        padding: 0 40px 0 10px
+        border: 1px solid #DDD
+        font-size: 1.4em
+        border-radius: 2px
+    .input_cor_geral .botao_cor
+        width: 30px
+        max-width: 30px
+        height: 40px
+        line-height: 40px
+        text-align: center
+        color: #FFFFFF
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0
+        margin: 0
+        border: 1px solid #DDD
+        background-color: #CCC
+        font-family: painel
+        border-radius: 0
+        cursor: pointer
+        &::after
+            content: "\e811"
+/* menu mobile */
+.menu_add_mobile
+    width: 50px
+    height: 50px
+    line-height: 50px
+    position: fixed
+    bottom: 20px
+    right: 20px
+    background-color: $cor_visualizar
+    color: #FFF
+    border-radius: 100%
+    text-align: center
+    overflow: hidden
+    z-index: 100
+    cursor: pointer
+    display: none
+    &:after
+        width: 50px
+        height: 50px
+        content: "\e807"
+        font-size: 1.4em
+        font-family: painel
+
+/* bloco controlador */
+.bloco_controlador
+    margin-top: 10px
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    .botao
+        height: 40px
+        line-height: 40px
+        color: #FFF
+        margin-left: 10px
+        border-radius: 3px
+        overflow: hidden
+        cursor: pointer
+        display: flex
+    .botao.add
+        background-color: $cor_add
+    .botao.add i
+        font-size: 1.6em
+    .botao.relatorio
+        background-color: $cor_relatorio
+    .botao.relatorio i
+        font-size: 1.4em
+    .botao.visualizar
+        font-size: 1.8em
+        font-weight: bold
+        background-color: $cor_visualizar
+        display: none
+    .botao.download
+        background-color: $cor_download
+    .botao.download i
+        font-size: 1.3em
+    .botao.deletar
+        background-color: $cor_deletar
+    .botao i
+        width: 40px
+        height: 40px
+        text-align: center
+        background-color: rgba(0,0,0,.1)
+    .botao span
+        height: 40px
+        padding: 0 20px 0 15px
+@media screen and (max-width: 900px)
+    #conteudo_site.fechado .bloco_controlador .botao span
+        display: none
+@media screen and (max-width: 1000px)
+    #conteudo_site.aberto .bloco_controlador .botao span
+        display: none
+
+#conteudo_site.mobile .bloco_controlador
+    position: fixed
+    right: 20px
+    bottom: 20px
+    &::after
+        width: 50px
+        height: 50px
+        line-height: 50px
+        color: #FFF
+        text-align: center
+        content: "\e807"
+        font-size: 1.4em
+        margin-left: 4px
+        font-family: painel
+        justify-content: center
+        background-color: $vermelho2
+        border-radius: 50%
+        display: flex
+        z-index: 2
+        cursor: pointer
+    .botao
+        width: 50px
+        height: 50px
+        line-height: 50px
+        position: absolute
+        top: 0
+        right: 0
+        border-radius: 100%
+        overflow: hidden
+        margin-left: 4px
+        z-index: 1
+        opacity: 0
+    .botao span
+        width: 50px
+        height: 50px
+        line-height: 50px
+        display: none
+/* CLASS / FINAL */
+
+/* IDS / COMECO */
+/* pre visualizacao */
+#bloco_previsualizacao
+    fixed-mascara(9999900)
+    .fechar
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: fixed
+        top: 10px
+        right: 20px
+        text-align: center
+        background-color: #FFF
+        border-radius: 100%
+        cursor: pointer
+        z-index: 2
+        &:after
+            content: "\e813"
+    .conteudo
+        fixed-conteudo()
+        background-color: #FFF
+        z-index: 1
+
+/* mascara cor */
+#bloco_cor_mascara
+    fixed-mascara(9999911)
+    display: flex
+    ul.conteudo_cor
+        fixed-conteudo(390px)
+        max-height: calc(100vh - 40px)
+        position: relative
+        background-color: #FFF
+        padding: 70px 20px 20px 20px
+        box-shadow: 0 0 5px #DDD
+        border-radius: 4px
+        overflow-x: hidden
+        overflow-y: auto
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    ul.conteudo_cor li.cor_titulo
+        width: 100%
+        height: 50px
+        line-height: 50px
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 1.4em
+        color: #666
+        border-radius: 4px 4px 0 0
+        padding: 0 50px 0 20px
+        background-color: #EEE
+    ul.conteudo_cor li.cor_titulo i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        position: absolute
+        top: 10px
+        right: 10px
+        text-align: center
+        cursor: pointer
+    ul.conteudo_cor li.but_cor_selecionar
+        width: 48px
+        height: 48px
+        margin: 1px 2px 0 0
+        padding: 0
+        border: none
+        cursor: pointer
+    ul.conteudo_cor li.cor_linha
+        width: 100%
+        height: 1px
+        background-color: #EEE
+        border: none
+        margin: 10px 0 8px 0
+
+/* Voltar do topo */
+#voltar_topo
+    width: 50px
+    height: 50px
+    line-height: 50px
+    position: fixed
+    right: 10px
+    bottom: 10px
+    color: #FFF
+    font-size: 1.8em
+    text-align: center
+    background-color: $azul
+    border-radius: 100%
+    opacity: .4
+    cursor: pointer
+    &:hover
+        opacity: 1
+
+/* botao mobile */
+#botao_mobile
+    width: 17px
+    height: calc(100vh - 100px)
+    position: fixed
+    bottom: 0
+    left: 0
+    display: none
+    z-index: 3
+#conteudo_site.mobile #botao_mobile
+    display: flex
+
+/* busca principal */
+#conteudo_site.aberto #busca_principal
+    padding-left: 240px
+#conteudo_site.fechado #busca_principal
+    padding-left: 50px
+#conteudo_site.aberto #busca_principal.ativo
+    padding-left: 0
+#conteudo_site.fechado #busca_principal.ativo
+    padding-left: 0
+#busca_principal
+    display: flex
+    flex-direction: column
+    align-items: center
+    &.ativo
+        height: 100vh
+        padding-left: 0
+        z-index: 10
+    form
+        width: 100%
+    &.ativo form
+        width: calc(100% - 40px)
+        max-width: 1000px
+        position: relative
+        display: flex
+    form input
+        width: 100%
+        max-width: 200px
+        height: 30px
+        font-size: 1.2em
+        color: #FFF
+        margin-top: 10px
+        border-bottom: 1px solid #FFF
+    &.ativo form input
+        max-width: 100%
+        height: 50px
+        margin-top: 20px
+        padding-right: 40px
+        font-size: 1.8em
+    form input::-webkit-input-placeholder
+        color: #FFF
+    form button
+        width: 30px
+        height: 50px
+        line-height: 50px
+        position: absolute
+        right: 0
+        bottom: 3px
+        color: #FFF
+        font-size: 2.2em
+        text-align: center
+        display: none
+    &.ativo form button
+        display: block
+    form button i
+        width: 30px
+        height: 30px
+    i.fechar
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 1.4em
+        text-align: center
+        color: #FFF
+        cursor: pointer
+        display: none
+        z-index: 10
+        &::after
+            content: "\e813"
+    &.ativo i.fechar
+        display: block
+    .conteudo
+        width: 100%
+        height: calc(100vh - 100px)
+        margin-top: 30px
+        background-color: #FFF
+        display: none
+    &.ativo .conteudo
+        display: flex
+        flex-direction: column
+        align-items: center
+        overflow-y: auto
+    .conteudo .dados
+        width: calc(100% - 20px)
+        max-width: 1020px
+    .conteudo .zero
+        width: 100%
+        margin: 80px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+    .conteudo .zero i
+        width: 100px
+        height: 100px
+        line-height: 100px
+        text-align: center
+        font-size: 1.8em
+        color: #CCC
+        border: 1px solid #CCC
+        border-radius: 100%
+    .conteudo .zero p
+        width: 100%
+        color: #AAA
+        margin-top: 20px
+        font-size: 2.0em
+        font-weight: bold
+        text-align: center
+    .conteudo .dados p.titulo
+        position: relative
+        margin-top: 20px
+        padding-bottom: 5px
+        font-weight: bold
+        padding-left: 10px
+        color: $painel
+        display: flex
+        &::after
+            width: 30px
+            height: 2px
+            content: " "
+            position: absolute
+            left: 10px
+            bottom: 0
+            background-color: $painel
+    .conteudo ul
+        width: 100%
+        margin-bottom: 20px
+        margin-top: 10px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .conteudo ul li.geral
+        col(3)
+        margin-bottom: 10px
+    .conteudo ul li.geral a
+        width: 100%
+        background-color: #F8F8F9
+        display: flex
+        flex-direction: row
+        align-items: center
+        &:hover
+            box-shadow: 0 0 5px #DDD
+    .conteudo ul li.imagem a
+        padding: 10px
+    .conteudo ul li.imagem figure
+        width: 80px
+        height: 80px
+        background-color: #FFF
+        background-size: cover
+        background-position: center center
+        border-radius: 50%
+    .conteudo ul li.geral span
+        width: 100%
+        line-height: 1.5em
+        font-size: 1.4em
+        color: #000
+        padding: 10px
+        flex-grow: 1
+        border-left: 3px solid $painel
+        overflow: hidden
+    .conteudo ul li.imagem span
+        width: calc(100% - 80px)
+        padding: 0 0 0 20px
+        border-left: none
+#conteudo_site.mobile #busca_principal
+    padding-left: 50px
+    &.ativo
+        padding-left: 0
+    form input
+        max-width: calc(100% - 20px)
+    &.ativo form input
+        max-width: 100%
+    &.ativo i.fechar
+        top: 30px
+        right: calc(100% - 40px)
+        font-size: 1.6em
+        &::after
+            content: "\e815"
+    &.ativo form
+        padding-left: 30px
+@media screen and (max-width: 1100px)
+    #busca_principal.ativo
+        i.fechar
+            top: 30px
+            right: calc(100% - 40px)
+            font-size: 1.6em
+            &::after
+                content: "\e815"
+        form
+            padding-left: 30px
+@media screen and (max-width: 830px)
+    #busca_principal
+        .conteudo ul li.geral
+            col(2)
+@media screen and (max-width: 680px)
+    #busca_principal
+        .conteudo ul li.geral
+            col(1)
+
+
+/* header principal */
+.header_principal_false
+    width: 100%
+    height: 50px
+header.header_principal_absolute
+    position: absolute
+header.header_principal_fixed
+    position: fixed
+header.header_principal
+    width: 100%
+    height: 50px
+    line-height: 50px
+    color: #999
+    padding-right: 20px
+    background-color: #FFF
+    overflow: hidden
+    z-index: 10
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    a.voltar
+        height: 50px
+        line-height: 50px
+        font-size: 1.2em
+        text-align: center
+        padding: 0 20px
+        margin-right: -20px
+        font-family: painel
+        color: #999
+        z-index: 2
+        &:after
+            width: 30px
+            height: 30px
+            content: "\e815"
+    h1
+        padding-left: 20px
+        margin-right: 20px
+        font-size: 1.8em
+        font-weight: 400
+        flex-grow: 1
+        &.linha
+            height: 34px
+            line-height: 34px
+            margin: 8px 15px 0 0
+            border-right: 1px solid #EEE
+            padding-right: 15px
+    .bloco_bloquado
+        background-color: #FF0
+        display: flex
+    .editar
+        width: 34px
+        height: 34px
+        line-height: 34px
+        position: relative
+        font-size: 1.4em
+        text-align: center
+        cursor: pointer
+        color: #FFF
+        font-family: painel
+        border-radius: 2px
+        background-color: $cor_editar
+        &:after
+            content: "\e807"
+    .add
+        height: 34px
+        line-height: 34px
+        position: relative
+        font-size: 1.2em
+        margin-right: 10px
+        color: #FFF
+        padding: 0 10px 0 44px
+        background-color: $cor_add
+        border-radius: 2px
+        cursor: pointer
+    .add i
+        width: 34px
+        height: 34px
+        line-height: 34px
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 1.3em
+        text-align: center
+        font-family: painel
+        background-color: rgba(0,0,0,.1)
+    .deletar
+        height: 34px
+        line-height: 34px
+        position: relative
+        font-size: 1.2em
+        margin-right: 10px
+        color: #FFF
+        padding: 0 10px 0 44px
+        background-color: $cor_deletar
+        border-radius: 2px
+        cursor: pointer
+    .deletar i
+        width: 34px
+        height: 34px
+        line-height: 34px
+        position: absolute
+        top: 0
+        left: 0
+        font-size: .9em
+        text-align: center
+        font-family: painel
+        background-color: rgba(0,0,0,.1)
+    i.previsualizacao
+        width: 34px
+        height: 34px
+        line-height: 34px
+        position: relative
+        text-align: center
+        font-size: 1.2em
+        margin-right: 10px
+        font-family: painel
+        color: #FFF
+        background-color: $painel
+        border-radius: 2px
+        cursor: pointer
+    .controlador
+        display: flex
+        margin-right: 5px
+    .controlador p
+        font-size: 1.2em
+        margin-right: 5px
+    .controlador p span
+        font-weight: bold
+        color: #888
+    .controlador .botao
+        width: 34px
+        height: 34px
+        line-height: 31px
+        font-family: painel
+        font-size: 1.6em
+        text-align: center
+        margin-top: 8px
+        color: #999
+        border: 1px solid #DDD
+        cursor: default
+        &:last-child
+            border-left: none
+    .controlador a:hover
+        background-color: #FFF
+        cursor: pointer
+    .controlador .botao:after
+        width: 100%
+        height: 34px
+        content: attr(data-font)
+    i.icones
+        width: 34px
+        height: 34px
+        line-height: 34px
+        position: relative
+        float: right
+        font-size: 12px
+        text-align: center
+        cursor: pointer
+        margin-left: 5px
+        color: #999
+        border: 1px solid #DDD
+        &:hover
+            background-color: #FFF
+    i.icones a
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+    i.icones.but_remove_filtro
+        margin-left: 0
+        color: #FFF
+        background-color: $vermelho2
+        border-color: $vermelho2
+    button
+        height: 35px
+        position: relative
+        padding: 0 20px 0 55px
+        border: 1px solid $painel
+        color: $painel
+        font-size: 1.2em
+        border-radius: 3px
+        &:hover
+            background-color: $painel
+            color: #FFF
+    button i
+        width: 35px
+        height: 33px
+        line-height: 33px
+        position: absolute
+        top: 0
+        font-size: 1.2em
+        text-align: center
+        border-right: 1px solid $painel
+        left: 0
+    button:hover i
+        background-color: rgba(0,0,0,.1)
+
+
+/* menu scroll */
+.menu_scroll
+    width: 100%
+    height: 40px
+    line-height: 40px
+    border-top: 1px solid #DDD
+    border-bottom: 1px solid #DDD
+    overflow-y: hidden
+    overflow-x: auto
+    background-color: #EEE
+    ul
+        width: 100%
+    ul li a
+        padding: 0 20px
+        color: #000
+        font-size: 1.1em
+        border-right: 1px solid #DDD
+    &:last-child
+        border-right: none
+    &.hover,
+    &:hover
+        background-color: #E0E0E0
+
+/* bloco geral da busca por ajax */
+.bloco_busca_ajax
+    width: calc(100% - 40px)
+    max-width: 500px
+    background-color: #FFF
+    display: flex
+    flex-direction: column
+    border-radius: 4px
+    overflow: hidden
+    header
+        width: 100%
+        height: 50px
+        line-height: 50px
+        border-bottom: 1px solid #EEE
+        border-radius: 4px 4px 0 0
+        display: flex
+        padding: 0 20px
+        align-items: center
+        flex-direction: row
+    header h1
+        font-weight: normal
+        font-size: 1.6em
+        flex-grow: 1
+        color: #999
+        text-transform: uppercase
+    header i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        cursor: pointer
+        border-radius: 2px
+        border: 1px solid #EEE
+        &::after
+            content: "\e813"
+        &:hover
+            border-color: #CCC
+    .bloco_botao_busca
+        width: 100%
+        display: flex
+        flex-direction: row
+        margin: -10px 0 10px 0
+    .bloco_botao_busca .botao_busca
+        height: 40px
+        line-height: 40px
+        background-color: #EEE
+        padding: 0 20px
+        margin-right: 4px
+        cursor: pointer
+    .bloco_botao_busca .botao_busca.hover,
+    .bloco_botao_busca .botao_busca:hover
+            background-color: $cor
+            color: #FFF
+    .corpo
+        width: 100%
+        padding: 20px 0 10px 20px
+        display: flex
+        flex-direction: column
+    .corpo .coluna
+        display: flex
+        flex-direction: row
+    .corpo select
+        max-width: 250px
+    footer
+        width: 100%
+        position: relative
+        padding: 10px 20px
+        border-top: 1px solid #EEE
+        border-radius: 0 0 4px 4px
+        display: flex
+        justify-content: flex-end
+    footer .botao
+        height: 40px
+        line-height: 40px
+        padding: 0 30px 0 25px
+        border-radius: 3px
+        font-size: 1.2em
+        color: #FFF
+        cursor: pointer
+    footer div.botao
+        position: absolute
+        left: 20px
+        background-color: $vermelho2
+    footer button.botao
+        background-color: $cor_add
+/* Bloco geral do ajax */
+.bloco_ajax_geral
+    fixed-mascara()
+    .bloco_conteudo
+        fixed-conteudo()
+        background: #FFF
+        border-radius: 4px
+    header.geral
+        width: 100%
+        height: 50px
+        line-height: 50px
+        background-color: #EEE
+        border-radius: 4px 4px 0 0
+        font-weight: normal
+        display: flex
+        padding: 0 20px
+        align-items: center
+        flex-direction: row
+    header.geral h1
+        flex-grow: 1
+        color: #999
+    header.geral i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        cursor: pointer
+        border-radius: 2px
+        &::after
+            content: "\e813"
+        &:hover
+            background: #DDD
+    footer.geral_botao
+        width: 100%
+        position: relative
+        padding: 10px 20px
+        background-color: #F4F4F4
+        border-top: 1px solid #DDD
+        border-radius: 0 0 4px 4px
+        display: flex
+        justify-content: flex-end
+    footer.geral_botao .botao
+        height: 40px
+        line-height: 40px
+        padding: 0 30px 0 25px
+        border-radius: 3px
+        font-size: 1.2em
+        color: #FFF
+        cursor: pointer
+    footer.geral_botao div.botao
+        position: absolute
+        left: 20px
+        background-color: $vermelho2
+    footer.geral_botao button.botao
+        background-color: $verde
+    footer.geral_botao a.botao
+        position: absolute
+        left: 20px
+        color: #000 !important
+        border: 1px solid #DDD
+
+#conteudo_site.mobile .bloco_ajax_geral
+    header.geral
+        padding: 0
+        flex-direction: row-reverse
+    header.geral i
+        width: 30px
+        font-size: 1.2em
+        font-weight: normal
+        margin: 0 10px
+        &::after
+            content: "\e815"
+        &:hover
+            background-color: rgba(0,0,0,0)
+
+.bloco_ajax_lista .conteudo
+    width: 100%
+    height: calc(100vh - 90px)
+    position: relative
+    overflow-x: hidden
+    overflow-y: auto
+.bloco_ajax_lista .conteudo ul
+    width: 100%
+    position: relative
+    border-bottom: 2px solid #333
+.bloco_ajax_lista .conteudo ul li
+    width: 100%
+    height: 30px
+    line-height: 30px
+    overflow: hidden
+.bloco_ajax_lista .conteudo ul li.topo
+    color: #FFF
+    background-color: #333
+.bloco_ajax_lista .conteudo ul li.lista
+    font-size: 1.2em
+
+.bloco_ajax_lista .conteudo ul li.lista:nth-child(even)
+    background-color: #F4F4F4
+
+.bloco_ajax_lista .conteudo ul li .td
+    padding: 0 10px
+
+/* pagina geral */
+.bloco_pagina_geral
+    width: calc(100% - 40px)
+    max-width: 600px
+    background-color: #FFF
+    border-radius: 4px
+    box-shadow: 0 0 0 #000
+    header.geral
+        width: 100%
+        height: 50px
+        line-height: 50px
+        border-bottom: 1px solid #EEE
+        border-radius: 4px 4px 0 0
+        font-weight: normal
+        display: flex
+        padding: 0 20px
+        align-items: center
+        flex-direction: row
+    header.geral h1
+        flex-grow: 1
+        font-weight: normal
+        color: #999
+        font-size: 1.6em
+        text-transform: uppercase
+    header.geral i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        cursor: pointer
+        border-radius: 2px
+        border: 1px solid #EEE
+        &::after
+            content: "\e813"
+        &:hover
+            border-color: #CCC
+    footer.geral_botao
+        width: 100%
+        position: relative
+        padding: 10px 20px
+        border-top: 1px solid #EEE
+        border-radius: 0 0 4px 4px
+        display: flex
+        justify-content: flex-end
+    footer.geral_botao .botao
+        height: 40px
+        line-height: 40px
+        padding: 0 30px 0 25px
+        border-radius: 3px
+        font-size: 1.2em
+        color: #FFF
+        cursor: pointer
+    footer.geral_botao div.botao
+        position: absolute
+        left: 20px
+        background-color: $vermelho2
+    footer.geral_botao button.botao
+        background-color: $cor_add
+    footer.geral_botao a.botao
+        position: absolute
+        left: 20px
+        padding: 0 15px
+        color: #000 !important
+        border: 1px solid #DDD
+
+.bloco_download
+    max-width: 700px
+    .corpo
+        width: 100%
+        padding: 20px 10px 10px 20px
+    .corpo .texto
+        font-size: 1.4em
+        margin-bottom: 10px
+    .corpo .checkbox:first-child
+        width: 100%
+        border-bottom: 1px solid #EEE
+        margin-bottom: 10px
+        padding-bottom: 5px
+    .corpo .checkbox:first-child label
+        margin: 0 !important
+
+#bloco_social
+    fixed-mascara(9999920)
+    align-items: center
+    display: none
+    .conteudo
+        width: calc(100% - 40px)
+        max-width: 400px
+        background-color: #FFF
+        margin: 20px 0
+        border-radius: 3px
+        overflow: hidden
+        display: flex
+        flex-direction: column
+    header
+        width: 100%
+        height: 50px
+        line-height: 50px
+        background-color: #EEE
+        padding: 0 10px
+        display: flex
+        flex-direction: row
+    header h1
+        width: 100%
+        font-size: 1.5em
+        flex-grow: 1
+    header i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        margin-top: 10px
+        text-align: center
+        cursor: pointer
+        &:after
+            content: "\e813"
+        &:hover
+            background-color: #DDD
+    .conteudo p
+        width: 100%
+        font-size: 1.4em
+        color: #666
+        padding: 10px 10px 0 10px
+    .conteudo .bloco_botao
+        width: 100%
+        padding: 10px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    .conteudo .bloco_botao button
+        width: calc(50% - 10px)
+        height: 50px
+        border-radius: 3px
+        font-size: 1.2em
+        color: #FFF
+    .conteudo .bloco_botao button.facebook
+        background-color: #3C5A9A
+    .conteudo .bloco_botao button.google
+        background-color: #CE3730
+
+
+
+
+#bloco_autorizacao
+    fixed-mascara(999997)
+    form
+        max-width: 400px
+        margin: 20px 0
+    form .corpo
+        padding: 20px 20px 10px 20px
+    form .corpo input
+        width: 100%
+        height: 50px
+        font-size: 1.4em
+        padding: 0 10px
+        margin-bottom: 10px
+        border: 1px solid #CCC
+        border-radius: 2px
+    form .input_password_geral
+        width: 100%
+    form .input_password_geral .bloco_password
+        width: 100%
+        position: relative
+    form .input_password_geral .bloco_password input
+        padding-right: 60px
+    form .input_password_geral .bloco_password .but_password_visualizar
+        width: 50px
+        height: 50px
+        line-height: 50px
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 1.4em
+        text-align: center
+        background-color: $azul
+        color: #FFF
+        cursor: pointer
+    form .input_password_geral .bloco_password .but_password_visualizar[data-password=ativo]:after
+        content: "\e802"
+        font-family: painel
+    form .input_password_geral .bloco_password .but_password_visualizar[data-password=inativo]:after
+        content: "\e806"
+        font-family: painel
+.app_geral_lista
+    display: flex
+    flex-direction: column
+    .lista_dados
+        width: calc(100% - 20px)
+        position: relative
+        margin: 10px 10px 20px 10px
+        display: flex
+        flex-direction: column
+    .lista_dados ul.ul_lista
+        width: 100%
+        &.topo
+            position: absolute
+            left: 0
+            top: 0
+        &.lista
+            margin-top: 40px
+    ul.ul_lista li
+        width: 100%
+        height: 40px
+        line-height: 40px
+        overflow: hidden
+        cursor: default
+        display: flex
+        flex-direction: row
+    ul.ul_lista li a,
+    ul.ul_lista li .link
+        width: 100%
+        color: #000
+        border-top: 1px solid rgba(0,0,0,0)
+        cursor: pointer
+        display: flex
+        flex-direction: row
+    ul.ul_lista.topo li
+        background-color: #FFF
+        color: #000
+        border-bottom: 1px solid #DDD
+        font-size: 1.4em
+        border-radius: 4px 4px 0 0
+    ul.ul_lista.lista li
+        font-size: 1.3em
+        background-color: #FFF
+        border-bottom: 1px solid #EEE
+        &:hover
+            background-color: #F9F9F9
+        &:last-child
+            border-bottom: 2px solid #CCC
+    ul.ul_lista.lista li.selecionado a,
+    ul.ul_lista.lista li.selecionado .link
+        background-color: $painel
+        color: #FFF
+        border-color: #FFF
+    ul.ul_lista li .td
+        height: 100%
+        position: relative
+        padding: 0 10px
+    ul.ul_lista.topo li .td a span
+        margin-left: 5px
+    ul.ul_lista.topo li .td a span:after
+        height: 100%
+        content: attr(data-font)
+        font-family: painel
+    ul.ul_lista li .td:nth-child(1)
+        width: 70px
+    ul.ul_lista li .td:nth-child(2)
+        flex-grow: 1
+    ul.ul_lista li .td.status
+        width: 90px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    ul.ul_lista.lista li .td.status span
+        width: 14px
+        height: 26px
+        border: 1px solid #FFF
+        border-radius: 3px
+    ul.ul_lista.lista .zero
+        width: 100%
+        height: calc(100vh - 220px)
+        line-height: 200px
+        text-align: center
+        font-size: 1.2em
+        color: #999
+        border: none
+        border-bottom: 2px solid #333
+        &:hover
+            background-color: #FFF
+    ul.ul_lista.lista .zero span
+        width: 100%
+    ul.ul_lista.lista .zero i
+        display: none
+        &:hover
+            background-color: #FFF
+@media screen and (max-width: 1150px)
+    #conteudo_site.aberto
+        ul.ul_lista.lista_geral li .td:nth-child(4)
+            display: none
+    ul.ul_lista.lista_geral li .td.status
+        display: flex
+@media screen and (max-width: 900px)
+    #conteudo_site.aberto
+        .app_geral_lista ul.ul_lista li .td
+            display: none
+            &:nth-child(1)
+                display: flex
+            &:nth-child(2)
+                display: flex
+            &.status
+                display: flex
+                width: 15px
+                margin-right: 5px
+                span
+                    width: 15px
+                    height: 30px
+                    border: none
+                    border-radius: 0
+        ul.ul_lista.lista_geral li .td:nth-child(3)
+            display: none
+    #conteudo_site.fechado
+        ul.ul_lista.lista_geral li .td:nth-child(4)
+            display: none
+        ul.ul_lista.lista_geral li .td.status
+            display: flex
+@media screen and (max-width: 680px)
+    #conteudo_site.fechado
+        ul.ul_lista.lista_geral li .td:nth-child(3)
+            display: none
+        ul.ul_lista.lista_geral li .td.status
+            display: flex
+@media screen and (max-width: 600px)
+    #conteudo_site.fechado
+        .app_geral_lista ul.ul_lista li .td
+            display: none
+            &:nth-child(1)
+                display: flex
+            &:nth-child(2)
+                display: flex
+            &.status
+                display: flex
+                width: 15px
+                margin-right: 5px
+                overflow: hidden
+                text-indent: -1000px
+                span
+                    width: 15px
+                    height: 30px
+                    border: none
+                    border-radius: 0
+
+/* app de agenda */
+.app_agenda
+    display: flex
+    flex-direction: column
+    header .hoje
+        height: 40px
+        line-height: 40px
+        border: 1px solid #EEE
+        border-radius: 2px
+        cursor: pointer
+        background-color: #FFF
+        display: flex
+    header .hoje a
+        width: 100%
+        height: 100%
+        padding: 0 20px
+        color: #999
+    header .selecao
+        height: 40px
+        line-height: 40px
+        margin-left: 10px
+        font-size: 1.4em
+        display: flex
+        flex-direction: row
+        background-color: #FFF
+    header .selecao .nome
+        color: #999
+        padding: 0 20px
+        border-top: 1px solid #EEE
+        border-bottom: 1px solid #EEE
+        cursor: default
+    header .selecao .seta
+        border: 1px solid #EEE
+        padding: 0 15px
+        cursor: pointer
+        display: flex
+        position: relative
+    header .selecao .seta a
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+    .table
+        width: calc(100% - 40px)
+        display: flex
+        flex-direction: column
+        margin: 20px
+        background-color: #FFF
+    .table .tr
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+        border-left: 1px solid #CCC
+    .table .tr .td
+        col(7, 0px)
+        height: calc((100vh - 180px) / 5)
+        min-height: 100px
+        position: relative
+        border-right: 1px solid #CCC
+        border-bottom: 1px solid #CCC
+        display: flex
+        flex-direction: column
+    .table .tr .td.nulo
+        background-color: #F9F9F9
+        color: #999
+    .table .tr:first-child .td
+        height: 40px
+        min-height: 40px
+        line-height: 40px
+        text-align: center
+        border-top: 1px solid #CCC
+    .table .tr .td .topo
+        width: 100%
+        height: 30px
+        display: flex
+        flex-direction: row
+        align-items: center
+    .table .tr .td .topo span.data
+        width: 20px
+        height: 20px
+        line-height: 20px
+        font-size: 1.2em
+        margin-left: 10px
+        text-indent: 3px
+        display: flex
+    .table .tr .td.hoje .topo span.data
+        background-color: $vermelho2
+        color: #FFF
+        border-radius: 50%
+    .table .tr .td .topo .novo
+        width: 20px
+        height: 20px
+        line-height: 20px
+        text-align: center
+        background-color: $cor_add
+        color: #FFF
+        border-radius: 2px
+        opacity: 0
+        cursor: pointer
+    .table .tr .td .topo a
+        height: 20px
+        line-height: 20px
+        color: #666
+        margin: 0 5px
+        padding: 0 5px
+        border: 1px solid #CCC
+        border-radius: 2px
+        opacity: 0
+    .table .tr .td:hover .novo,
+    .table .tr .td:hover a
+        opacity: 1
+    .table .tr .td ul.conteudo_agenda
+        width: 100%
+        height: calc(100% - 35px)
+        overflow-x: hidden
+        overflow-y: auto
+        z-index: 1
+    .table .tr .td ul.conteudo_agenda li
+        width: 100%
+        line-height: 1.5em
+        padding: 5px 10px
+    .table .tr .td ul.conteudo_agenda li i
+        display: none
+
+.app_agenda_visualizar
+    .bloco_add
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+    .bloco_add .botao
+        height: 40px
+        line-height: 40px
+        line-height: 40px
+        position: relative
+        background-color: $cor_add
+        color: #FFF
+        font-size: 1.2em
+        margin: 20px 0 0 20px
+        padding: 0 20px 0 60px
+        border-radius: 3px
+        cursor: pointer
+    .bloco_add .botao i
+        width: 40px
+        height: 40px
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 1.4em
+        text-align: center
+        background-color: rgba(0,0,0,.1)
+    ul.lista_hora
+        width: calc(100% - 40px)
+        margin: 20px
+        background-color: #FFF
+        display: flex
+        flex-direction: column
+        border-radius: 3px
+        box-shadow: 0 2px 2px #CCC
+    ul.lista_hora li.data
+        width: 100%
+        padding: 10px
+        font-size: 1.4em
+        background-color: #F4F4F4
+        border-bottom: 1px solid #DDD
+    ul.lista_hora li.lista
+        width: 100%
+        display: flex
+        flex-direction: row
+        border-bottom: 1px solid #EEE
+    ul.lista_hora li.lista .hora
+        width: 110px
+        min-height: 20px
+        font-size: 1.2em
+        padding-left: 20px
+        display: flex
+        align-items: center
+    ul.lista_hora li.lista ul
+        width: calc(100% - 110px)
+    ul.lista_hora li.lista ul li
+        width: 100%
+        padding: 5px 10px
+        border-bottom: 1px solid #EEE
+        display: flex
+        flex-direction: row
+        align-items: center
+    ul.lista_hora li.lista ul li:last-child
+        border-bottom: none
+    ul.lista_hora li.lista ul li.geral .texto
+        line-height: 1.5em
+        font-size: 1.4em
+        flex-grow: 1
+    ul.lista_hora li.lista ul li.geral i.icone
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        margin: 0 10px
+        color: #FFF
+        border-radius: 2px
+        cursor: pointer
+    ul.lista_hora li.lista ul li.geral.telefone i.icone
+        background-color: $verde
+        font-size: 1.4em
+        &::after
+            content: "\e818"
+    ul.lista_hora li.lista ul li.geral.email i.icone
+        background-color: $marrom
+        font-size: 1.2em
+        &::after
+            content: "\f0e0"
+    ul.lista_hora li.lista ul li.geral.reuniao i.icone
+        background-color: $laranja
+        font-size: 1.2em
+        &::after
+            content: "\e80a"
+    ul.lista_hora li.lista ul li.geral.entrega i.icone
+        background-color: $azul
+        font-size: 1.2em
+        &::after
+            content: "\e81a"
+    ul.lista_hora li.lista ul li.geral span.status
+        width: 15px
+        height: 15px
+        border-radius: 50%
+
+
+
+/* lista geral de imagens */
+.app_geral_imagem .lista_dados
+    width: 100%
+    position: relative
+    padding: 10px 5px 20px 5px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    .zero
+        width: 100%
+        margin: 100px 0 50px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+    .zero i
+        width: 100px
+        height: 100px
+        line-height: 100px
+        text-align: center
+        font-size: 1.8em
+        color: #999
+        border: 1px solid #DDD
+        border-radius: 100%
+    .zero span
+        width: 100%
+        margin-top: 20px
+        color: #CCC
+        font-size: 1.6em
+        text-align: center
+    li.bloco
+        col(4, 10px)
+        height: 250px
+        position: relative
+        margin-bottom: 20px
+        background-color: #FFF
+        overflow: hidden
+        border-radius: 3px
+    li.bloco.selecionado figure:after
+        width: 100%
+        height: 100%
+        position: absolute
+        content: " "
+        top: 0
+        left: 0
+        background-color: $verde
+        opacity: .3
+        z-index: 4
+    li.bloco figure
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background-size: cover
+        background-position: center center
+        z-index: 1
+        transition: all .3s ease-out
+    li.bloco:hover figure
+        width: calc(100% + 40px)
+        height: calc(100% + 40px)
+        top: -20px
+        left: -20px
+    li.bloco span
+        width: 100%
+        position: absolute
+        left: 0
+        bottom: 0
+        padding: 15px 20px
+        font-size: 1.2em
+        color: #FFF
+        background-color: rgba(0,0,0,.8)
+        z-index: 2
+    li.bloco a
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 3
+@media screen and (max-width: 1100px)
+    .app_geral_imagem .lista_dados
+        li.bloco
+            col(3)
+@media screen and (max-width: 800px)
+    .app_geral_imagem .lista_dados
+        li.bloco
+            col(2)
+@media screen and (max-width: 600px)
+    .app_geral_imagem .lista_dados
+        max-width: 400px
+        margin-left: calc((100% - 400px) / 2)
+        li.bloco
+            col(1)
+@media screen and (max-width: 410px)
+    .app_geral_imagem .lista_dados
+        margin-left: 0
+
+/* form geral */
+.app_geral_add
+    display: flex
+    flex-direction: column
+    form
+        width: 100%
+        padding: 0 10px 20px 10px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+    form .linha
+        col(3)
+        display: flex
+        flex-direction: column
+    form .linha_grande
+        width: calc(100% - 20px)
+        margin: 0 10px
+    form fieldset
+        width: 100%
+        margin-top: 20px
+        padding: 10px 10px 0 10px
+        border-radius: 3px
+        display: flex
+        flex-direction: column
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+    form fieldset.lista
+        width: calc(100% - 20px)
+        padding: 10px 10px 0 10px
+        border-radius: 0
+        margin-left: 10px
+        border: none
+        border-bottom: 1px solid #F4F4F4
+        border-radius: 3px
+    form fieldset.abrir_fechar
+        height: 40px
+        position: relative
+        display: flex
+        flex-direction: column
+        overflow: hidden
+        &::after
+            width: 40px
+            height: 40px
+            line-height: 40px
+            content: "+"
+            font-size: 1.6em
+            color: #666
+            text-align: center
+            position: absolute
+            top: 0
+            right: 0
+    form fieldset.abrir_fechar.aberto
+        height: auto
+        &.abrir_fechar.aberto::after
+            content: "-"
+    form fieldset.abrir_fechar .but_abrir
+        width: 100%
+        height: 40px
+        line-height: 40px
+        padding: 0 10px
+        font-size: 1.2em
+        font-weight: bold
+        margin: -10px 0 0 -10px
+        background-color: #FFF
+        cursor: pointer
+    form fieldset.abrir_fechar.aberto .but_abrir
+        width: calc(100% + 20px)
+        border-bottom: 1px solid #EEE
+        margin-bottom: 10px
+    form fieldset .bloco_linha
+        width: 100%
+        border-bottom: 1px solid #EEE
+        padding-top: 7px
+    form fieldset .bloco_linha:last-child
+        border-bottom: none
+    form fieldset .legenda
+        width: 100%
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+        font-size: 1.2em
+        font-weight: bold
+        border-bottom: 1px solid #EEE
+    form fieldset.lista .legenda
+        padding: 0 0 5px 0
+        font-size: 1.4em
+    form fieldset input[type=email],
+    form fieldset input[type=text]
+        width: 100%
+        max-width: 100%
+    form fieldset select
+        width: 100%
+        max-width: 230px
+    form fieldset input[data-mascara=data]
+        max-width: 140px
+    form fieldset input[data-mascara=cpf]
+        max-width: 130px
+    /* boleano */
+    form fieldset .input_booleano_geral
+        width: auto
+        margin-bottom: 10px
+        cursor: pointer
+        align-items: center
+        display: flex
+    form fieldset .input_booleano_geral .booleano_titulo
+        height: 30px
+        line-height: 30px
+        margin-right: 10px
+        font-size: 1.3em
+        overflow: hidden
+    form fieldset .input_booleano_geral .booleano_botao
+        width: 35px
+        height: 10px
+        border-radius: 10px
+        display: flex
+    form fieldset .input_booleano_geral.ativo .booleano_botao
+        background-color: #90C5F5
+        justify-content: flex-end
+    form fieldset .input_booleano_geral.inativo .booleano_botao
+        background-color: #DDD
+        justify-content: flex-start
+    form fieldset .input_booleano_geral .booleano_botao .booleano_bola
+        width: 22px
+        height: 22px
+        margin-top: -6px
+        border-radius: 100%
+        box-shadow: 0 0 2px #CCC
+    form fieldset .input_booleano_geral.ativo .booleano_botao .booleano_bola
+        background-color: #1490E9
+    form fieldset .input_booleano_geral.inativo .booleano_botao .booleano_bola
+        background-color: #EEE
+    /* lista */
+    form fieldset .form_lista
+        width: calc(100% + 20px)
+        margin-left: -10px
+        display: flex
+        flex-direction: column
+    form fieldset .form_lista .add
+        width: 125px
+        height: 30px
+        line-height: 30px
+        position: relative
+        padding: 0 10px 0 40px
+        margin-left: 10px
+        margin-bottom: 10px
+        background-color: $cor_add
+        color: #FFF
+        text-align: center
+        border-radius: 2px
+        cursor: pointer
+        overflow: hidden
+    form fieldset .form_lista .add i
+        width: 30px
+        height: 30px
+        position: absolute
+        top: 0
+        left: 0
+        text-align: center
+        border-radius: 2px 0 0 2px
+        background-color: lightness($cor_add, 40%)
+    form fieldset .form_lista .linha
+        width: calc(100% - 20px)
+        height: 1px
+        margin-left: 10px
+        background: #EEE
+        display: flex
+    form fieldset .form_lista .bloco_conteudo
+        width: 100%
+        max-height: 200px
+        padding: 0 10px
+        overflow-x: hidden
+        overflow-y: auto
+        display: inline-block
+    form fieldset .form_lista .bloco_conteudo li.zero
+        width: 100%
+        text-align: center
+        padding: 50px 0
+    form fieldset .form_lista .bloco_conteudo li.lista
+        width: 100%
+        border-top: 1px solid #EEE
+        display: flex
+        padding: 5px 0
+        flex-direction: row
+        overflow: hidden
+        &:first-child
+            border-top: none
+    form fieldset .form_lista .bloco_conteudo li.lista span.valor
+        height: 30px
+        line-height: 30px
+        flex-grow: 1
+        font-size: 1.2em
+    form fieldset .form_lista .bloco_conteudo li.lista i.destaque
+        height: 30px
+        line-height: 30px
+        color: #daa520
+        margin: 0 5px
+        text-align: center
+        border-radius: 2px
+        cursor: pointer
+    form fieldset .form_lista .bloco_conteudo li.lista i.editar
+        width: 30px
+        height: 30px
+        line-height: 30px
+        background-color: $cor_editar
+        color: #FFF
+        text-align: center
+        border-radius: 2px
+        cursor: pointer
+    /* editor */
+    form fieldset .bloco_editor,
+    form fieldset .bloco_editor textarea
+        width: 100%
+    /* Lista de tags */
+    form .bloco_tag_input
+        width: 100%
+        display: flex
+        flex-direction: column
+    form .bloco_tag_input .bloco_tag_input_botao
+        width: 100%
+        display: flex
+        flex-direction: row
+    form .bloco_tag_input .bloco_tag_input_botao .bloco_tag_input_input
+        width: calc(100% - 40px)
+        max-width: 400px
+        margin-right: 0
+        border-radius: 3px 0 0 3px
+    form .bloco_tag_input .bloco_tag_input_botao .bloco_tag_input_add
+        width: 40px
+        height: 40px
+        line-height: 40px
+        background-color: $cor_add
+        color: #FFF
+        text-align: center
+        font-size: 1.4em
+        border-radius: 0 3px 3px 0
+    form .bloco_tag_input .bloco_tag_input_botao_ul
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    form .bloco_tag_input .bloco_tag_input_botao_ul .bloco_tag_input_li
+        margin: 0 10px 10px 0
+        padding: 5px
+        display: flex
+        flex-direction: row
+        align-items: center
+        border: 1px solid #DDD
+        border-radius: 3px
+    form .bloco_tag_input .bloco_tag_input_botao_ul .bloco_tag_input_li .bloco_tag_input_span
+        font-size: 1.4em
+    form .bloco_tag_input .bloco_tag_input_botao_ul .bloco_tag_input_li .bloco_tag_input_deletar
+        width: 17px
+        height: 17px
+        line-height: 18px
+        margin-left: 5px
+        background-color: $cor_deletar
+        color: #FFF
+        font-size: 1.2em
+        text-align: center
+        border-radius: 3px
+        cursor: pointer
+    /* Lista de input */
+    form .bloco_lista_input
+        width: 100%
+        display: flex
+        flex-direction: column
+    form .bloco_lista_input .bloco_lista_input_busca
+        width: 100%
+        position: relative
+        display: flex
+    form .bloco_lista_input .bloco_lista_input_busca .bloco_lista_input_input
+        margin-bottom: 10px
+    form .bloco_lista_input .bloco_lista_input_busca .bloco_lista_input_botao
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 1.4em
+        text-align: center
+        background-color: $cor_add
+        color: #FFF
+        cursor: pointer
+        border-radius: 0 3px 3px 0
+        cursor: pointer
+    form .bloco_lista_input .bloco_lista_input_ul
+        width: 100%
+        border: 1px solid #EEE
+        margin-bottom: 10px
+        display: flex
+        flex-direction: column
+    form .bloco_lista_input .bloco_lista_input_ul .bloco_lista_input_li
+        width: 100%
+        position: relative
+        border-bottom: 1px solid #EEE
+        display: flex
+        flex-direction: row
+        align-items: center
+    form .bloco_lista_input .bloco_lista_input_ul .bloco_lista_input_li:last-child
+        border-bottom: none
+    form .bloco_lista_input .bloco_lista_input_ul .bloco_lista_input_li .bloco_lista_input_nome
+        flex-grow: 1
+        font-size: 1.4em
+        padding: 10px
+        color: #000
+    form .bloco_lista_input .bloco_lista_input_ul .bloco_lista_input_li .bloco_lista_input_remover
+        width: 20px
+        height: 20px
+        line-height: 21px
+        margin: 0 5px
+        text-align: center
+        font-size: 1.1em
+        background-color: $cor_deletar
+        color: #FFF
+        border-radius: 3px
+        cursor: pointer
+    form .bloco_lista_input .bloco_lista_input_ul .bloco_lista_input_zero
+        width: 100%
+        text-align: center
+        padding: 20px 0
+        color: #666
+        font-size: 1.2em
+    /* imagens */
+    form .bloco_imagem
+        width: 100%
+        position: relative
+        text-align: center
+        overflow: hidden
+        display: flex
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    form .bloco_imagem .fechar
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 10px
+        right: 10px
+        font-size: 1.5em
+        text-align: center
+        background-color: $cor_deletar
+        color: #FFF
+        opacity: .2
+        cursor: pointer
+        transition: opacity .3s ease-out
+        display: none
+    form .bloco_imagem:hover .fechar
+        opacity: 1
+    form .bloco_imagem.ativo .fechar
+        display: flex
+    form .bloco_imagem .botao
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 10px
+        left: 10px
+        background-color: $cor_add
+        color: #FFF
+        font-size: 1.2em
+        padding: 0 20px
+        opacity: .2
+        transition: opacity .3s ease-out
+        border-radius: 3px
+    form .bloco_imagem:hover .botao
+        opacity: 1
+    form .bloco_imagem .botao i
+        width: 40px
+        height: 40px
+        position: absolute
+        top: 0
+        left: 0
+        text-align: center
+        background-color: rgba(0,0,0,.1)
+    form .bloco_imagem .botao span
+        font-size: .8em
+    form .bloco_imagem .botao input
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
+        z-index: 10
+    form .bloco_imagem figure
+        width: 100%
+        height: 300px
+        bg-image('painel/imagem_padrao.png')
+        background-repeat: no-repeat
+        background-size: auto 100%
+        background-position: center center
+        background-color: #FFF
+    form .bloco_imagem.ativo figure
+        height: auto
+        min-height: 60px
+        background-image: url('')
+    /* imagens lista */
+    form .bloco_imagem_lista
+        width: 100%
+        position: relative
+        overflow: hidden
+        display: flex
+        padding: 10px 5px
+        flex-direction: column
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    form .bloco_imagem_lista .botao
+        width: 100%
+        max-width: 250px
+        height: 40px
+        line-height: 40px
+        position: relative
+        background-color: $cor_add
+        color: #FFF
+        text-align: center
+        font-size: 1.2em
+        padding: 0 20px
+        margin-left: 5px
+        border-radius: 3px
+    form .bloco_imagem_lista .botao input
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
+    form .bloco_imagem_lista .bloco_imagem_lista_conteudo
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    form .bloco_imagem_lista figure
+        col(4, 10px)
+        height: 250px
+        position: relative
+        margin-top: 10px
+        background-size: cover
+        background-position: center center
+        overflow: hidden
+    form .bloco_imagem_lista figure i
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 5px
+        right: 5px
+        text-align: center
+        font-size: 1.6em
+        text-align: center
+        background-color: $vermelho2
+        color: $vermelho1
+        border-radius: 2px
+        cursor: pointer
+        opacity: 0
+        transition: opacity .3s ease-out
+    form .bloco_imagem_lista figure:hover i
+        opacity: 1
+    form .bloco_imagem_lista figure input
+        width: 100%
+        height: 40px
+        position: absolute
+        left: 0
+        bottom: -10px
+        background-color: #FFF
+        border: none
+
+    /* video */
+    form .bloco_video
+        width: 100%
+        position: relative
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    form .bloco_video .link_video
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        padding: 15px 20px 10px 20px
+        background-color: rgba(255,255,255,.9)
+        z-index: 2
+        transition: opacity .3s ease-out
+        opacity: 0
+    form .bloco_video.hover .link_video,
+    form .bloco_video:hover .link_video
+        opacity: 1
+    form .bloco_video .link_video input
+        background-color: #FFF
+    form .bloco_video .iframe
+        width: 100%
+        height: 300px
+        position: relative
+        bg-image('painel/video_padrao.png')
+        background-repeat: no-repeat
+        background-size: auto 100%
+        background-position: center center
+        background-color: #FFF
+        text-align: center
+        z-index: 1
+    form .bloco_video.ativo .iframe
+        height: auto
+    form .bloco_video.ativo .iframe iframe
+        width: 100%
+        max-width: 1000px
+        height: 300px
+    form .bloco_video.ativo .iframe .responsivo
+        width: 100%
+        max-width: 100%
+        position: relative
+        padding-bottom: 56.25%
+        overflow: hidden
+    form .bloco_video.ativo .iframe .responsivo iframe,
+    form .bloco_video.ativo .iframe .responsivo object,
+    form .bloco_video.ativo .iframe .responsivo embed
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        max-width: 100%
+        height: 100%
+@media screen and (max-width: 830px)
+    .app_geral_add
+        form
+            width: 100%
+            padding: 20px 10px
+            display: flex
+            flex-direction: column
+            flex-wrap: nowrap
+            padding-top: 0
+            justify-content: flex-start
+            align-items: center
+        form .linha
+            col(1)
+            max-width: 500px
+            display: flex
+            flex-direction: column
+        form .linha_grande
+            max-width: 500px
+        form fieldset.lista
+            max-width: 520px
+/* form ajax */
+.app_geral_ajax
+    width: calc(100% - 40px)
+    max-width: 500px
+    border-radius: 4px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    .header_principal
+        border-bottom: 1px solid #EEE
+    form
+        padding: 0 20px 20px 20px
+        background-color: #FFF
+    form fieldset
+        border: none
+        padding: 0
+        margin-bottom: 10px
+        border-bottom: 1px solid #DDD
+        box-shadow: none
+        border-radius: 0
+    form input[type=number],
+    form input
+        width: 100%
+        max-width: 100%
+    form .bloco_botao
+        width: 100%
+        display: flex
+        flex-direction: row
+    form button
+        height: 40px
+        position: relative
+        padding: 0 20px 0 60px
+        color: #FFF
+        background-color: $cor_add
+        border-radius: 3px
+    form button i
+        width: 38px
+        height: 38px
+        line-height: 38px
+        position: absolute
+        top: 0
+        left: 0
+        text-align: center
+        font-size: 1.4em
+        background-color: rgba(0,0,0,.1)
+    form button.deletar
+        background-color: rgba(0,0,0,0)
+        border: 1px solid #999
+        color: #666
+    form button.deletar i
+        background-color: rgba(0,0,0,0)
+        border-right: 1px solid #999
+
+
+
+/* visualizar geral*/
+.app_geral_visualizar
+    width: 100%
+    padding-bottom: 40px
+    .center
+        width: calc(100% - 40px)
+        max-width: 1000px
+        margin: 0 auto
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    figure.capa_perfil
+        width: 100%
+        height: 200px
+        margin-bottom: 100px
+        background-color: #FAFAFA
+        padding-top: 120px
+    figure.capa_perfil span
+        width: 160px
+        height: 160px
+        margin: 0 auto
+        border-radius: 100%
+        background-color: #FFF
+        border: 1px solid #FAFAFA
+        display: table
+    figure.perfil
+        width: 100%
+        height: 300px
+        position: relative
+        background-color: #FFF
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center center
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    .dados_esquerda
+        width: 300px
+        margin: 20px 20px 0 0
+    .dados_direita
+        width: calc(100% - 320px)
+    article.bloco
+        width: 100%
+        margin-top: 20px
+        padding: 10px 20px 10px 5px
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+        display: flex
+        flex-direction: column
+    article.bloco:last-child
+        border: none
+    article.bloco header
+        width: 100%
+        padding: 5px 10px 5px 6px
+        margin-bottom: 5px
+        border-left: 4px solid $painel
+        font-weight: bold
+    article.bloco p
+        width: 100%
+        padding: 5px 10px
+        font-size: 1.3em
+        display: flex
+        flex-direction: row
+        align-items: center
+    article.bloco p span
+        margin-right: 5px
+    article.bloco p a.link_borda
+        border: 1px solid $cor_editar
+        color: $cor_editar
+        padding: 3px 5px
+        border-radius: 2px
+    article.bloco p .operadora
+        background-color: $azul
+        color: #FFF
+        padding: 5px 7px 5px 6px
+        border-radius: 3px
+        cursor: default
+    article.bloco p.status_texto span:first-child,
+    article.bloco p.status_icone span:first-child
+        height: 20px
+        line-height: 20px
+        margin-right: 5px
+    article.bloco p.status_icone span:last-child
+        width: 20px
+        height: 20px
+        line-height: 18px
+        text-align: center
+        font-family: painel
+        color: $verde
+        border: 1px solid $verde
+        border-radius: 100%
+        cursor: default
+    article.bloco p.status_icone span.status_1
+        width: 20px
+        height: 20px
+        line-height: 20px
+        color: $verde
+        border: 1px solid $verde
+    article.bloco p.status_icone span.status_2
+        width: 20px
+        height: 20px
+        line-height: 20px
+        color: $vermelho
+        border: 1px solid $vermelho
+    article.bloco p.status_icone span.status_1:after
+        content: "\e80b"
+    article.bloco p.status_icone span.status_2:after
+        content: "\e813"
+    article.bloco p.status_texto span:last-child
+        height: 20px
+        line-height: 18px
+        padding: 0 5px
+        border: 1px solid $verde
+        border-radius: 3px
+    article.endereco
+        width: 100%
+        margin-top: 20px
+        padding-bottom: 20px
+        border-bottom: 1px solid #DDD
+        padding: 10px 20px 10px 5px
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    article.endereco:last-child
+        border: none
+    article.endereco header
+        width: 100%
+        padding: 5px 10px 5px 6px
+        margin-bottom: 5px
+        border-left: 4px solid $painel
+        font-weight: bold
+    article.endereco p
+        width: 100%
+        position: relative
+        padding: 28px 10px 10px 35px
+        font-size: 1.3em
+    article.endereco p.zero
+        padding: 10px
+    article.endereco p span
+        width: 100%
+        height: 17px
+        line-height: 17px
+        position: absolute
+        top: 5px
+        left: 10px
+        font-size: 1.2em
+    article.endereco p a
+        width: 20px
+        height: 20px
+        line-height: 20px
+        position: absolute
+        top: 26px
+        left: 10px
+        font-size: .8em
+        text-align: center
+        background-color: $azul
+        color: #FFF
+        border-radius: 2px
+    article.endereco p a i
+        width: 100%
+        height: 100%
+    .bloco_quadrado
+        width: 100%
+        margin-top: 15px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+    .bloco_quadrado li
+        width: calc(50% - 5px)
+        text-align: center
+        margin-top: 5px
+        border: 1px solid #DDD
+        display: flex
+        flex-direction: column
+    .bloco_quadrado li a
+        padding: 10px 0
+    .bloco_quadrado li span
+        width: 100%
+        font-size: 3.0em
+        font-weight: bold
+        color: $vermelho2
+    .bloco_quadrado li p
+        width: 100%
+        font-size: 1.6em
+        color: #999
+    .bloco_lista
+        width: 100%
+        margin: 20px 0
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 2px
+    .bloco_lista header
+        width: 100%
+        height: 40px
+        border-bottom: 1px solid #EEE
+        display: flex
+        flex-direction: row
+    .bloco_lista header h1
+        height: 40px
+        line-height: 40px
+        padding: 0 10px
+        flex-grow: 1
+    .bloco_lista header a.abrir
+        width: 30px
+        height: 30px
+        line-height: 27px
+        position: relative
+        text-align: center
+        border: 1px solid #DDD
+        color: #000
+        border-radius: 2px
+        margin: 4px 5px 0 0
+        cursor: pointer
+    .bloco_lista header a i
+        width: 100%
+        height: 100%
+    .bloco_lista ul li
+        width: 100%
+        padding: 10px
+        font-size: 1.2em
+        cursor: default
+        overflow: hidden
+    .bloco_lista ul li.zero
+        height: 300px
+        line-height: 300px
+        text-align: center
+        color: #999
+    .album
+        width: 100%
+        position: relative
+        padding: 20px 0 0 20px
+        display: flex
+    .album .add
+        width: 100%
+        max-width: 300px
+        height: 250px
+        position: absolute
+        top: 20px
+        left: 20px
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+        cursor: pointer
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background-color: #FFF
+        overflow: hidden
+    .album .add input
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 3
+        opacity: 0
+    .album .add i
+        width: 70px
+        height: 70px
+        line-height: 70px
+        position: relative
+        text-align: center
+        margin-bottom: 10px
+        font-size: 2.4em
+        color: #999
+        border: 1px solid #DDD
+        border-radius: 100%
+        transition: color .3s ease-out
+        z-index: 2
+        &::after
+            font-family: painel
+            content: "\f0ee"
+    .album .add p
+        width: 100%
+        position: relative
+        text-align: center
+        font-size: 1.4em
+        font-weight: bold
+        color: #999
+        transition: color .3s ease-out, border-color .3s ease-out
+        z-index: 2
+    .album .add span
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 100%
+        left: 0
+        background-color: $cor_add
+        transition: top .15s ease-out
+        z-index: 1
+    .album .add.hover i,
+    .album .add:hover i
+        border-color: #FFF
+        color: #FFF
+    .album .add.hover p,
+    .album .add:hover p
+        color: #FFF
+    .album .add.hover span,
+    .album .add:hover span
+        top: 0
+    .album .lista
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .album .lista .imagem
+        width: 100%
+        max-width: 300px
+        height: 250px
+        position: relative
+        margin: 0 20px 20px 0
+        background-color: #FFF
+        background-size: cover
+        background-position: center center
+        overflow: hidden
+    .album .lista .imagem i
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        top: 10px
+        text-align: center
+        color: #FFF
+        font-size: 1.4em
+        cursor: pointer
+        opacity: 0
+        transition: opacity .3s ease-out
+    .album .lista .imagem:hover i
+        opacity: 1
+    .album .lista .imagem i.editar
+        background-color: $cor_editar
+        right: 10px
+    .album .lista .imagem i.capa
+        background-color: $verde
+        right: 60px
+    .album .lista .imagem i.deletar
+        background-color: $cor_deletar
+        left: 10px
+    .bloco_historico
+        margin-top: 20px
+@media screen and (max-width: 800px)
+    .app_geral_visualizar
+        .center
+            display: flex
+            flex-direction: column
+            align-items: center
+        .dados_esquerda
+            width: 300px
+            height: 300px
+            margin: 40px 0
+            border-radius: 50%
+            overflow: hidden
+        .dados_direita
+            width: 100%
+/* mobile */
+#conteudo_site.mobile .app_geral_visualizar
+    padding-bottom: 20px
+    .bloco_historico
+        width: calc(100% - 290px)
+        margin-left: 270px
+    .center
+        width: 100%
+        max-width: 100%
+        display: flex
+        flex-direction: row
+        align-items: flex-end
+        .dados_esquerda
+            width: 250px
+            height: calc(100vh - 50px)
+            top: 50px
+            left: 0
+            position: fixed
+            border-radius: 0
+        .dados_esquerda figure
+            height: 100%
+        .dados_direita
+            width: calc(100% - 250px)
+            margin: 0 0 0 250px
+            padding: 0 20px
+@media screen and (max-width: 600px)
+    #conteudo_site.mobile .app_geral_visualizar
+        .bloco_historico
+            width: calc(100% - 40px)
+            margin-left: 20px
+        .center
+            width: 100%
+            max-width: 100%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+        .dados_esquerda
+            width: 100%  !important
+            height: 300px !important
+            top: 50px
+            left: 0
+            position: fixed
+            border-radius: 0
+        .dados_esquerda figure
+            height: 300px
+        .dados_direita
+            width: 100% !important
+            padding: 0 20px
+            margin: 290px 0 0 0 !important
+            z-index: 2  !important
+            background-color: #FEFEFE
+
+.bloco_agenda_add
+    width: calc(100% - 40px)
+    max-width: 400px
+    background-color: #FFF
+    border-radius: 4px
+    overflow: hidden
+    header
+        width: 100%
+        height: 50px
+        line-height: 50px
+        border-radius: 4px 4px 0 0
+        display: flex
+        border-bottom: 1px solid #EEE
+        align-items: center
+        flex-direction: row
+    header h1
+        flex-grow: 1
+        color: #999
+    header a.voltar
+        width: 50px
+        height: 50px
+        line-height: 50px
+        font-size: 1.2em
+        text-align: center
+        font-family: painel
+        color: #999
+        &:after
+            width: 30px
+            height: 30px
+            content: "\e815"
+    .contato_zero
+        width: 100%
+        background-color: #FFF
+        font-size: 1.4em
+        text-align: center
+        padding: 70px 40px
+    .contato_zero h2
+        color: $vermelho2
+        margin-bottom: 5px
+    .contato_zero span
+        color: #666
+    fieldset
+        width: 100%
+        padding: 20px 0 10px 20px
+        display: flex
+        flex-direction: column
+    fieldset .input_data
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    fieldset .input_data label
+        width: 100%
+    fieldset .input_data input
+        width: calc(100% - 80px)
+    fieldset .input_data input[name=hora]
+        width: 70px
+        text-align: center
+    fieldset textarea
+        width: calc(100% - 20px)
+    footer
+        width: 100%
+        position: relative
+        padding: 10px 20px
+        border-top: 1px solid #EEE
+        border-radius: 0 0 4px 4px
+        display: flex
+        justify-content: flex-end
+    footer .botao
+        height: 40px
+        line-height: 40px
+        padding: 0 30px 0 25px
+        border-radius: 3px
+        font-size: 1.2em
+        background-color: $verde
+        color: #FFF
+        cursor: pointer
+
+#bloco_agenda_realizar
+    width: calc(100% - 40px)
+    max-width: 700px
+    position: relative
+    background-color: #FFF
+    display: flex
+    flex-direction: column
+    border-radius: 4px
+    overflow: hidden
+    header.header_principal
+        border-bottom: 1px solid #EEE
+    .conteudo
+        width: 100%
+        padding: 20px
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    .conteudo .titulo
+        color: $verde
+        font-weight: bold
+        font-size: 2.4em
+    .conteudo .texto
+        line-height: 1.5em
+        font-size: 1.4em
+    .conteudo time.agendamento
+        width: 100%
+        margin: 20px 0 5px 0
+        display: flex
+        flex-direction: column
+    .conteudo time.agendamento p
+        font-size: 1.2em
+    .conteudo time.agendamento span
+        font-size: 1.4em
+        margin-top: 5px
+    .conteudo .status
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    .conteudo .status span
+        height: 20px
+        line-height: 18px
+        padding: 0 8px
+        color: #FFF
+        font-size: 1.4em
+        border-radius: 10px
+        &:nth-child(2)
+            background-color: $azul
+            display: none
+        &:nth-child(3)
+            background-color: $verde
+            display: none
+        &:nth-child(4)
+            background-color: $vermelho2
+            display: none
+    .conteudo.ligando .status span
+        &:nth-child(1)
+            display: none
+        &:nth-child(2)
+            display: block
+    .conteudo.finalizado .status span
+        &:nth-child(1)
+            display: none
+        &:nth-child(3)
+            display: block
+    .conteudo.cancelado .status span
+        &:nth-child(1)
+            display: none
+        &:nth-child(4)
+            display: block
+    .conteudo .valor
+        width: 100%
+        position: relative
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+    .conteudo .valor p
+        width: 100%
+        font-size: 1.2em
+    .conteudo .valor span
+        width: 100%
+        font-size: 2.0em
+        color: #999
+        margin-top: 5px
+    .conteudo .link
+        height: 25px
+        line-height: 25px
+        position: relative
+        margin-top: 10px
+        color: #FFF
+        background-color: $cor_editar
+        display: flex
+        border-radius: 3px
+        overflow: hidden
+    .conteudo .link i
+        width: 25px
+        height: 25px
+        background-color: rgba(0,0,0,.1)
+        font-size: 1.6em
+    .conteudo .link span
+        font-size: 1.3em
+        padding: 0 10px
+    .conteudo .ligar
+        width: 100px
+        height: 100px
+        line-height: 100px
+        background-color: $verde5
+        color: #FFF
+        margin-top: 40px
+        text-align: center
+        font-size: 2.4em
+        border-radius: 50%
+        font-family: painel
+        &::after
+            content: "\e818"
+    .conteudo.finalizado .ligar,
+    .conteudo.cancelado .ligar
+        display: none
+    .conteudo.ligando .ligar
+        background-color: $vermelho2
+    .conteudo .cancelar
+        margin-top: 20px
+        padding: 20px 30px
+        border-radius: 3px
+        font-size: 1.2em
+        border: 1px solid #CCC
+        color: #999
+        &:hover
+            border-color: $vermelho2
+            color: $vermelho2
+    .conteudo.cancelado .cancelar,
+    .conteudo.finalizado .cancelar,
+    .conteudo.ligando .cancelar
+        display: none
+    .conteudo form
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin-top: 40px
+    .conteudo form.form_telefone
+        display: none
+    .conteudo.ligando form.form_telefone,
+    .conteudo.finalizado form.form_telefone
+    .conteudo.cancelado form.form_telefone
+        display: flex
+    .conteudo form textarea
+        width: 100%
+        height: 150px
+        border: 1px solid #CCC
+        padding: 10px
+        font-size: 1.4em
+    .conteudo form .bloco_remarcar
+        width: 100%
+        margin-top: 10px
+        display: flex
+        flex-direction: row
+        background: #EEE
+        padding: 5px 10px
+        display: none
+    .conteudo form .bloco_remarcar p
+        height: 40px
+        line-height: 40px
+        font-size: 1.4em
+    .conteudo form .bloco_remarcar .daqui_hora
+        height: 20px
+        line-height: 20px
+        padding: 0 10px
+        margin: 10px 0 0 10px
+        background-color: $cor_add
+        color: #FFF
+        border-radius: 3px
+    .conteudo form .bloco_remarcar input
+        height: 40px
+        padding: 0 10px
+        font-size: 1.4em
+        text-align: center
+        margin-left: 10px
+        background-color: #FFF
+    .conteudo form .bloco_remarcar input[name=data]
+        width: 100px
+    .conteudo form .bloco_remarcar input[name=hora]
+        width: 60px
+    .conteudo form .bloco_botao
+        width: 100%
+        margin-top: 10px
+        display: flex
+        flex-direction: row
+    .conteudo form .bloco_botao .botao
+        padding: 15px 25px
+        background-color: #999
+        border-radius: 2px
+        cursor: pointer
+        font-size: 1.1em
+        margin-right: 10px
+        color: #FFF
+    .conteudo form .bloco_botao .botao.but_cancelar.ativo
+        background-color: $vermelho2
+    .conteudo form .bloco_botao .botao.but_finalizar.ativo
+        background-color: $verde
+    .conteudo form .bloco_botao button.botao
+        margin-right: 0
+        background-color: $cor_add
+    .conteudo .historico
+        width: 100%
+        margin-top: 40px
+        padding-top: 10px
+        border-top: 1px solid #EEE
+        display: flex
+        flex-direction: row
+    .conteudo .historico i
+        width: 40px
+        height: 40px
+        line-height: 40px
+        text-align: center
+        font-size: 1.4em
+        border: 1px solid #CCC
+        justify-content: flex-start
+        align-items: flex-start
+        border-radius: 3px
+    .conteudo .historico .conteudo_dados
+        width: calc(100% - 40px)
+        padding-left: 10px
+        display: flex
+        flex-direction: column
+        text-align: center
+    .conteudo .historico .conteudo_dados .nome
+        width: 100%
+        color: #666
+        font-size: 1.6em
+        text-align: left
+        margin: 0
+        padding: 0
+    .conteudo .historico .conteudo_dados time
+        width: 100%
+        text-align: left
+        font-size: 1.2em
+        color: #999
+    .conteudo .historico .conteudo_dados p
+        width: 100%
+        line-height: 1.5em
+        text-align: left
+        font-size: 1.4em
+        color: #333
+
+
+.app_visualizar_mensagem .center_historico
+    width: calc(100% - 40px)
+    max-width: 1000px
+    margin: 0 auto
+    padding-bottom: 20px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+.app_visualizar_mensagem .bloco_mensagem
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 0 20px 20px 20px
+    .center
+        width: calc(100% - 40px)
+        max-width: 1000px
+    figure
+        width: 200px
+        height: 200px
+        margin-top: 20px
+        background-color: #EEE
+        background-position: center center
+        background-size: cover
+        border-radius: 50%
+        overflow: hidden
+    .conteudo_mensagem
+        width: 100%
+        max-width: 1000px
+        margin: 20px 0
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    .conteudo_mensagem .data
+        width: 100%
+        font-size: 1.2em
+        padding: 10px
+        color: #666
+        border-bottom: 1px solid #EEE
+    .conteudo_mensagem .data span
+        font-weight: bold
+        color: #999
+    .conteudo_mensagem p
+        width: calc(100% - 20px)
+        font-size: 1.4em
+        padding: 10px 0
+        margin: 0 10px
+        border-bottom: 1px solid #EEE
+        display: flex
+        flex-direction: row
+    .conteudo_mensagem p span
+        line-height: 1.8em
+        color: #999
+    .conteudo_mensagem p span.texto
+        line-height: 1.5em
+        flex-grow: 1
+        padding: 0 8px
+        color: #333
+    .conteudo_mensagem p a
+        height: 25px
+        line-height: 25px
+        color: #666
+        padding: 0 10px
+        border: 1px solid #CCC
+        border-radius: 2px
+    .conteudo_mensagem p a:hover
+        color: #333
+        border-color: #999
+    .conteudo_mensagem .download
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: 20px
+    .conteudo_mensagem .download a
+        width: calc(100% - 40px)
+        max-width: 200px
+        height: 50px
+        line-height: 50px
+        text-align: center
+        background-color: $vermelho2
+        color: #FFF
+        font-size: 1.4em
+        border-radius: 3px
+    .select
+        width: 100%
+        margin: 20px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+    .select select
+        width: calc(100% - 40px)
+        max-width: 300px
+        height: 40px
+        padding: 0 40px 0 10px
+        border: 1px solid $painel
+        font-size: 1.2em
+        background: url(../images/painel/select.png) center right no-repeat
+    .bloco_historico
+        max-width: 1000px
+
+
+
+.app_visualizar_noticia .header
+    width: 100%
+    text-align: center
+    margin-top: 20px
+
+.app_visualizar_noticia .header h1
+    width: 100%
+    line-height: 1.5em
+    font-size: 3.0em
+    font-weight: bold
+
+.app_visualizar_noticia .header p
+    width: 100%
+    line-height: 1.5em
+    font-size: 1.8em
+    margin-top: 10px
+
+.app_visualizar_noticia .topo
+    width: 100%
+    position: relative
+    margin: 30px 0 20px 0
+
+.app_visualizar_noticia .topo .data
+    width: 300px
+    border-right: 1px solid #DDD
+    padding-right: 20px
+
+.app_visualizar_noticia .topo .data span
+    width: 100%
+    text-align: right
+
+.app_visualizar_noticia .topo .data span.dia
+    font-size: 3.5em
+    font-weight: bold
+    color: #000
+
+.app_visualizar_noticia .topo .data span.mes
+    font-size: 1.5em
+    font-weight: bold
+    color: #666
+
+.app_visualizar_noticia .topo .data span.ano
+    font-size: 1.5em
+    color: #666
+
+.app_visualizar_noticia .topo .dados
+    width: calc(100% - 320px)
+    position: absolute
+    right: 0
+    bottom: 0
+    top: 0
+    margin: auto
+    display: table
+
+.app_visualizar_noticia .topo .dados p
+    width: 100%
+    font-size: 1.2em
+    margin: 2px 0
+
+.app_visualizar_noticia .topo .dados p.fonte
+    font-weight: bold
+
+.app_visualizar_noticia .topo .dados p.atualizacao
+    color: #666
+
+.app_visualizar_noticia .conteudo_centralizado
+    width: 100%
+    max-width: 650px
+    margin: 0 auto
+
+.app_visualizar_noticia .conteudo_centralizado .linha_topo
+    width: 100%
+    height: 31px
+    position: relative
+
+.app_visualizar_noticia .conteudo_centralizado .linha_topo span
+    width: 100%
+    height: 1px
+    position: absolute
+    top: 15px
+    left: 0
+    background-color: #EEE
+
+.app_visualizar_noticia .conteudo_centralizado .linha_topo p
+    height: 31px
+    line-height: 31px
+    position: relative
+    margin: 0 auto
+    padding: 0 10px
+    font-size: 1.2em
+    background-color: #FFF
+    color: #AAA
+    display: table
+    z-index: 2
+
+.app_visualizar_noticia .conteudo_centralizado figure
+    width: 100%
+    text-align: center
+
+.app_visualizar_noticia .conteudo_centralizado figure img
+    width: 100%
+    max-width: 100%
+
+.app_visualizar_noticia .conteudo_centralizado .video
+    width: 100%
+
+.app_visualizar_noticia .conteudo_centralizado .video .responsivo
+    position: relative
+    padding-bottom: 56.25%
+    overflow: hidden
+    max-width: 100%
+
+.app_visualizar_noticia .conteudo_centralizado .video .responsivo iframe,
+.app_visualizar_noticia .conteudo_centralizado .video .responsivo object,
+.app_visualizar_noticia .conteudo_centralizado .video .responsivo embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.app_visualizar_noticia .conteudo_centralizado .materia
+    width: 100%
+    padding-bottom: 50px
+
+.app_visualizar_noticia .conteudo_centralizado .materia p
+    line-height: 1.8em
+    font-size: 1.7em
+    margin: 15px 0
+
+.app_visualizar_noticia .conteudo_centralizado .materia iframe,
+.app_visualizar_noticia .conteudo_centralizado .materia img
+    width: 100%
+    max-width: 300px
+    height: auto
+    margin: 0 20px 5px 0
+
+.app_visualizar_noticia .conteudo_centralizado .materia a
+    font-weight: bold
+    color: #3232CD
+
+.app_visualizar_noticia .conteudo_centralizado .materia a:hover
+    text-decoration: underline
+
+.app_visualizar_noticia .conteudo_centralizado .materia p.destaque
+    width: calc(100% - 40px)
+    padding-left: 20px
+    margin: 20px 0 30px 40px
+    border-left: 4px solid $painel
+
+
+.app_visualizar_noticia .conteudo_centralizado .materia blockquote
+    width: 100%
+    padding: 20px 40px
+    text-align: center
+    font-size: 1.5em
+    font-weight: bold
+
+.app_visualizar_noticia .conteudo_centralizado .materia blockquote:before
+    width: 80px
+    height: 3px
+    content: " "
+    margin: 0 auto 10px auto
+    background-color: $painel
+    display: table
+
+.app_visualizar_noticia .conteudo_centralizado .materia blockquote p
+    margin-top: 0
+
+
+
+.bloco_arquivo_lista
+    width: 100%
+    position: relative
+    margin-top: 30px
+    border-radius: 3px
+    .titulo_sub
+        width: 100%
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+        font-size: 1.2em
+        font-weight: bold
+        border-bottom: 1px solid #EEE
+        text-transform: uppercase
+    .botao
+        width: 100px
+        height: 30px
+        line-height: 30px
+        position: relative
+        margin-top: 10px
+        padding-left: 40px
+        background-color: $cor_add
+        color: #FFF
+        border-radius: 2px
+    .botao i
+        width: 40px
+        height: 30px
+        position: absolute
+        top: 0
+        left: 0
+        text-align: center
+        font-size: 1.4em
+        z-index: 1
+    .botao input
+        width: 100%
+        height: 30px
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        opacity: 0
+        cursor: pointer
+    ul.lista
+        width: 100%
+        margin-top: 10px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    ul.lista li.zero
+        width: 100%
+        height: 100px
+        line-height: 100px
+        color: #999
+        text-align: center
+    ul.lista li.arquivo
+        width: 150px
+        height: 150px
+        position: relative
+        margin: 0 20px 20px 0
+        background-size: 80px 80px
+        background-position: center center
+        background-repeat: no-repeat
+        background-color: #F9F9F9
+        overflow: hidden
+    ul.lista li.arquivo a
+        width: 30px
+        height: 30px
+        line-height: 30px
+        position: absolute
+        top: 5px
+        text-align: center
+        color: #FFF
+        z-index: 3
+        opacity: 0
+        transition: opacity .3s ease-out
+    ul.lista li.arquivo.hover a,
+    ul.lista li.arquivo:hover a
+        opacity: 1
+    ul.lista li.arquivo a.download
+        background-color: $azul
+        left: 5px
+    ul.lista li.arquivo a.deletar
+        background-color: $cor_deletar
+        right: 5px
+    ul.lista li.arquivo input
+        width: 100%
+        height: 30px
+        position: absolute
+        left: 0
+        bottom: 0px
+        padding: 0 10px
+        margin: 0
+        font-size: 1.2em
+        background-color: rgba(0,0,0,.5)
+        color: #FFF
+        opacity: 1
+        transition: opacity .3s ease-out, bottom .3s ease-out
+    ul.lista li.arquivo.hover input,
+    ul.lista li.arquivo:hover input
+        bottom: 0
+        opacity: 1
+    ul.lista li.arquivo input::-webkit-input-placeholder
+        color: #FFF
+    ul.lista li.arquivo .nome
+        width: 100%
+        position: absolute
+        left: 0
+        bottom: 0
+        background-color: rgba(0,0,0,.6)
+        color: #FFF
+        padding: 10px
+        font-size: 1.2em
+        opacity: 1
+        transition: opacity .3s ease-out, bottom .3s ease-out
+        cursor: default
+    ul.lista li.arquivo.hover .nome,
+    ul.lista li.arquivo:hover .nome
+        opacity: 0
+        bottom: -100%
+
+
+.bloco_arquivo
+    width: 100%
+    position: relative
+    margin-top: 10px
+    margin-bottom: 20px
+    border-top: 2px solid $painel
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+.bloco_arquivo .titulo_sub
+    width: auto
+    height: 30px
+    line-height: 30px
+    position: absolute
+    top: -15px
+    left: 10px
+    padding: 0 10px 0 15px
+    background-color: #FFF
+.bloco_arquivo .botao
+    width: 100px
+    height: 30px
+    line-height: 30px
+    position: relative
+    margin-top: 20px
+    padding-left: 40px
+    background-color: $cor_add
+    color: #FFF
+    border-radius: 2px
+.bloco_arquivo .botao i
+    width: 40px
+    height: 30px
+    position: absolute
+    top: 0
+    left: 0
+    text-align: center
+    font-size: 1.4em
+    z-index: 1
+.bloco_arquivo .botao input
+    width: 100%
+    height: 30px
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    opacity: 0
+    cursor: pointer
+.bloco_arquivo .lista
+    width: 120px
+    height: 30px
+    margin: 20px 0 0 10px
+    padding-left: 10px
+    border-left: 1px solid #DDD
+    display: flex
+.bloco_arquivo .lista > a
+    width: 30px
+    height: 30px
+    line-height: 30px
+    color: #FFF
+    text-align: center
+    font-size: 1.3em
+    margin-right: 10px
+    border-radius: 3px
+.bloco_arquivo .lista > a.download
+    background-color: $azul
+.bloco_arquivo .lista > a.deletar
+    background-color: $cor_deletar
+
+
+
+.bloco_historico
+    width: 100%
+    background-color: #FFF
+    box-shadow: 0 2px 2px #CCC
+    border-radius: 3px
+    header
+        width: 100%
+        height: 50px
+        padding: 0 20px
+        position: relative
+        border-bottom: 1px solid #EEE
+        display: flex
+        flex-direction: row
+        align-items: center
+    header h1
+        height: 50px
+        line-height: 50px
+        font-size: 1.2em
+        margin-right: 20px
+        overflow: hidden
+    header i
+        width: 35px
+        height: 35px
+        line-height: 35px
+        text-align: center
+        font-size: 1.4em
+        color: #999
+        border: 1px solid #DDD
+        border-radius: 2px
+        cursor: pointer
+    header i.add:hover
+        background-color: $verde
+        border-color: $verde
+        color: #FFF
+    header i.abrir
+        position: absolute
+        right: 10px
+    header i.abrir:hover
+        border-color: #CCC
+        color: #666
+    ul li
+        width: 100%
+        position: relative
+        padding: 10px
+        display: flex
+        flex-direction: row
+    ul li.zero
+        padding: 40px 20px
+        text-align: center
+        color: #999
+    ul li i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        font-size: 1.3em
+        border: 1px solid #DDD
+        border-radius: 2px
+    ul li i.telefone:after
+        content:"\e818"
+    ul li i.email:after
+        content:"\f0e0"
+    ul li i.editar:after
+        content:"\e807"
+    ul li i.outro:after
+        content:"\e819"
+    ul li .dados_lista
+        width: calc(100% - 40px)
+        flex-grow: 1
+        margin-left: 10px
+        display: flex
+        flex-direction: column
+    ul li .dados_lista .nome
+        font-size: 1.4em
+        font-weight: bold
+        color: #666
+    ul li .dados_lista .data
+        color: #777
+        font-size: 1.2em
+    ul li .dados_lista p
+        width: 100%
+        line-height: 1.5em
+        margin-top: 5px
+        font-size: 1.6em
+
+
+#bloco_historico_add
+    .bloco_conteudo
+        max-width: 500px
+        display: flex
+        flex-direction: column
+        background-color: #FFF
+    .dados
+        width: 100%
+        display: flex
+        flex-direction: column
+    .dados .tipo
+        width: 100%
+        display: flex
+        flex-direction: row
+    .dados .tipo li
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: relative
+        text-align: center
+        margin-right: 20px
+        font-size: 1.6em
+        background-color: #F4F4F4
+        color: #333
+        border-radius: 3px
+        cursor: pointer
+        display: flex
+    .dados .tipo li:hover,
+    .dados .tipo li.hover
+        background-color: $verde
+        color: #FFF
+    .dados .tipo li.grande
+        width: 60px
+    .dados .tipo li.grande:after
+        width: 20px
+        height: 40px
+        position: absolute
+        font-family: painel
+        border-left: 1px solid rgba(0,0,0,.1)
+        top: 0
+        right: 0
+    .dados .tipo li.grande.realizar:after
+        content: "\f105"
+    .dados .tipo li.grande.receber:after
+        content: "\e80c"
+    .dados .tipo li i
+        width: 40px
+    .dados select
+        width: calc(100% - 20px)
+        display: none
+    .dados textarea
+        width: calc(100% - 20px)
+        height: 150px
+        margin-top: 20px
+        font-size: 1.4em
+        padding: 10px
+        border: 1px solid #CCC
+        border-radius: 3px
+    .geral_botao
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        align-items: center
+    .geral_botao .historico_booleano
+        width: 100%
+        display: none
+        align-items: center
+    .geral_botao .historico_booleano input[type=checkbox]
+        display: none
+    .geral_botao .historico_booleano label
+        width: auto
+        position: relative
+        cursor: pointer
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        align-items: center
+        overflow: hidden
+    .geral_botao .historico_booleano label::before
+        width: 20px
+        height: 20px
+        line-height: 20px
+        text-align: center
+        font-family: painel
+        content: " "
+        margin-right: 5px
+        color: #FFF
+        background-color: #DDD
+        border-radius: 100%
+    .geral_botao .historico_booleano input:checked + label::before
+        background-color: $verde
+        content: "\e80b"
+@media screen and (max-width: 540px)
+    #bloco_historico_add
+        .dados .tipo
+            display: none
+        .dados select
+            display: block
+        .dados textarea
+            margin-top: 10px
+
+#bloco_historico_abrir
+    header i.anterior
+        margin-right: 4px
+        border: 1px solid #CCC
+        &::after
+            content: "\f104"
+    header i.proximo
+        margin-right: 10px
+        border: 1px solid #CCC
+        &::after
+            content: "\f105"
+    ul
+        width: 100%
+        max-height: calc(100vh - 90px)
+        padding: 20px
+        overflow-x: hidden
+        overflow-y: auto
+    ul li
+        width: 100%
+        position: relative
+        padding: 0 0 10px 40px
+        margin-bottom: 10px
+        border-bottom: 1px solid #EEE
+    ul li:last-child
+        margin-bottom: 0
+        padding-bottom: 0
+        border: none
+    ul li i
+        width: 30px
+        height: 30px
+        line-height: 30px
+        position: absolute
+        top: 0
+        left: 0
+        text-align: center
+        font-size: 1.3em
+        border: 1px solid #DDD
+        border-radius: 2px
+    ul li i.telefone:after
+        content:"\e818"
+    ul li i.email:after
+        content:"\f0e0"
+    ul li i.editar:after
+        content:"\e807"
+    ul li i.outro:after
+        content:"\e819"
+    ul li .nome
+        font-weight: bold
+        font-size: 1.4em
+        color: #666
+    ul li .data
+        color: #999
+    ul li p
+        width: 100%
+        line-height: 1.5em
+        font-size: 1.4em
+    ul li.loading
+        width: 100%
+        padding: 50px 0
+        margin: 0
+        color: #999
+        text-align: center
+        border: none
+    ul li.zero
+        width: 100%
+        padding: 50px 0
+        margin: 0
+        text-align: center
+        color: #999
+
+
+/* CONTATO / COMECO */
+#bloco_contato
+    form.form_geral
+        max-width: 400px !important
+    .dados
+        width: 100%
+        padding: 20px 20px 10px 20px
+        display: flex
+        flex-direction: column
+    .outro
+        width: 100%
+        position: relative
+    .outro span
+        width: 30px
+        height: 40px
+        line-height: 40px
+        position: absolute
+        text-align: center
+        font-family: painel
+        top: 0
+        right: 0
+        color: #999
+        cursor: pointer
+        z-index: 2
+    .outro span:after
+        content: "\e813"
+    .outro input
+        padding-right: 30px
+    input,
+    select
+        max-width: 100% !important
+        width: 100% !important
+    .input_booleano_geral
+        width: auto
+        margin-bottom: 10px
+        cursor: pointer
+        align-items: center
+        display: flex
+    .input_booleano_geral .booleano_titulo
+        height: 30px
+        line-height: 30px
+        margin-right: 10px
+        font-size: 1.3em
+        overflow: hidden
+    .input_booleano_geral .booleano_botao
+        width: 35px
+        height: 10px
+        border-radius: 10px
+        display: flex
+    .input_booleano_geral.ativo .booleano_botao
+        background-color: #90C5F5
+        justify-content: flex-end
+    .input_booleano_geral.inativo .booleano_botao
+        background-color: #DDD
+        justify-content: flex-start
+    .input_booleano_geral .booleano_botao .booleano_bola
+        width: 22px
+        height: 22px
+        margin-top: -6px
+        border-radius: 100%
+        box-shadow: 0 0 2px #CCC
+    .input_booleano_geral.ativo .booleano_botao .booleano_bola
+        background-color: #1490E9
+    .input_booleano_geral.inativo .booleano_botao .booleano_bola
+        background-color: #EEE
+
+/* ENDERECO / COMECO */
+#bloco_endereco form.form_geral
+        width: 100%
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .dados
+        padding: 20px 0 10px 20px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .dados input
+        width: 100%
+    .dados input[name=nome]
+        max-width: 350px
+    .dados .bloco_cep
+        line-height: 40px
+        margin-right: 20px
+        display: flex
+        flex-direction: row
+    .dados .bloco_cep input
+        width: 120px
+        max-width: 120px
+        margin-right: 10px
+    .dados .bloco_cep a
+        color: #1148c2
+        font-size: 1.2em
+    .dados .bloco_cep a:hover
+        text-decoration: underline
+    .dados input[name=logradouro]
+        max-width: 440px
+    .dados input[name=numero]
+        max-width: 140px
+    .dados input[name=complemento]
+        max-width: 300px
+    .dados input[name=referencia]
+        max-width: 300px
+    .dados input[name=bairro]
+        max-width: 220px
+    .dados input[name=cidade]
+        max-width: 250px
+    .dados input[name=estado]
+        max-width: 240px
+    .bloco_mapa
+        width: 100%
+        height: 380px
+        position: relative
+        padding: 20px
+        display: flex
+        justify-content: space-between
+    .bloco_mapa .esquerda
+        display: flex
+        flex-direction: row
+        z-index: 2
+    .bloco_mapa .esquerda input
+        background-color: #FFF
+        margin: 0 !important
+        border-radius: 0 2px 2px 0 !important
+        &:first-child
+            margin-right: 10px !important
+            border-radius: 2px 0 0 2px !important
+    .bloco_mapa .direita {
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+    }
+    .bloco_mapa .direita i
+        width: 40px
+        height: 40px
+        line-height: 40px
+        position: relative
+        text-align: center
+        margin: 0 10px 0 0
+        color: #FFF
+        border-radius: 2px
+        z-index: 2
+        cursor: pointer
+    .bloco_mapa .direita i.atualizar
+        font-size: 1.4em
+        background-color: $verde
+    .bloco_mapa .direita i.abrir
+        font-size: 2.0em
+        font-weight: bold
+        background-color: $azul
+    .bloco_mapa .direita i.atencao
+        background-color: $vermelho
+    .bloco_mapa .direita i a
+        width: 100%
+        height: 100%
+        position: absolute
+    .bloco_mapa .mapa
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background-color: #F4F4F4
+        z-index: 1
+@media screen and (max-width: 660px)
+    #bloco_endereco form.form_geral
+        .dados input,
+        .dados select
+            width: 100%
+            max-width: 100%
+        .dados .bloco_cep input
+            width: 120px
+
+        .bloco_mapa .esquerda
+            width: calc(100% - 80px)
+            flex-direction: column
+        .bloco_mapa .esquerda input
+            width: 100%
+            height: 50px
+            border-radius: 2px !important
+            &:first-child
+                margin: 0 0 10px 0 !important
+                border-radius: 2px !important
+        .bloco_mapa .direita
+            width: 50px
+            position: absolute
+            right: 20px
+            flex-direction: column
+        .bloco_mapa .direita i
+            width: 50px
+            height: 50px
+            line-height: 50px
+            margin: 0 0 10px 0
+
+#bloco_agenda
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    background-color: rgba(0,0,0,.7)
+    overflow-x: hidden
+    overflow-y: auto
+    z-index: 9999900
+    display: none
+
+#bloco_agenda .conteudo
+    width: calc(100% - 40px)
+    max-width: 800px
+    margin: 20px auto
+    background-color: #FFF
+    border-radius: 3px
+    overflow: hidden
+    display: table
+
+#bloco_agenda .conteudo header
+    width: 100%
+    height: 50px
+    line-height: 50px
+    position: relative
+
+    background-color: #EEE
+
+#bloco_agenda .conteudo header h1
+    width: 100%
+
+    padding: 0 40px 0 20px
+    font-size: 1.5em
+
+#bloco_agenda .conteudo header i
+    width: 30px
+    height: 30px
+    line-height: 30px
+    position: absolute
+    top: 10px
+    right: 10px
+    text-align: center
+    cursor: pointer
+
+#bloco_agenda .conteudo header i:after
+    content: "\e813"
+
+#bloco_agenda .conteudo header i:hover
+    background: #DDD
+
+#bloco_agenda .conteudo form
+    width: 100%
+
+    padding: 20px 0 0 20px
+
+#bloco_agenda .conteudo form .bloco_data
+    width: 160px
+
+#bloco_agenda .conteudo form input[name=hora]
+    width: 60px
+
+#bloco_agenda .conteudo form select
+    width: 200px
+
+#bloco_agenda .conteudo form input[name=texto]
+    width: calc(100% - 480px)
+
+#bloco_agenda .conteudo form footer
+    width: calc(100% + 40px)
+
+    padding: 10px 20px
+    margin: 10px 0 0 -20px
+    background-color: #F4F4F4
+    border-top: 1px solid #DDD
+
+#bloco_agenda .conteudo form footer .botao
+    height: 40px
+    line-height: 40px
+    padding: 0 30px 0 25px
+    margin-right: 20px
+    border-radius: 3px
+    font-size: 1.2em
+    color: #FFF
+    background-color: $verde
+    cursor: pointer
+
+#bloco_senha
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    overflow-x: hidden
+    overflow-y: auto
+    background-color: rgba(0,0,0,.7)
+    z-index: 9999900
+    display: none
+
+#bloco_senha .conteudo
+    width: calc(100% - 40px)
+    max-width: 350px
+    margin: 20px auto
+    background-color: #FFF
+    border-radius: 3px
+    display: table
+    overflow: hidden
+
+#bloco_senha header
+    width: 100%
+    height: 50px
+    line-height: 50px
+    position: relative
+
+    background-color: #EEE
+
+#bloco_senha header h1
+    width: 100%
+
+    padding: 0 40px 0 15px
+    font-size: 1.5em
+
+#bloco_senha header i
+    width: 30px
+    height: 30px
+    line-height: 30px
+    position: absolute
+    top: 10px
+    right: 10px
+    text-align: center
+    cursor: pointer
+
+#bloco_senha header i:after
+    content: "\e813"
+
+#bloco_senha header i:hover
+    background-color: #DDD
+
+#bloco_senha .conteudo form
+    width: 100%
+
+    padding: 20px 20px 0 20px
+
+#bloco_senha .conteudo form label
+    width: 100%
+
+    text-align: center
+    font-size: 1.2em
+    margin-bottom: 3px
+
+#bloco_senha .conteudo form input
+    width: 100%
+    height: 40px
+
+    font-size: 1.2em
+    padding: 0 10px
+    margin-bottom: 10px
+    font-size: 1.4em
+    border: 1px solid #CCC
+    border-radius: 2px
+
+#bloco_senha .conteudo form .input_password_geral
+    width: 100%
+#bloco_senha .conteudo form .input_password_geral .bloco_password
+    width: 100%
+    position: relative
+#bloco_senha .conteudo form .input_password_geral .bloco_password input
+    padding-right: 50px
+#bloco_senha .conteudo form .input_password_geral .bloco_password .but_password_visualizar
+    width: 40px
+    height: 40px
+    line-height: 40px
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 1.4em
+    text-align: center
+    background-color: $azul
+    color: #FFF
+    cursor: pointer
+#bloco_senha .conteudo form .input_password_geral .bloco_password .but_password_visualizar[data-password=ativo]:after
+    content: "\e802"
+    font-family: painel
+#bloco_senha .conteudo form .input_password_geral .bloco_password .but_password_visualizar[data-password=inativo]:after
+    content: "\e806"
+    font-family: painel
+#bloco_senha .conteudo form .input_password_geral .bloco_password .bloco_verificar
+    width: 40px
+    height: 40px
+    line-height: 40px
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 1.4em
+    text-align: center
+    cursor: pointer
+#bloco_senha .conteudo form .input_password_geral .bloco_password .bloco_verificar:after
+    width: 40px
+    height: 40px
+    font-family: painel
+    color: #FFF
+#bloco_senha .conteudo form .input_password_geral .bloco_password .bloco_verificar.correto:after
+    content: "\e80b"
+    background-color: $verde
+#bloco_senha .conteudo form .input_password_geral .bloco_password .bloco_verificar.incorreto:after
+    content: "\e813"
+    background-color: $vermelho
+#bloco_senha .conteudo form footer
+    width: calc(100% + 40px)
+    padding: 10px 20px
+    margin: 10px 0 0 -20px
+    background-color: #F4F4F4
+    border-top: 1px solid #DDD
+#bloco_senha .conteudo form footer button
+    height: 40px
+    line-height: 40px
+    float: right
+    padding: 0 30px 0 25px
+    border-radius: 3px
+    font-size: 1.2em
+    color: #FFF
+    background-color: $painel
+    cursor: pointer
+
+
+
+#bloco_bloquear
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    overflow-x: hidden
+    overflow-y: auto
+    background-color: rgba(0,0,0,.98)
+    z-index: 9999900
+    display: none
+
+#bloco_bloquear .conteudo
+    width: calc(100% - 40px)
+    max-width: 300px
+    margin: 20px auto
+    background-color: #FFF
+    border-radius: 3px
+    display: table
+    overflow: hidden
+
+#bloco_bloquear header
+    width: 100%
+    height: 50px
+    line-height: 50px
+    position: relative
+
+    background-color: #EEE
+
+#bloco_bloquear header h1
+    width: 100%
+
+    text-align: center
+    font-size: 1.5em
+
+#bloco_bloquear .conteudo form
+    width: 100%
+
+    padding: 20px 20px 0 20px
+
+#bloco_bloquear .conteudo form figure
+    width: 100px
+    height: 100px
+    margin-bottom: 20px
+    margin-left: calc((100% - 100px) / 2)
+    background-size: cover
+    background-position: center center
+    border-radius: 100%
+
+#bloco_bloquear .conteudo form input
+    width: 100%
+    height: 40px
+
+    font-size: 1.2em
+    padding: 0 50px 0 10px
+    margin-bottom: 10px
+    font-size: 1.4em
+    border: 1px solid #CCC
+    border-radius: 2px
+
+#bloco_bloquear .conteudo form .input_password_geral
+    width: 100%
+
+
+#bloco_bloquear .conteudo form .input_password_geral .bloco_password
+    width: 100%
+    position: relative
+
+
+#bloco_bloquear .conteudo form .input_password_geral .bloco_password .but_password_visualizar
+    width: 40px
+    height: 40px
+    line-height: 40px
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 1.4em
+    text-align: center
+    background-color: $azul
+    color: #FFF
+    cursor: pointer
+
+#bloco_bloquear .conteudo form .input_password_geral .bloco_password .but_password_visualizar[data-password=ativo]:after
+    content: "\e802"
+    font-family: painel
+
+#bloco_bloquear .conteudo form .input_password_geral .bloco_password .but_password_visualizar[data-password=inativo]:after
+    content: "\e806"
+    font-family: painel
+
+#bloco_bloquear .conteudo form footer
+    width: 100%
+
+    margin-bottom: 15px
+
+#bloco_bloquear .conteudo form footer button
+    width: 100%
+    height: 40px
+    line-height: 40px
+
+    border-radius: 3px
+    font-size: 1.2em
+    color: #FFF
+    background-color: $painel
+    cursor: pointer
+
+#bloco_bloquear .conteudo form footer p.texto
+    width: 100%
+
+    text-align: center
+    color: #999
+    margin: 10px 0
+
+#bloco_bloquear .conteudo form footer a
+    width: 100%
+    height: 40px
+    line-height: 40px
+
+    text-align: center
+    border: 1px solid #DDD
+    color: #999
+
+
+#bloco_parceiro_auditoria_confirmar
+    max-width: 500px;
+    .contato_lista
+        width: calc(100% - 40px)
+        display: flex
+        background-color: #F9F9F9
+        margin: 20px 20px 0 20px
+        padding: 10px 10px 0 10px
+        flex-direction: column
+        border: 1px solid #DDD
+    select
+            width:calc(100% - 40px)
+            margin: 10px 0 10px 0
+    .contato_lista span
+        width: 100%
+        font-size: 1.4em
+        padding-bottom: 10px
+        margin-bottom: 10px
+        border-bottom: 1px solid #CCC
+    .contato_lista span.bold
+        margin-bottom: 3px
+        padding-bottom: 0
+        border-bottom: none
+    .contato_lista span:last-child
+        border-bottom: none
+        padding-bottom: 0
+    textarea
+        width: calc(100% - 40px)
+        height: 150px
+        padding: 10px
+        font-size: 1.4em
+        border: 1px solid #CCC
+        margin: 20px
+
+
+
+/* RELATORIOS */
+.app_geral_relatorio
+    width: 100%
+    .header_principal
+        background-color: #FFF
+    .bloco_grafico_erro
+        width: calc(100% - 40px)
+        position: relative
+        padding: 20px
+        margin: 20px
+        border: 1px solid $vermelho2
+        text-align: center
+        background-color: #FFF
+    .bloco_grafico_erro i
+        width: 20px
+        height: 20px
+        line-height: 20px
+        position: absolute
+        top: 5px
+        right: 5px
+        text-align: center
+        font-size: 1.2em
+        color: #999
+        cursor: pointer
+    .bloco_grafico_erro h2
+        font-size: 2.0em
+        margin-bottom: 10px
+        color: $vermelho2
+    .bloco_grafico_erro p
+        line-height: 1.5m
+        font-size: 1.9em
+        margin-top: 4px
+        &:last-child
+            color: #999
+            font-size: 1.4em
+    .titulo_grafico
+        width: 100%
+        font-size: 2.0em
+        padding-bottom: 5px
+        margin-bottom: 20px
+        border-bottom: 1px solid #EEE
+    .bloco_grafico
+        width: calc(100% - 40px)
+        padding: 20px
+        margin: 0 0 40px 20px
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+.app_geral_relatorio .grafico_tabela
+    width: 100%
+    margin-bottom: 20px
+    .topo
+        width: 100%
+        color: #333
+        border-top: 1px solid #EEE
+    .tr
+        width: 100%
+        border-bottom: 1px solid #EEE
+        border-left: 1px solid #EEE
+        border-right: 1px solid #EEE
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+    .tr .esquerda
+        width: 200px
+        display: flex
+        flex-direction: column
+    .tr .esquerda .td
+        width: 100%
+        padding: 0 10px
+        overflow: hidden
+    .tr .direita
+        width: calc(100% - 140px)
+        display: flex
+    .tr .td
+        height: 30px
+        line-height: 30px
+        font-size: 1.4em
+    .tr .direita .td
+        border-left: 1px solid #EEE
+        text-align: center
+.app_geral_relatorio .grafico_barra
+    width: 100%
+    display: flex
+    flex-direction: column
+    .grafico
+        width: 100%
+
+.app_geral_relatorio .grafico_linha
+    width: 100%
+    display: flex
+    flex-direction: column
+    .grafico
+        width: 100%
+
+.app_geral_relatorio .grafico_circulo
+    width: 100%
+    display: flex
+    flex-direction: row
+    .grafico
+        width: 100%
+        max-width: 400px
+        margin-right: 20px
+        border-right: 1px solid #EEE
+
+.app_geral_relatorio .grafico_lista
+    width: 100%
+    display: flex
+    flex-direction: column
+    h3
+        width: 100%
+        height: 40px
+        line-height: 40px
+        position: relative
+        background-color: #F4F4F4
+        padding: 0 10px
+        display: flex
+        align-items: center
+    h3 span
+        flex-grow: 1
+    h3 i
+        width: 25px
+        height: 25px
+        line-height: 25px
+        position: relative
+        text-align: center
+        border: 1px solid #EEE
+        display: flex
+    h3 i a
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+    ul
+        width: 100%
+    ul li
+        width: 100%
+        display: flex
+        align-items: center
+        border-bottom: 1px solid #EEE
+    ul li span
+        padding: 10px
+        font-size: 1.4em
+    ul li span.nome
+        width: calc(100% - 150px)
+        max-width: calc(100% - 150px)
+        display: flex
+        cursor: default
+        word-wrap: break-word
+        overflow: hidden
+    ul li span.nome a
+        width: 100%
+        color: #000
+    ul li span.porcentagem
+        width: 80px
+        height: 10px
+        padding: 0 2px
+        background-color: #CCC
+        border-radius: 5px
+        display: flex
+        align-items: center
+    ul li span.porcentagem .barra
+        height: 6px
+        padding: 0
+        background-color: $cor_editar
+        border-radius: 3px
+    ul li span.valor
+        width: 70px
+        text-align: center
+
+.app_geral_relatorio .bloco_grafico_lista
+    width: 100%
+    margin-bottom: 40px
+    padding: 0 10px
+    display: flex
+    flex-direction: row
+    .grafico_lista
+        col(3)
+        background-color: #FFF
+        box-shadow: 0 2px 2px #CCC
+        border-radius: 3px
+    .grafico_lista h3
+        background-color: #FFF
+        border-bottom: 1px solid #CCC
+    .grafico_lista ul
+        max-height: 300px
+        overflow-y: auto
+        overflow-x: hidden
+    .grafico_lista ul li span.nome
+        width: calc(100% - 130px)
+        max-width: calc(100% - 130px)
+    .grafico_lista ul li span.porcentagem
+        width: 60px
+
+.app_geral_relatorio .grafico_quadrado
+    width: 100%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    .grande
+        width: 50%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        .nome
+            font-size: 1.6em
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+        .nome span
+            width: 100%
+            text-align: center
+        .valor
+            margin-top: 10px
+            font-size: 3.0em
+            padding: 15px 20px
+            border: 1px solid #EEE
+            border-radius: 3px
+            cursor: default
+
+.app_geral_relatorio .bloco_dia_acesso
+    width: calc(100% - 40px)
+    padding: 20px
+    margin: 0 20px 40px 20px
+    background-color: #FFF
+    border-radius: 3px
+    box-shadow: 0 1px 2px #CCC
+    .hora
+        width: 100%
+        display: flex
+        flex-direction: column
+    .hora .conteudo
+        width: 100%
+        display: flex
+    .hora .conteudo .nome
+        width: 40px
+        display: flex
+        flex-direction: column
+    .hora .conteudo .nome span
+        height: 20px
+        line-height: 18px
+        font-size: 1.4em
+        margin: 2px 0
+    .hora .conteudo .campo
+        width: calc(100% - 40px)
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .hora .conteudo .campo .valor
+        col(24, 4px)
+        height: 20px
+        position: relative
+        margin: 2px
+        background-color: #DDD
+        display: flex
+    .hora .conteudo .campo .valor span
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+    .hora .conteudo .campo .minuto
+        col(24, 4px)
+        height: 20px
+        line-height: 24px
+        text-align: center
+        font-size: 1.2em
+        margin: 2px
+    .hora .legenda
+        width: 100%
+        padding-left: 40px
+        font-size: 1.2em
+        margin-top: 5px
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+    .hora .coluna
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin-left: 5px
+    .hora .coluna .bloco
+        width: 100%
+        display: flex
+        flex-direction: row
+    .hora .coluna .bloco span
+        width: 70px
+        height: 10px
+        margin-right: 2px
+    .hora .coluna .numero
+        width: 100%
+        display: flex
+        flex-direction: row
+    .hora .coluna .numero li
+        width: 70px
+        height: 10px
+        margin-right: 2px
+        display: flex
+        justify-content: flex-end
+    .hora .coluna .numero li span.zero
+        width: 100%
+        flex-grow: 1
+    .grafico_quadrado
+        margin-top: 40px
+        padding-top: 20px
+        border-top: 1px solid #EEE
+
+
+.app_geral_relatorio .bloco_quadrado_topo
+    width: 100%
+    padding: 0 20px
+    margin: 20px 0 40px 0
+    display: flex
+    flex-direction: row
+    align-items: stretch
+    .real
+        width: 300px
+        background-color: $cor_editar
+        padding: 20px
+    .real h3
+        color: #FFF
+        font-size: 1.4em
+        margin-bottom: 5px
+        font-weight: 100
+    .real .numero
+        width: 100%
+        font-size: 6.0em
+        color: #FFF
+        margin-bottom: 20px
+    .real p
+        width: 100%
+        color: #FFF
+        font-size: 1.2em
+        padding-bottom: 3px
+        margin-bottom: 5px
+        border-bottom: 1px solid rgba(255,255,255,.2)
+    .real ul
+        height: 180px
+        overflow-x: hidden
+        overflow-y: auto
+    .real ul li.zero
+        width: 100%
+        color: #FFF
+        padding: 50px 0
+    .real ul li.lista
+        width: 100%
+        display: flex
+    .real ul li.lista a
+        width: 100%
+        color: #FFF
+        padding: 5px 0
+        font-size: 1.2em
+        &:hover
+            background-color: rgba(255,255,255, .1)
+    .quadrado
+        width: calc(100% - 300px)
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+    .quadrado.w100p
+        width: 100%
+        justify-content: space-between
+    .quadrado .bloco
+        width: calc(50% - 20px)
+        margin-left: 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        color: #FFF
+        border-radius: 3px
+    .quadrado.w100p .bloco
+        margin-left: 0
+        padding: 10px 0
+    .quadrado.bloco_3 .bloco
+        width: calc((100% / 3) - 10px)
+    .quadrado.bloco_4 .bloco
+        width: calc(25% - 10px)
+    .quadrado .bloco.azul
+        background-color: #25B4FA
+    .quadrado .bloco.verde
+        background-color: #0BC78E
+    .quadrado .bloco.vermelho
+        background-color: #FF585E
+    .quadrado .bloco.rocho
+        background-color: #AE72E4
+    .quadrado .bloco.total
+        margin-bottom: 20px
+    .quadrado .bloco.ativo
+        margin-bottom: 20px
+    .quadrado .bloco .numero
+        font-size: 3.0em
+    .quadrado .bloco .nome
+        font-size: 1.4em
+    .quadrado .bloco .porcentagem
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    .quadrado .bloco .porcentagem .porcentagem_valor
+        font-size: 1.6em
+    .quadrado .bloco .porcentagem .porcentagem_barra
+        width: 100%
+        max-width: 100px
+        height: 3px
+        position: relative
+        margin: 5px 0
+        border-radius: 3px
+        background-color: rgba(0,0,0,.2)
+    .quadrado .bloco .porcentagem .porcentagem_barra span
+        height: 3px
+        position: absolute
+        top: 0
+        left: 0
+        background-color: #FFF
+        border-radius: 3px
+    .quadrado .bloco .porcentagem .porcentagem_nome
+        font-size: 1.2em
+
+
+#bloco_sem_permissao
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    h1
+        font-size: 2.4em
+        color: #666
+        margin-top: 40px
+    p
+        font-size: 1.8em
+        margin-top: 10px
+    a
+        color: $azul4
+        font-weight: bold
+
+
+
+
+
+
+/* final */
+
+@import "print.styl"

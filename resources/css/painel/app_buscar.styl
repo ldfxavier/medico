@@ -1,0 +1,54 @@
+form.bloco_buscar_padrao
+	max-width: 500px
+.bloco_buscar_padrao .bloco_selecao
+	width: 100%
+	position: relative
+	margin-top: 10px
+	padding: 0 20px
+	display: flex
+	flex-direction: row
+	.botao
+		border: 1px solid #DDD
+		background: #FFF
+		position: relative
+		border-bottom: none
+		height: 30px
+		line-height: 30px
+		padding: 0 20px
+		margin-right: 5px
+		border-radius: 3px 3px 0 0
+		z-index: 1
+		cursor: pointer
+		&:nth-child(1)
+			z-index: 3
+	.linha
+		width: 100%
+		height: 1px
+		position: absolute
+		bottom: 0
+		left: 0
+		background-color: #DDD
+		z-index: 2
+.bloco_buscar_padrao .dado
+	padding: 0 20px
+	display: flex
+	flex-direction: column
+	&#bloco_formulario_avancado
+		display: none
+.bloco_buscar_padrao footer
+	width: 100%
+	border-top: 1px solid #DDD
+	margin-top: 20px
+	padding: 10px 20px
+	display: flex
+	justify-content: flex-end
+	button
+		height: 40px
+		line-height: 40px
+		padding: 0 20px
+		background: $cor_add
+		border-radius: 3px
+		font-size: 1.4em
+		color: #FFF
+	button i
+		margin-left: 10px

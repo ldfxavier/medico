@@ -1,0 +1,42 @@
+version: '3'
+services:
+    apache:
+        image: andrerodrigue5/apache2-php7.3.14
+        container_name: apache-medico
+        ports:
+            - "8013:80"
+            - "4013:443"
+        volumes:
+            - .:/var/www/html/
+            - ./files/docker/apache/sites-enabled/:/etc/apache2/sites-enabled/
+        networks:
+            - docker-rede
+        depends_on:
+            - "mariadb"
+    mariadb:
+        image: mariadb:10.1.26
+        container_name: mariadb-medico
+        ports:
+            - "3013:3306"
+        environment:
+            MYSQL_DATABASE: medico
+            MYSQL_ROOT_PASSWORD: 123456
+        networks:
+            - docker-rede
+        volumes:
+            - ./files/mysql/:/var/lib/mysql
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:4.7
+        container_name: phpmyadmin-medico
+        ports:
+            - "1013:80"
+        environment:
+            PMA_HOST: mariadb-medico
+            PMA_PORT: 3306
+        networks:
+            - docker-rede
+        depends_on:
+            - "apache"
+networks:
+    docker-rede:
+        driver: bridge

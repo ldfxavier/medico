@@ -1,0 +1,103 @@
+.bloco_grafico_erro
+	width: calc(100% - 40px)
+	position: relative
+	padding: 20px
+	margin: 20px
+	border: 1px solid #FF6666
+	text-align: center
+	background-color: #FFF
+.bloco_grafico_erro i
+	width: 20px
+	height: 20px
+	line-height: 20px
+	position: absolute
+	top: 5px
+	right: 5px
+	text-align: center
+	font-size: 1.2em
+	color: #999
+	cursor: pointer
+.bloco_grafico_erro h2
+	font-size: 2.0em
+	margin-bottom: 10px
+	color: #FF6666
+.bloco_grafico_erro p
+	line-height: 1.5em
+	font-size: 1.9em
+	margin-top: 4px
+	&:last-child
+		color: #999
+		font-size: 1.4em
+.titulo_grafico
+	width: 100%
+	font-size: 2.0em
+	padding-bottom: 5px
+	margin-bottom: 20px
+	border-bottom: 1px solid #EEE
+.bloco_grafico
+	width: calc(100% - 10px)
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+	margin: 0 10px 10px 10px
+	padding: 10px
+	border-radius: 5px
+	overflow-x: auto
+.bloco_grafico .grafico_linha
+.bloco_grafico .grafico_barra
+	width: 900px
+
+.bloco_grafico_lista
+	width: 100%
+	margin-bottom: 40px
+	padding: 0 10px
+	display: flex
+	flex-direction: row
+	.grafico_lista
+		col(3)
+		background-color: #FFF
+		box-shadow: 0 2px 2px #CCC
+		border-radius: 3px
+	.grafico_lista h3
+		background-color: #FFF
+		border-bottom: 1px solid #CCC
+	.grafico_lista ul
+		max-height: 300px
+		overflow-y: auto
+		overflow-x: hidden
+	.grafico_lista ul li span.nome
+		width: calc(100% - 130px)
+		max-width: calc(100% - 130px)
+	.grafico_lista ul li span.porcentagem
+		width: 60px
+.grafico_quadrado
+	width: 100%
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	.grande
+		width: 50%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		.nome
+			font-size: 1.6em
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: center
+		.nome span
+			width: 100%
+			text-align: center
+		.valor
+			margin-top: 10px
+			font-size: 3.0em
+			padding: 15px 20px
+			border: 1px solid #EEE
+			border-radius: 3px
+			cursor: default
+/* 
+.chartjs-render-monitor
+	height: 275px !important
+	min-height: 275px !important */

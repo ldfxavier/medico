@@ -1,0 +1,1 @@
+$(function(){$("#LINK").val(),$.banner({id:".id-banner__home",imagem:".separador",next:"#botao-banner-login-prev",prev:"#botao-banner-login-next",tempo:8,rotacao:!1})});

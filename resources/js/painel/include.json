@@ -1,0 +1,15 @@
+[
+	"resources/js/geral/jquery.js",
+	"resources/js/geral/jquery.ui.js",
+	"resources/js/geral/Pagina.class.js",
+	"resources/js/geral/Mascara.class.js",
+	"resources/js/geral/Loading.class.js",
+	"resources/js/geral/Scroll.class.js",
+	"resources/js/geral/Ajuda.class.js",
+	"resources/js/geral/Checkbox.class.js",
+	"resources/js/geral/Alerta.class.js",
+	"resources/js/painel/header.js",
+	"resources/js/painel/padrao.js",
+	"resources/js/painel/app_index.js",
+	"resources/js/painel/app_buscar.js"
+]

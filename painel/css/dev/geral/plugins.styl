@@ -1,0 +1,478 @@
+fonte(plugins, 1)
+
+@keyframes loading_animate
+	0%
+		left: 10%
+		opacity: 0
+
+	10%
+		left: 20%
+		opacity: 1
+
+	90%
+		left: 80%
+		opacity: 1
+
+	100%
+		left: 90%
+		opacity: 0
+
+
+
+
+#plugins_input_tamanho
+	position: absolute
+	background-color: #333
+	padding: 5px 10px
+	border-radius: 2px
+	z-index: 999999
+	font-size: 1.4em
+	color: #FFF
+
+/* ==== */
+/* HELP */
+/* ==== */
+#plugins_ajuda
+	position: absolute
+	font-size: 1.4em
+	padding: 10px
+	color: #FFF
+	font-weight: bold
+	text-align: center
+	background: #333
+	border-radius: 3px
+	border: 1px solid #FFF
+	z-index: 999998
+	display: flex
+
+/* ==== */
+/* HELP */
+/* ==== */
+
+#plugins_loading
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	display: flex
+	cursor: progress
+	z-index: 9999999
+	span
+		width: 12px
+		height: 12px
+		position: absolute
+		top: 5px
+		background: #1B9BE0
+		border-radius: 100%
+		opacity: 0
+	span:nth-child(1)
+		animation: loading_animate 1.5s linear infinite
+	span:nth-child(2)
+		animation: loading_animate 1.5s linear .15s infinite
+	span:nth-child(3)
+		animation: loading_animate 1.5s linear .30s infinite
+	span:nth-child(4)
+		animation: loading_animate 1.5s linear .45s infinite
+
+
+
+#plugins_pagina
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	background-color: rgba(0,0,0,.7)
+	z-index: 999990
+	overflow-x: hidden
+	overflow-y: auto
+	opacity: 0
+	display: none
+	#plugins_pagina_fechar
+		width: 40px
+		height: 40px
+		line-height: 40px
+		position: fixed
+		top: 20px
+		right: 20px
+		color: #000
+		text-align: center
+		font-family: plugins
+		background-color: #FFF
+		border-radius: 100%
+		font-size: 1.7em
+		z-index: 999991
+		cursor: pointer
+		display: none
+		opacity: 0
+		&:after
+			content: "\e80a"
+	.plugins_pagina_conteudo
+		margin-top: -300px
+		display: flex
+		justify-content: center
+		padding: 20px 0
+		opacity: 0
+
+#plugins_alerta
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background-color: rgba(0,0,0,.7)
+	z-index: 9999920
+	flex-direction: column
+	align-items: center
+	display: none
+
+	#plugins_alerta_conteudo
+		width: calc(100% - 40px)
+		max-width: 450px
+		position: absolute
+		top: 20px
+		background-color: #EEE
+		border-radius: 3px
+		overflow: hidden
+		cursor: default
+		display: flex
+		flex-direction: column
+	#plugins_alerta_conteudo .plugins_alerta_titulo
+		width: 100%
+		padding: 10px
+		color: #FFF
+		font-size: 1.6em
+		font-weight: bold
+		background-color: #2493FF
+		border-radius: 3px 3px 0 0
+	#plugins_alerta_conteudo .plugins_alerta_texto
+		width: 100%
+		padding: 15px 10px
+		font-size: 1.4em
+		background-color: #FFF
+		border-bottom: 1px solid #DDD
+	#plugins_alerta_conteudo .plugins_alerta_footer
+		width: 100%
+		position: relative
+		display: flex
+		justify-content: flex-end
+		flex-direction: row
+	#plugins_alerta_conteudo .plugins_alerta_botao
+		height: 25px
+		line-height: 25px
+		margin: 10px
+		padding: 0 10px
+		border-radius: 2px
+		cursor: pointer
+		color: #FFF
+		background-color: #00AB45
+		border: 1px solid #00AB45
+		&:hover
+			border-color: #00AB45
+			color: #FFF
+	#plugins_alerta_conteudo .plugins_alerta_botao.plugins_alerta_cancelar
+		position: absolute
+		left: 0
+		bottom: 0
+		border: 1px solid #CCC
+		background-color: #FFF
+		color: #999
+	#plugins_alerta_conteudo .plugins_alerta_botao.plugins_alerta_cancelar:hover
+		border-color: #999
+		color: #666
+
+#plugins_alerta_notificacao
+	width: calc(100% - 40px)
+	max-width: 300px
+	line-height: 1.5em
+	position: fixed
+	top: 20px
+	font-size: 1.4em
+	right: 20px
+	padding: 15px 50px 15px 15px
+	color: #FFF
+	cursor: default
+	flex-direction: row
+	flex-wrap: wrap
+	background-color: #E51837
+	border-radius: 3px
+	z-index: 9999920
+	.plugins_alerta_botao
+		width: 40px
+		height: 30px
+		line-height: 30px
+		position: absolute
+		top: calc(50% - 15px)
+		right: 0
+		border-left: 1px solid rgba(255,255,255,.3)
+		text-align: center
+		transition: background-color .3s ease-out
+		cursor: pointer
+	.plugins_alerta_botao:hover
+		background-color: rgba(255,255,255,.2)
+
+#plugins_galeria_mascara
+	width: 100%
+	height: 100%
+	position: fixed
+	background-color: rgba(0,0,0,.7)
+	top: 0
+	left: 0
+	opacity: 0
+	z-index: 999999990
+
+.but_plugins_galeria_a
+	cursor: pointer
+
+	#plugins_galeria_imagem
+		position: fixed
+		z-index: 999999991
+
+	#plugins_galeria_imagem_temp
+		position: fixed
+		z-index: 999999992
+
+	#plugins_galeria_fechar
+		width: 25px
+		height: 25px
+		line-height: 25px
+		position: fixed
+		top: 20px
+		right: 20px
+		text-align: center
+		font-size: 1.8em
+		color: #FFF
+		z-index: 999999992
+		border-radius: 100%
+		cursor: pointer
+
+	#plugins_galeria_fechar:after
+		font-family: plugins
+		content: "\e80a"
+
+	#plugins_galeria_fechar:hover
+		background-color: #FFF
+		color: #000
+
+	#plugins_galeria_fechar_mobile
+		width: 100%
+		height: 40px
+		line-height: 40px
+		position: fixed
+		top: 0
+		left: 0
+		text-align: left
+		text-indent: 20px
+		font-size: 20px
+		color: #FFF
+		z-index: 999999992
+		border-radius: 100%
+		cursor: pointer
+
+	#plugins_galeria_prev,
+	#plugins_galeria_next
+		width: 50px
+		height: 50px
+		line-height: 50px
+		position: fixed
+		top: 0
+		bottom: 0
+		margin: auto
+		font-family: plugins
+		font-size: 40px
+		color: #FFF
+		border-radius: 100%
+		z-index: 999999993
+		cursor: pointer
+
+	#plugins_galeria_prev:hover,
+	#plugins_galeria_next:hover
+		background-color: #FFF
+		color: #000
+
+	#plugins_galeria_prev
+		left: 10px
+		text-indent: 7px
+
+	#plugins_galeria_prev:after
+		content: "\e801"
+
+	#plugins_galeria_next
+		right: 10px
+		text-indent: 14px
+
+	#plugins_galeria_next:after
+		content: "\e800"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#plugins_calendario
+	width: 349px
+	position: absolute
+	background-color: #414141
+	box-shadow: 0 0 10px #CCC
+	background: #414141
+	font-family: Arial
+	font-size: 1.2em
+	z-index: 999998
+	display: none
+
+	#plugins_calendario #plugins_calendario_header
+		width: 100%
+		float: left
+		padding-bottom: 5px
+		cursor: default
+		padding: 10px 10px 5px 10px
+
+	#plugins_calendario .plugins_calendario_botoes
+		width: 30px
+		height: 30px
+		line-height: 30px
+		float: left
+		color: #FFF
+		text-align: center
+		cursor: pointer
+		font-family: plugins
+
+	#plugins_calendario .plugins_calendario_botoes:hover
+		background: #666
+
+	#plugins_calendario #plugins_calendario_ano_anterior
+		margin-left: 10px
+
+	#plugins_calendario #plugins_calendario_fechar
+		float: right
+
+	#plugins_calendario #plugins_calendario_mes_anterior:after,
+	#plugins_calendario #plugins_calendario_ano_anterior:after
+		content: "\e801"
+
+	#plugins_calendario #plugins_calendario_mes_proximo:after,
+	#plugins_calendario #plugins_calendario_ano_proximo:after
+		content: "\e800"
+
+	#plugins_calendario #plugins_calendario_fechar:after
+		content: "\e804"
+
+	#plugins_calendario .plugins_calendario_texto
+		height: 30px
+		line-height: 30px
+		float: left
+		padding: 0 5px
+		color: #FFF
+
+	#plugins_calendario #plugins_calendario_mes_texto
+		width: 100px
+		text-align: center
+
+	#plugins_calendario .plugins_calendario_coluna
+		width: 100%
+		float: left
+
+	#plugins_calendario .plugins_calendario_coluna li
+		width: 45px
+		float: left
+		margin: 1px
+		text-align: center
+		background-color: #EBEBEB
+
+	#plugins_calendario #plugins_calendario_semana
+		width: calc(100% - 20px)
+		float: left
+		background-color: #3982A3
+		color: #FFF
+		margin-left: 10px
+		cursor: default
+
+	#plugins_calendario #plugins_calendario_semana li
+		height: 30px
+		line-height: 30px
+		background-color: #3982A3
+
+	#plugins_calendario #plugins_calendario_datas
+		width: calc(100% - 20px)
+		background-color: #FFF
+		margin-left: 10px
+
+	#plugins_calendario #plugins_calendario_datas li
+		height: 45px
+		line-height: 45px
+
+	#plugins_calendario #plugins_calendario_datas .plugins_calendario_dias:hover
+		background-color: #ED4E66
+		color: #FFF
+		cursor: pointer
+
+	#plugins_calendario #plugins_calendario_datas .plugins_calendario_dias_hover
+		background-color: #ED4E66
+		color: #FFF
+
+	#plugins_calendario #plugins_calendario_datas .plugins_calendario_dias_negativo
+		opacity: .3
+		cursor: default
+
+
+	#plugins_calendario #plugin_calendario_rodape
+		width: 100%
+		float: left
+		padding: 5px 10px 10px 10px
+
+	#plugins_calendario #plugins_calendario_hora
+		width: 100px
+		height: 30px
+		float: left
+		background-color: #FFF
+		text-align: center
+		font-size: 1.2em
+		padding: 0 10px
+		display: none
+
+	#plugins_calendario #plugins_calendario_ok,
+	#plugins_calendario .plugins_calendario_agora
+		height: 30px
+		line-height: 30px
+		float: right
+		padding: 0 10px
+		border: 1px solid #3982A3
+		color: #FFF
+		cursor: pointer
+		display: none
+
+	#plugins_calendario #plugins_calendario_ok
+		margin-left: 10px
+		background-color: #3982A3
+
+	#plugins_calendario .plugins_calendario_agora:hover
+		background-color: #3982A3
+
+
+
+.input_password_geral .bloco_password .but_password_visualizar:after
+	font-family: plugins
+	content: "\e803"
+
+.input_password_geral .bloco_password .bloco_verificar.correto:after
+	font-family: plugins
+	content: "\e802"
+
+.input_password_geral .bloco_password .bloco_verificar.incorreto:after
+	font-family: plugins
+	content: "\e804"

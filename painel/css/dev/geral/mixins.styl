@@ -1,0 +1,61 @@
+/* MASCARA */
+fixed-mascara(zindex = 9999912)
+    width: 100%
+    height: 100vh
+    position fixed
+    top 0
+    left 0
+    background-color rgba(0,0,0,.7)
+    z-index zindex
+    display none
+    flex-direction column
+    align-items center
+    overflow-x hidden
+    overflow-y auto
+
+fixed-conteudo(width = 1000px)
+    width calc(100% - 40px) !important
+    max-width width
+    margin: 20px 0
+
+/* COLUNAS */
+col(n = 2, m = 20px)
+    width: s('calc( ( 100% / %s ) - %s )', n, m)
+    margin-left: s('calc( %s / 2 )', m)
+    margin-right: s('calc( %s / 2 )', m)
+
+/* GRADIENTE */
+gradient(c1, c2, de = to, pa = top)
+    background: linear-gradient(de pa, c1, c2)
+
+/* ESCONDER */
+esconder()
+    width 1px
+    height 1px
+    position absolute
+    top -99999px
+    left -99999px
+    opacity 0
+
+/* BACKGROUND SIZE */
+bg-size()
+    background-repeat no-repeat
+    background-position center center
+    background-size: cover
+
+/* BACKGROUND IMAGEM */
+bg-image(im)
+    background-image: url(../images/im);
+
+/* FONTES */
+fonte(local = site, cache = 24804973)
+    @font-face {
+        font-family: local;
+        src: url('fonts/' + local + '/icone.eot?' + cache);
+        src: url('fonts/' + local + '/icone.eot?' + cache + '#iefix') format('embedded-opentype'),
+             url('fonts/' + local + '/icone.woff?' + cache) format('woff'),
+             url('fonts/' + local + '/icone.ttf?' + cache) format('truetype'),
+             url('fonts/' + local + '/icone.svg?' + cache + '#icone') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }

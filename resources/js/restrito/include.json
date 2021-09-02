@@ -1,0 +1,12 @@
+[
+    "resources/js/geral/jquery.js",
+    "resources/js/geral/jquery.mobile.js",
+    "resources/js/geral/jquery.ui.js",
+    "resources/js/geral/plugins.js",
+    "resources/js/geral/Alerta.class.js",
+    "resources/js/geral/Pagina.class.js",
+    "resources/js/geral/Loading.class.js",
+    "resources/js/geral/Mascara.class.js",
+    "resources/js/geral/Validar.class.js",
+    "resources/js/restrito/padrao.js"
+]

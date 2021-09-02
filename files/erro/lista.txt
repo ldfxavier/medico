@@ -1,0 +1,53 @@
+200:Erro!:Sua requisição foi executada com sucesso.
+201:Erro!:Seu registro foi salvo com sucesso.
+204:Erro!:O registro foi deletado.
+400:Erro!:Requisição ruim (Bad Request).
+401:Erro!:Você não autenticou essa requisição.
+403:Erro!:Você não tem permissão para executar essa requisição.
+404:Erro!:Rota não encontrada.
+405:Erro!:O método HTTP não é suportado.
+406:Erro!:O type header tem que ser text/json.
+500:Erro!:Ocorreu um erro de sistema.
+
+700:URL incompleta!:Um ou mais parâmetros da URL não foi enviado.
+701:Campo incorreto!:O client_id informado não foi encontrado.
+702:Campo incorreto!:O redirect URI informado não foi encontrado.
+703:Campo incorreto!:O Scope informado é inválido.
+704:Erro!:O GET não pode ser vazio.
+705:Erro!:O POST não pode ser vazio.
+706:Erro!:O PUT não pode ser vazio.
+707:Erro!:O identificador não pode ser vazio.
+708:Erro!:Você precisa enviar um método HTTP.
+709:Erro!:Os métodos PUT e DELETE precisão de um identificado.
+710:Erro!:Você não pode passar POST ou PUT em uma requisição GET.
+711:Erro!:Você não pode passar GET ou PUT em uma requisição POST.
+712:Erro!:Você não pode passar GET ou POST em uma requisição PUT.
+713:Erro!:Você não pode passar GET, POST ou PUT em uma requisição DELETE.
+714:Campo incorreto!:A URL enviada não pertence a nenhum parceiro válido.
+715:Erro ao deletar:Ocorreu um erro ao deletar o registro.
+716:Erro ao deletar:O registro não existe ou já foi deletado.
+717:Campo incorreto!:Não foi encontrato nenhum usuário pelo código enviado.
+
+
+900:Campo obrigatório!:O campo {CAMPO} não pode ser vazio.
+901:Campo obrigatório!:O campo {CAMPO} não é um valor inteiro.
+902:Campo obrigatório!:O campo {CAMPO} não é um valor decimal (10,2).
+903:Campo obrigatório!:O campo {CAMPO} não é um valor float.
+904:
+905:Campo obrigatório!:O campo {CAMPO} não é um valor aceito.
+906:Campo obrigatório!:O campo {CAMPO} não está dentro do intervalo permitido.
+907:Campo obrigatório!:O campo {CAMPO} não tem a quantidade de caracteres correto.
+908:Campo obrigatório!:O campo {CAMPO} não é um telefone válido.
+909:Campo obrigatório!:O campo {CAMPO} não é um e-mail válido.
+910:Campo obrigatório!:O campo {CAMPO} não é um Array.
+911:Campo obrigatório!:O campo {CAMPO} não é a senha correta.
+912:Campo obrigatório!:O campo {CAMPO} não é igual ao valor comparado.
+913:Campo obrigatório!:O campo {CAMPO} não é diferênte do valor comparado.
+914:Campo obrigatório!:O campo {CAMPO} não é uma string JSON.
+915:Campo obrigatório!:O campo {CAMPO} não é um data no formato correto.
+916:Campo obrigatório!:O campo {CAMPO} não é um valor válido para documento.
+917:Campo obrigatório!:O campo {CAMPO} não é um valor positivo.
+918:Campo obrigatório!:O campo {CAMPO} não é um valor negativo.
+919:Campo obrigatório!:O campo {CAMPO} é obrigatório.
+920:Campo obrigatório!:O(s) campo(s) {CAMPO} não faz(em) parte da requisição.
+921:Campo incorreto!:O campo {CAMPO} não é um valor booleano.

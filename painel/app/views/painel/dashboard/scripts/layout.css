@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url("var.css");
+
+#bloco_dashboard {
+    width: 100%;
+    float: left;
+}
+
+#bloco_dashboard .dados {
+    width: 100%;
+    float: left;
+    padding: 0 0 20px 20px;
+}
+
+/* DADOS GERAIS */
+#bloco_dashboard .dados article:hover {
+    box-shadow: 0 1px 5px 1px rgba(0,0,0,0.05),0 3px 14px 2px rgba(0,0,0,0.05),0 5px 5px -3px rgba(0,0,0,0.05);
+    transition: all .3s ease-out;
+}
+#bloco_dashboard .dados .bloco_1 {
+    width: calc((100% / 3) - 20px);
+    margin: 20px 20px 0 0;
+}
+#bloco_dashboard .dados .bloco_2 {
+    width: calc(((100% / 3) * 2) - 20px);
+    margin: 20px 20px 0 0;
+}
+#bloco_dashboard .dados .bloco_cheio {
+    width: calc(100% - 20px);
+}
+#bloco_dashboard .dados .bloco_meio {
+    width: calc(50% - 20px);
+    margin: 20px 20px 0 0;
+}
+#bloco_dashboard .dados .bloco_geral {
+    height: 322px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+/* CABEÇALHOS */
+#bloco_dashboard .dados header.header_dashboard {
+    width: calc(100% - 20px);
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-bottom: 1px solid #F0F0F0;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+#bloco_dashboard .dados header.header_dashboard h1 {
+    float: left;
+}
+#bloco_dashboard .dados header.header_dashboard i.fechar {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    margin-top: 5px;
+    color: #999;
+    font-size: .8em;
+    text-align: center;
+    cursor: pointer;
+}
+#bloco_dashboard .dados header.header_dashboard i.fechar:hover {
+    background-color: #F4F4F4;
+}
+#bloco_dashboard .dados header.header_dashboard a.add {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    margin: 5px 0 0 10px;
+    color: #999;
+}
+#bloco_dashboard .dados header.header_dashboard a.add:hover {
+    background-color: var(--add);
+    color: #FFF;
+}
+
+/* PERFIL */
+#bloco_dashboard .dados .bloco_perfil figure {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 0 auto;
+    background-color: #FFF;
+    background-size: cover;
+    background-position: center center;
+    border: 4px solid #FFF;
+    border-radius: 100%;
+    z-index: 2;
+}
+#bloco_dashboard .dados .bloco_perfil .equipe {
+    width: 100%;
+    float: left;
+    margin-top: -40px;
+    padding: 50px 0 20px 0;
+    background-color: var(--cor);
+    border-radius: 5px 5px 0 0;
+}
+#bloco_dashboard .dados .bloco_perfil .equipe .nome {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+}
+#bloco_dashboard .dados .bloco_perfil .equipe .area {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--cor_escuro);
+}
+#bloco_dashboard .dados .bloco_perfil .conteudo {
+    width: 100%;
+    float: left;
+    padding: 20px 0;
+    background-color: #FFF;
+    border: 1px solid #F0F0F0;
+    border-top: none;
+}
+#bloco_dashboard .dados .bloco_perfil .conteudo ul.tipo {
+    margin: 0 auto;
+    display: table;
+}
+#bloco_dashboard .dados .bloco_perfil .conteudo ul.tipo li {
+    float: left;
+    font-size: 1.1em;
+    border: 1px solid var(--cor);
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+    cursor: default;
+}
+
+/* LISTA */
+#bloco_dashboard .dados .bloco_lista {
+    height: 322px;
+    position: relative;
+    float: left;
+    border: 1px solid #F0F0F0;
+    overflow: hidden;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo {
+    width: 100%;
+    height: 280px;
+    float: left;
+    padding: 5px 0;
+    overflow-y: auto;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.geral {
+    width: 100%;
+    position: relative;
+    float: left;
+    padding: 5px 10px;
+    cursor: default;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.geral:after {
+    width: calc(100% - 20px);
+    height: 1px;
+    content: " ";
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    background-color: #EEE;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.geral:last-child:after {
+    display: none;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.geral:last-child {
+    margin-bottom: 10px;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.geral:hover {
+    background-color: #FDFDFD;
+}
+#bloco_dashboard .dados .bloco_lista .conteudo li.zero {
+    width: 100%;
+    float: left;
+    margin-top: 100px;
+    text-align: center;
+    color: #CCC;
+}
+#bloco_dashboard .dados .bloco_lista .footer {
+    width: calc(100% - 10px);
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #FFF;
+    z-index: 10;
+}
+
+
+/* QUADRADOS */
+#bloco_dashboard .dados .bloco_quadrado {
+    height: 322px;
+    float: left;
+    border: 1px solid #F0F0F0;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista {
+    width: 100%;
+    float: left;
+    padding: 0 10px;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro {
+    width: calc(50% - 5px);
+    position: relative;
+    float: left;
+    padding: 40px 0;
+    margin-bottom: 10px;
+    color: #FFF;
+    text-align: center;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:nth-child(1){
+    background-color: #62549A;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:nth-child(2){
+    background-color: #4AA9E9;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:nth-child(3){
+    background-color: #23B9A9;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:nth-child(4){
+    background-color: #FF6C60;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:nth-child(even) {
+    float: right;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.2);
+    z-index: 1;
+    transition: opacity .3s ease-out;
+    opacity: 0;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro:hover .bg {
+    opacity: 1;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro .valor {
+    font-size: 3.0em;
+    position: relative;
+    font-weight: bold;
+    cursor: default;
+    z-index: 2;
+}
+#bloco_dashboard .dados .bloco_quadrado .lista .quadro .texto {
+    position: relative;
+    cursor: default;
+    z-index: 2;
+}

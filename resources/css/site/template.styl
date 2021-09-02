@@ -1,0 +1,142 @@
+@import "../geral/mixins.styl"
+@import "../geral/variaveis.styl"
+
+
+icone(site, 1)
+
+#fw_loading
+    z-index: 99999
+
+body
+    overflow: hidden
+
+.esconde
+    display: none
+
+.header
+    width: 100%
+    height: 200px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: #fff
+    z-index: 500
+    .centro
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .menu
+        width: 100%
+        height: 120px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: column
+        .topo
+            width: 100%
+            ul
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: flex-end
+                li
+                    display: flex
+                    align-items: center
+                    margin-right: 20px
+                    p
+                        display: flex
+                        align-items: baseline
+                        flex-direction: column
+                        margin-left: 10px
+                        font-size: 1.5em
+                        line-height: 20px
+                        color: #7D7987
+                        span.azul
+                            font-weight: bold
+        .bottom
+            width: 100%
+            ul
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: flex-end
+                li
+                    display: flex
+                    align-items: center
+                    margin-right: 20px
+                    font-size: 1.5em
+                    line-height: 23px
+                    color: #7D7987
+                    &.active
+                        color: #1F1534
+                        font-weight: bold
+
+
+footer
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content:center
+    background-color: #17567F
+    margin-top: 80px
+    .centro
+        width: 100%
+        max-width: 1200px
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        flex-wrap: wrap
+        margin-top: 80px
+        article
+            col(4, 20px)
+            margin-bottom: 50px
+            position: relative
+            min-height: 200px
+            figure img
+                border-top-left-radius: 20px
+            &.redes ul
+                display: flex
+                align-items:  flex-start
+                flex-direction: column
+                justify-content: flex-start
+                li
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 18px
+                    line-height: 20px
+                    color: #FFFFFF
+                    margin-bottom: 20px
+                li p
+                    display: flex
+                    flex-direction: column
+                li span
+                    margin-left: 10px
+                li span.bold
+                    font-weight: bold
+            ul.rede_linha
+                display: flex
+                align-items: center
+                flex-direction: row !important
+                li
+                    margin-right: 10px
+            &.texto
+                h3
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 20px
+                    margin-bottom: 20px
+                    color: #FFFFFF
+                    text-align: left
+                p
+                    font-style: normal
+                    font-weight: 300
+                    font-size: 18px
+                    line-height: 38px
+                    color: #FFFFFF
+                    text-align: left
+
+

@@ -1,0 +1,548 @@
+@charset "UTF-8"
+
+@import "../geral/resetar.styl"
+@import "../geral/variaveis.styl"
+@import "../geral/mixins.styl"
+@import "../geral/cor.styl"
+/* PLUGINS*/
+@import "../geral/Loading.class.styl"
+@import "../geral/Contato.class.styl"
+@import "../geral/Pagina.class.styl"
+@import "../geral/Formulario.class.styl"
+@import "../geral/Alerta.class.styl"
+@import "../geral/Ajuda.class.styl"
+@import "../geral/cor.styl"
+@import "../geral/plugins.styl"
+
+html,
+body
+    overflow-x:hidden
+
+body
+    background: #FFFFFF
+    font-family: 'Mulish', sans-serif
+    font-size: 62.5%
+    overflow-x: hidden
+a
+    cursor: pointer
+    text-decoration: none
+
+icone(site, 1)
+
+i:after
+    width: 100%
+    height: 100%
+    text-align: center
+    content: attr(data-font)
+    font-family: site
+
+#site
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    position: relative
+
+
+/*
+    ANIMAÇÕES
+*/
+.fade-in
+    animation: fadeIn ease 20s
+.fadeInDown
+    animation: fadeInDown ease 1s
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes fadeInDown
+    0%
+        opacity: 0
+        transform: translateY(-20px)
+
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes moveImagem
+    0%
+        left: 0
+    100%
+        left: -2850px
+
+.centro
+    width: 100%
+    max-width: 1200px
+
+
+#conteudo_principal
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    .centraliza--conteudo_principal
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        position: relative
+
+@media screen and (max-width: 1300px)
+    #conteudo_principal
+        width: 100%
+        justify-content: center
+        .centraliza--conteudo_principal
+            min-height: calc(100vh - 200px)
+            padding-top: 20px
+
+header.header_pagina
+    width: 100%
+    max-width: 1000px
+    margin: 20px 0 40px 0
+    padding-bottom: 20px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    &::after
+        width: 100%
+        max-width: 100px
+        height: 3px
+        content: " "
+        position: absolute
+        bottom: 5px
+        background-color: $amarelo_padrao
+    h1
+        width: 100%
+        text-align: left
+        font-size: 3.0em
+        font-weight: 400
+        color: $azul_padrao
+    p
+        line-height: 1.5em
+        margin-top: 5px
+        font-size: 1.8em
+        color: #333
+        text-align: left
+
+.titulo_padrao
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    max-width: 300px
+    h2
+        font-size: 1.5em
+        line-height: 1.5em
+        padding-bottom: 5px
+        color: #666
+        text-align: center
+    .linha
+        height: 3px
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        &:after
+            content: ''
+            display: block
+            width: 80px
+            height: 100%
+            position: absolute
+            top: 0
+            background-color: #000000
+    h1
+        font-size: 36px
+        line-height: 1.5em
+        color: #000000
+        text-align: center
+        margin-top: 10px
+
+.titulo_padrao_esquerdo
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    flex-direction: column
+    max-width: 300px
+    .linha
+        width: 300px
+        height: 3px
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        position: relative
+        &:after
+            content: ''
+            display: block
+            width: 77px
+            height: 100%
+            position: absolute
+            top: 5px
+            left: 0px
+            text-align: left
+            background-color: #FFF
+    h1
+        font-size: 2.5em
+        line-height: 1.5em
+        color: #000000
+        text-align: center
+        margin-top: 10px
+
+.bloco_banner--padrao
+    width: 100%
+    height: 600px
+    position: relative
+    margin-bottom: 20px
+    &:hover .controlador
+        opacity: 1
+    .controle
+        position: relative
+        margin: 0 auto
+        margin-top: 605px
+        display: table
+        z-index: 10
+    .controle li 
+        width: 12px
+        height: 12px
+        float: left
+        margin: 0 5px
+        background-color: $cor
+        cursor: pointer
+        border-radius: 100%
+        background-color: #5B9BF3
+        opacity: 0.3
+    .controle li:hover 
+        background-color: $cor !important
+        opacity: 1
+    .controle li.hover 
+        background-color: $cor !important
+        opacity: 1
+    figure
+        width: 100%
+        height: 600px
+        position: absolute
+        top: 0
+        left: 0
+        background-position: center center
+        background-size: contain
+        display: none
+        opacity: 0
+        border-radius: 2px
+        &:first-child
+            display: block
+            opacity: 1
+    figure header
+        width: 100%
+        height: 100%
+        background-color: rgba(0,0,0,.2)
+        color: #FFF
+        padding: 20px 20px 50px 20px
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        justify-content: flex-end
+    figure header h1
+        width: 100%
+        font-weight: 900
+        font-size: 4.0em
+        text-shadow: 2px 2px 3px rgba(0,0,0,.7)
+    figure header p
+        width: 100%
+        line-height: 1.3em
+        text-shadow: 1px 1px 3px #000
+        font-size: 2.0em
+        margin-top: 8px
+    figure a
+        width: 100%
+        height: 100%
+        position: absolute
+        float: left
+        top: 0
+        left: 0
+        z-index: 2
+    .controlador
+        width: 50px
+        height: 80px
+        line-height: 80px
+        position: absolute
+        top: 300px
+        opacity: 0
+        z-index: 2
+        font-size: 40px
+        text-align: center
+        cursor: pointer
+        text-shadow: 1px 1px 0 #FFF
+        transition: opacity .3s ease-out
+    .controlador.next
+        left: 20px
+        background: url('../images/seta_esquerda.png') no-repeat
+    .controlador.prev
+        right: 0
+        background: url('../images/seta_direita.png') no-repeat
+
+
+#banner_principal figure 
+    background-repeat:  no-repeat
+    background-size: contain
+
+
+
+#sobre
+    width: calc(100% - 40px)
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    position: relative
+    margin-top: 100px
+    .quadrado
+        position: absolute
+        left: 0
+        top: -80px
+        width: 78px
+        height: 115px
+        background: url('../images/quadrado_sobre.png') no-repeat top left
+    .esquerdo
+        max-width: 400px
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        position: relative
+        flex-direction: column
+        margin-right: 30px
+        h1
+            font-style: normal
+            font-weight: bold
+            font-size: 3.5em
+            line-height: 56px
+            color: #000
+        p
+            font-style: normal
+            font-weight: 300
+            font-size: 1.7em
+            line-height: 32px
+            color: #7D7987
+            padding-right: 70px
+            margin-top: 20px
+        a
+            padding: 10px 40px
+            background: #17567F
+            border-radius: 55px
+            font-size: 1.4em
+            color: #FFF
+            margin-top: 20px
+    .direito
+        figure img
+            height: 400px
+
+#especialidade
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    position: relative
+    margin-top: 100px
+    .titulo_padrao
+        margin-bottom: 40px
+    .conteudo
+        width: 100%
+        max-width: 1200px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap:wrap
+        position: relative
+        .quadrado
+            position: absolute
+            right: 50px
+            top: 0px
+            width: 78px
+            height: 115px
+            background: url('../images/quadrado_especilidade.png') no-repeat top left
+            -webkit-transform: rotate(90deg)
+            -moz-transform: rotate(90deg)
+            -ms-transform: rotate(90deg)
+            -o-transform: rotate(90deg)
+            transform: rotate(90deg)
+        article
+            col(3, 20px)
+            margin-bottom: 50px
+            position: relative
+            min-height: 320px
+            figure img
+                border-top-left-radius: 20px
+            h1
+                font-style: normal
+                font-weight: bold
+                font-size: 24px
+                line-height: 56px
+                color: #000000
+                padding: 0px 30px
+            p
+                font-style: normal
+                font-weight: 300
+                font-size: 16px
+                line-height: 1.5em
+                color: #7D7987
+                padding: 0px 30px
+
+
+#agenda
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    position: relative
+    margin-top: 100px
+    background-color: #17567F
+    .centro
+        width: 100%
+        max-width: 1200px
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        margin-top: 100px
+        margin-bottom: 100px
+    .centro .esquerdo
+        width: 50%
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        flex-direction: column
+        text-align: left
+        .titulo_padrao_esquerdo
+            max-width: 100%
+        h1
+            color: #FFF
+            font-weight: bold
+            margin-top: 0px
+        ul
+            margin-top: 40px
+            li
+                color: #FFF
+                font-size: 18px
+                line-height: 30px
+        p
+            font-size: 18px
+            line-height: 30px
+            color: #FFFFFF
+            &.margin
+                margin-top: 40px
+                margin-bottom: 40px
+    .centro .direito
+        width: 50%
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        form
+            width: 100%
+            max-width: 430px
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            background-color: #fff
+            box-shadow: 5px 10px 50px rgba(51, 51, 51, 0.2)
+            border-radius: 20px
+            z-index: 400
+            h1
+                font-family: 'Ubuntu', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 20px
+                line-height: 30px
+                letter-spacing: 0.04em
+                padding: 20px 0px
+                color: #333333
+            label
+                width: 100%
+                max-width: 340px
+                font-family: 'Ubuntu', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 30px
+                letter-spacing: 0.04em
+                color: #999999
+                text-align: left
+            input
+            textarea
+                width: 100%
+                max-width: 340px
+                height: 40px
+                opacity: 0.4
+                border: 1px solid #666666
+                box-sizing: border-box
+                border-radius: 10px
+                font-size: 16px
+                font-family: 'Ubuntu', sans-serif
+                line-height: 26px
+                text-align: center
+                letter-spacing: 0.04em
+                color: #333
+                margin-bottom: 20px
+                text-align: left
+                padding-left: 20px
+            textarea
+                height: 95px
+                padding-top: 10px
+            button
+                width: 340.81px
+                height: 46.67px
+                background: #17567F
+                font-family: 'Ubuntu', sans-serif
+                color: #FFFFFF
+                font-size: 16px
+                line-height: 26px
+                border-radius: 10px
+                margin-bottom: 30px
+
+#localizacao
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    position: relative
+    margin-top: 100px
+    .centro
+        width: 100%
+        max-width: 1000px
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+        margin-top: 50px
+        margin-bottom: 100px
+		.esquerdo
+			position: relative
+			ul
+				li
+					font-style: normal
+					font-weight: bold
+					font-size: 18px
+					line-height: 56px
+					color: #7D7987
+			.quadrado
+				position: absolute
+				left: -40px
+				top: -20px
+				width: 78px
+				height: 115px
+				background: url('../images/quadrado_especilidade.png') no-repeat top left
+				-webkit-transform: rotate(90deg)
+				-moz-transform: rotate(90deg)
+				-ms-transform: rotate(90deg)
+				-o-transform: rotate(90deg)
+				transform: rotate(90deg)
+		.direito
+			figure img
+				height: 393px
+
+
+@import "template.styl"
