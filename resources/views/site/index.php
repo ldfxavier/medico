@@ -46,6 +46,7 @@
 </section>
 
 <section id="especialidade">
+	<div class="bg"></div>
 	<div class="titulo_padrao">
 		<h1>Especialidades</h1>
 		<div class="linha"></div>
@@ -131,5 +132,6 @@
 				</figure>
 			</div>
 		</article>
+		<div class="quadrado_footer"></div>
 	</div>
 </section>

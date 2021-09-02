@@ -32,22 +32,28 @@
 			</ul>
 		</article>
 		<article class="texto">
-			<h3>Institucional</h3>
-			<p>Dr. André Neri</p>
-			<p>Blog</p>
-			<p>Agendamentos</p>
+			<div class="conteudo">
+				<h3>Institucional</h3>
+				<p>Dr. André Neri</p>
+				<p>Blog</p>
+				<p>Agendamentos</p>
+			</div>
 		</article>
 		<article class="texto">
-			<h3>Especialidades</h3>
-			<p>Nariz</p>
-			<p>Orelha</p>
-			<p>Garganta</p>
-			<p>Cirurgia laser</p>
+			<div class="conteudo">
+				<h3>Especialidades</h3>
+				<p>Nariz</p>
+				<p>Orelha</p>
+				<p>Garganta</p>
+				<p>Cirurgia laser</p>
+			</div>
 		</article>
 		<article class="texto">
-			<h3>Contatos</h3>
-			<p>+55 61 99840 4040</p>
-			<p>cirurgiasoto@gmail.com</p>
+			<div class="conteudo">
+				<h3>Contatos</h3>
+				<p>+55 61 99840 4040</p>
+				<p>cirurgiasoto@gmail.com</p>
+			</div>
 		</article>
 	</div>
 
