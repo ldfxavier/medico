@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.lista_dados .but_gerar_link {
+	height: 34px;
+	width: 34px;
+	line-height: 34px;
+	position: absolute;
+    float: left;
+	font-size: 1.2em;
+	color: #FFF;
+	background-color: #3232CD;
+	border-radius: 2px;
+	cursor: pointer;
+    z-index: 99;
+}
+.lista_dados .but_gerar_link i {
+	width: 34px;
+    height: 34px;
+    line-height: 34px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .9em;
+    text-align: center;
+	font-family: icone;
+	background-color: rgba(0,0,0,.1);
+}
+
+#gerar_link{
+	display: none;
+}
+.link_doc{
+	position: fixed;
+	width: calc(100% - 250px);
+    height: 100vh;
+	background: rgba(0,0,0,0.5);
+	z-index: 99999999;
+	display: none;
+}
+
+.link_doc .explicacao{
+	position: relative;
+	top: calc(50% - 30px);
+	width: calc(100% - 60px);
+	margin: 0 auto;
+	background: #fff;
+	padding: 10px;
+	border-top: 5px solid var(--cor);
+	text-align: center;
+	font-size: 1.8em;
+}
+#gerar_link .explicacao input{
+	width: 100%;
+	padding: 20px 10px;
+	text-align: center;
+}

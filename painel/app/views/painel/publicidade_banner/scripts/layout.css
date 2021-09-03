@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* CSS Document */
+.app_geral_add form .capa .bloco_imagem figure,
+.app_geral_add form .logo .bloco_imagem figure,
+.app_geral_add form .favicon .bloco_imagem figure {
+	height: 300px;
+	min-width: 1024px;
+	max-width: 1124px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}

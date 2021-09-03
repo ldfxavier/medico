@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+.app_geral_lista ul.ul_lista li .td:nth-child(2) {
+	width: calc(100% - 610px);
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(3) {
+	width: 150px;
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(4) {
+	width: 150px;
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(5) {
+	width: 80px;
+	text-align: center;
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(6) {
+	width: 80px;
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(7) {
+	width: 90px;
+	text-align: center;
+}

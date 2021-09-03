@@ -122,7 +122,7 @@ final class UsuarioCliente extends Model
         $array = [
             'cod' => uuid(),
             'nome' => $nome,
-            'cpf' => (Int) so_numero($cpf),
+            'documento' => (Int) so_numero($documento),
             'telefone' => $telefone,
             'celular' => $celular,
             'cep' => so_numero($cep),

@@ -24,9 +24,9 @@
 	$qa_link = array(
 		'link' => array('localhost'),
 		'painel' => '{{LINK}}/painel',
-		'arquivo' => 'https://localhost:4002/public/arquivos',
+		'arquivo' => 'https://localhost:4013/public/arquivos',
 		'diretorio' => '../public/arquivos',
-		'template' => 'sinpefrs'
+		'template' => 'padrao'
 	);
 
 	/**
@@ -34,7 +34,7 @@
 	**/
 	$qa_pdo = array(
 		'host' => 'mariadb',
-        'banco' => 'parlamentum',
+        'banco' => 'medico',
         'usuario' => 'root',
         'senha' => '123456'
 	);

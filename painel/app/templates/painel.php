@@ -80,6 +80,15 @@ Menu::principal('USUÁRIOS', $_app, '#FFCC33', array(
     array('Equipe', 'usuario_equipe', 0),
     array('Usuário', 'usuario_usuario', 0),
 ));
+Menu::principal('ADMINISTRATIVO', $_app, '#FF99FF', array(
+    array('Status', 'administrativo_status', 0, true),
+));
+Menu::principal('DRIVE', $_app, '#FF1493', array(
+    array('Drive', 'drive', 0),
+));
+Menu::principal('BANNER', $_app, '#F47521', array(
+    array('Banner', 'publicidade_banner', 0),
+));
 ?>
 			</ul>
 

@@ -119,7 +119,7 @@
 		<div class="legenda">ACESSO</div>
 
 		<label>CPF:</label>
-		<input type="text" name="login" value="<?= P::r($r, 'login'); ?>" placeholder="Digite um e-mail">
+		<input type="text" name="documento" value="<?= P::r($r, 'documento'); ?>" placeholder="Digite o CPF">
 
 		<label>E-mail:</label>
 		<input type="text" name="email" value="<?= P::r($r, 'email'); ?>" placeholder="Digite um e-mail">

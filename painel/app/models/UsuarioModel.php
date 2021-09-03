@@ -27,8 +27,8 @@
                             'ultimo' => end($nome) != $nome[0] ? Converter::caixa(end($nome), 'A') : ''
                         ],
                         'cpf' => (object)[
-                            'valor' => $r->cpf,
-                            'br' => Converter::documento($r->cpf)
+                            'valor' => $r->documento,
+                            'br' => Converter::documento($r->documento)
                         ],
                         'email' => $r->email,
                         'telefone' => (object)[

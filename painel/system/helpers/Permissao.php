@@ -10,6 +10,45 @@ class Permissao
             'tabela' => 'foto',
             'model' => 'FotoModel',
         ),
+        'drive' => array(
+            'titulo' => 'Drive',
+            'tabela' => 'drive',
+            'model' => 'DriveModel',
+            'permissao' => 'per_drive',
+            'lista' => array(
+                'per_drive' => 'Visualizar lista',
+                'per_drive_visualizar' => 'Visualizar arquivo',
+                'per_drive_add' => 'Adicionar arquivo',
+                'per_drive_editar' => 'Editar arquivo',
+                'per_drive_deletar' => 'Deletar arquivo',
+            ),
+        ),
+
+        'publicidade_banner' => array(
+            'titulo' => 'Banner',
+            'tabela' => 'banner',
+            'model' => 'BannerModel',
+            'permissao' => 'per_publicidade_banner',
+            'lista' => array(
+                'per_publicidade_banner_visualizar' => 'Visualizar lista',
+                'per_publicidade_banner_detalhe' => 'Detalhe do banner',
+                'per_publicidade_banner_add' => 'Adicionar banner',
+                'per_publicidade_banner_editar' => 'Editar banner',
+                'per_publicidade_banner_deletar' => 'Deletar banner',
+            ),
+        ),
+        'administrativo_status' => array(
+            'titulo' => 'Status',
+            'tabela' => 'status_novo',
+            'model' => 'StatusModel',
+            'permissao' => 'per_administrativo_status',
+            'lista' => array(
+                'per_administrativo_status_visualizar' => 'Visualizar lista',
+                'per_administrativo_status_add' => 'Adicionar área',
+                'per_administrativo_status_editar' => 'Editar área',
+                'per_administrativo_status_deletar' => 'Deletar área',
+            ),
+        ),
         'usuario_equipe' => array(
             'titulo' => 'Equipe',
             'tabela' => 'equipe',
@@ -37,7 +76,6 @@ class Permissao
                 'per_usuario_usuario_download' => 'Download lista usuário',
             ),
         ),
-      
         'arquivo' => array(
             'tabela' => 'arquivo',
             'model' => 'ArquivoModel',
