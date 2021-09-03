@@ -1,4 +1,3 @@
-
 <section class="bloco_banner--padrao " id="banner_principal">
 
 	<figure style="background-image: url(<?= LINK_PADRAO;?>/images/banner.png)">
