@@ -4,7 +4,6 @@ namespace App\Controllers\Site;
 
 use App\Helpers\Auth;
 use App\Helpers\Validar;
-use App\Marktclub\Api;
 use App\Models\Site\UsuarioCliente;
 use System\Controller;
 
@@ -16,6 +15,13 @@ class Index extends Controller
         return View("site.index");
     }
     
+
+	public function popup_especialidade(){
+			
+		return View('!site.popup_especialidade');
+
+	}
+
     public function cadastro()
     {
         return view('site.cadastro');

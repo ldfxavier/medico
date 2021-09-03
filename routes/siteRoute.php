@@ -12,8 +12,13 @@ Route::grupo('index', function () {
         'css' => 'login,login_cadastro'
     ]);
 
+    Route::view('popup_especialidade', '/popup/especialidade', 'Index@popup_especialidade', [
+        'get' => ['ajax'],
+    ]);
+
 
     Route::post('salvar_cadastro', '/cadastro/salvar', 'Index@salvar_cadastro', [
         'post' => ['login' ,'senha' ,'confirmar_senha' ,'nome' ,'cpf' ,'email' ,'confirmar_email', 'cep' ,'logradouro' ,'numero' ,'complemento' ,'referencia' ,'bairro' ,'cidade' ,'estado', 'telefone', 'celular'],
     ]);
 });
+

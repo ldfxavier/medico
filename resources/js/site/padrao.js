@@ -1,13 +1,22 @@
 $(function() {
 
-	$.banner({
-		id: '#banner_principal',
-		imagem: 'figure',
+    $.banner({
+        id: '#banner_principal',
+        imagem: 'figure',
         controle: '#controle',
-		prev: '#banner_principal_next',
-		next: '#banner_principal_prev',
-		tempo: 8
-	});
+        prev: '#banner_principal_next',
+        next: '#banner_principal_prev',
+        tempo: 8
+    });
+
+    Pagina = new Pagina();
+
+    $(".abre_popup_especialidade").click(function(e) {
+        e.preventDefault();
+        let url = $(this).attr("data-href");
+        Pagina.abrir(url);
+    });
+
 
 
     //MENU ICON
@@ -46,19 +55,19 @@ $(function() {
         });
     }).scroll();
 
-	$(".header .menu .bottom .mobile-menu-icon").click(function(e) {
-		e.preventDefault();
+    $(".header .menu .bottom .mobile-menu-icon").click(function(e) {
+        e.preventDefault();
 
-		$('.menu-container').toggleClass('ativo');
+        $('.menu-container').toggleClass('ativo');
 
-	});
+    });
 
-	   // Ação quando a janela mudar de tamanho
-	$(window).resize(function() {
+       // Ação quando a janela mudar de tamanho
+    $(window).resize(function() {
 
         if ($(window).width() <= 760 && !$('.header .menu .bottom .menu-container').hasClass('ativo')) {
 
-			$('.header .menu .bottom .menu-container').removeClass('ativo');
+            $('.header .menu .bottom .menu-container').removeClass('ativo');
 
         } 
 

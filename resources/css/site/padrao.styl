@@ -272,7 +272,7 @@ header.header_pagina
         line-height: 80px
         position: absolute
         top: 50%
-		margin-top: -250px
+        margin-top: -250px
         opacity: 0
         z-index: 2
         font-size: 40px
@@ -678,7 +678,7 @@ header.header_pagina
     .quadrado_footer
         position: absolute
         right: -50px
-        bottom: -180px
+        bottom: -200px
         width: 78px
         height: 115px
         background: url('../images/quadrado_localizacao.png') no-repeat top left
@@ -698,5 +698,76 @@ header.header_pagina
         justify-content: center
         .direito
             margin-top: 30px
+
+
+.mobile
+    display: none
+.desktop
+    display: flex
+.h1_voltar
+    padding-left: 20px
+@media screen and (max-width: 1000px)
+    .mobile
+        display: flex
+    .desktop
+        display: none
+    .h1_voltar
+        padding-left: 0
+
+.header-popup
+    width: 100%
+    height: 50px
+    line-height: 50px
+    display: flex
+    flex-direction: row
+    border-bottom: 1px solid $cor
+    i
+        width: 40px
+        height: 50px
+        text-align: center
+        font-size: 2em
+        cursor: pointer
+        &.fechar
+            color: #666
+    h1
+        font-size: 1.8em
+        color: $cor
+        flex-grow: 1
+        flex-basis: 0%
+        font-weight: bold
+@media screen and (max-width: 1000px)
+    .header-popup .h1_voltar
+        font-size: 1.4em
+
+
+
+.bloco-popup__botao
+    width: 100%
+    max-width: 100%
+    height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    top: 0px
+    bottom: 0px
+    left: 0px
+    right: 0px
+    background-color: #EEE
+    overflow-y: auto
+    .bloco-popup__conteudo
+        width: calc(100% - 20px)
+        display: flex
+        flex-direction: column
+        margin-left: 10px
+        margin-top: 10px
+        margin-bottom: 10px
+    .bloco-popup__conteudo
+        color: #666
+        padding: 10px
+        p
+            font-size: 1.5em
+            line-height: 1.5em
+            
 
 @import "template.styl"

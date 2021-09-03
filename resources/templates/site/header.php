@@ -71,7 +71,7 @@
 							<ul>
 								<li class="active"><a href="#conteudo_principal">Home</a> </li>
 								<li> <a href="#sobre">Dr André Neri</a> </li>
-								<li> <a href="#especialidade">Especialidades</a> </li>
+								<li> <a  href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' ?>"  class="abre_popup_especialidade">Especialidades</a> </li>
 								<li> <a href="#agenda">Agendamentos</a> </li>
 								<li> <a href="#localizacao">Localização</a> </li>
 							</ul>

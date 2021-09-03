@@ -39,10 +39,6 @@ module.exports = function(grunt) {
                 src: grunt.file.readJSON('resources/js/site/include.json'),
                 dest: 'public/js/site.js'
             },
-            restrito: {
-                src: grunt.file.readJSON('resources/js/restrito/include.json'),
-                dest: 'public/js/restrito.js'
-            },
             painel: {
                 src: grunt.file.readJSON('resources/js/painel/include.json'),
                 dest: 'public/js/painel.js'
@@ -55,14 +51,6 @@ module.exports = function(grunt) {
                     cwd: 'resources/js/site/pagina/',
                     src: '*.js',
                     dest: 'public/js/site'
-                }]
-            },
-            jsrestrito: {
-                files: [{
-                    expand: true,
-                    cwd: 'resources/js/restrito/pagina/',
-                    src: '*.js',
-                    dest: 'public/js/restrito'
                 }]
             },
             jspainel: {
@@ -91,14 +79,6 @@ module.exports = function(grunt) {
                     dest: 'public/js/site'
                 }]
             },
-            restrito: {
-                files: [{
-                    expand: true,
-                    cwd: 'public/js/restrito',
-                    src: '*.js',
-                    dest: 'public/js/restrito'
-                }]
-            },
             painel: {
                 files: [{
                     expand: true,
@@ -118,19 +98,6 @@ module.exports = function(grunt) {
                         cwd: 'public/css/site',
                         src: ['*.css'],
                         dest: 'public/css/site',
-                        ext: '.css'
-                    }
-                ]
-            },
-            restrito: {
-                files: [{
-                        'public/css/restrito.css': ['public/css/restrito.css']
-                    },
-                    {
-                        expand: true,
-                        cwd: 'public/css/restrito',
-                        src: ['*.css'],
-                        dest: 'public/css/restrito',
                         ext: '.css'
                     }
                 ]
@@ -166,19 +133,6 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            restrito: {
-                files: [{
-                        'public/css/restrito.css': ['resources/css/restrito/padrao.styl']
-                    },
-                    {
-                        expand: true,
-                        cwd: 'resources/css/restrito/pagina',
-                        src: '*.styl',
-                        dest: 'public/css/restrito',
-                        ext: '.css'
-                    }
-                ]
-            },
             painel: {
                 files: [{
                         'public/css/painel.css': ['resources/css/painel/padrao.styl']
@@ -206,19 +160,6 @@ module.exports = function(grunt) {
                         cwd: 'public/css/site',
                         src: '*.css',
                         dest: 'public/css/site',
-                        ext: '.css'
-                    }
-                ]
-            },
-            restrito: {
-                files: [{
-                        'public/css/restrito.css': ['public/css/restrito.css'],
-                    },
-                    {
-                        expand: true,
-                        cwd: 'public/css/restrito',
-                        src: '*.css',
-                        dest: 'public/css/restrito',
                         ext: '.css'
                     }
                 ]
