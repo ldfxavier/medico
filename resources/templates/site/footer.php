@@ -22,13 +22,14 @@
 						<span class="bold">Whatsapp</span>
 						<span>+55 61 99840 4040</span>
 					</p>
+					<a class="link" href="https://api.whatsapp.com/send/?phone=5561998404040"></a>
 				</li>
 			</ul>
 			<ul class="rede_linha">
-				<li><a href=""><img src="<?= LINK_PADRAO?>/images/facebook_footer.png" alt=""></a></li>
-				<li><a href=""><img src="<?= LINK_PADRAO?>/images/instagram_footer.png" alt=""></a></li>
+				<li><a href="https://www.facebook.com/doutorandreneri/" target="_blank"><img src="<?= LINK_PADRAO?>/images/facebook_footer.png" alt=""></a></li>
+				<li><a href="https://www.instagram.com/dr.andreneri"  target="_blank"><img src="<?= LINK_PADRAO?>/images/instagram_footer.png" alt=""></a></li>
 				<li><a href=""><img src="<?= LINK_PADRAO?>/images/twitter_footer.png" alt=""></a></li>
-				<li><a href=""><img src="<?= LINK_PADRAO?>/images/youtube_footer.png" alt=""></a></li>
+				<li><a href="https://www.youtube.com/channel/UCmeSrxPegFc1PT2hWvIIYQA"  target="_blank"><img src="<?= LINK_PADRAO?>/images/youtube_footer.png" alt=""></a></li>
 			</ul>
 		</article>
 		<article class="texto">

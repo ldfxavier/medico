@@ -49,15 +49,16 @@
 									<span class="color_cor azul">Whatsapp</span>
 									<span class="opaco">+55 61 99840 4040</span>
 								</p>
+								<a class="link" href="https://api.whatsapp.com/send/?phone=5561998404040"></a>
 							</li>
 							<li>
-								<img src="<?= LINK_PADRAO ?>/images/youtube.png"" alt="">
+								<a href="https://www.youtube.com/channel/UCmeSrxPegFc1PT2hWvIIYQA"  target="_blank""><img src="<?= LINK_PADRAO ?>/images/youtube.png"" alt=""></a>
 							</li>
 							<li>
-								<img src="<?= LINK_PADRAO ?>/images/facebook.png"" alt="">
+								<a href="https://www.facebook.com/doutorandreneri/" target="_blank"><img src="<?= LINK_PADRAO ?>/images/facebook.png"" alt=""></a>
 							</li>
 							<li>
-								<img src="<?= LINK_PADRAO ?>/images/instagram.png"" alt="">
+								<a href="https://www.instagram.com/dr.andreneri"  target="_blank"><img src="<?= LINK_PADRAO ?>/images/instagram.png"" alt=""></a>
 							</li>
 							<li>
 								<img src="<?= LINK_PADRAO ?>/images/twitter.png"" alt="">
