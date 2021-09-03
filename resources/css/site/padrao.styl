@@ -97,7 +97,6 @@ i:after
         justify-content: center
         .centraliza--conteudo_principal
             min-height: calc(100vh - 200px)
-            padding-top: 20px
 
 header.header_pagina
     width: 100%
@@ -143,7 +142,7 @@ header.header_pagina
         color: #666
         text-align: center
     .linha
-        height: 3px
+        height: 2px
         position: relative
         display: flex
         align-items: center
@@ -151,7 +150,7 @@ header.header_pagina
         &:after
             content: ''
             display: block
-            width: 80px
+            width: 56px
             height: 100%
             position: absolute
             top: 0
@@ -171,7 +170,7 @@ header.header_pagina
     max-width: 300px
     .linha
         width: 300px
-        height: 3px
+        height: 2px
         display: flex
         align-items: flex-start
         justify-content: flex-start
@@ -179,10 +178,10 @@ header.header_pagina
         &:after
             content: ''
             display: block
-            width: 77px
+            width: 56px
             height: 100%
             position: absolute
-            top: 5px
+            top: 8px
             left: 0px
             text-align: left
             background-color: #FFF
@@ -195,15 +194,16 @@ header.header_pagina
 
 .bloco_banner--padrao
     width: 100%
-    height: 600px
+    height: 500px
     position: relative
     margin-bottom: 20px
     &:hover .controlador
         opacity: 1
     .controle
-        position: relative
+        position: absolute
         margin: 0 auto
-        margin-top: 605px
+        bottom: -40px
+        left: 50%
         display: table
         z-index: 10
     .controle li 
@@ -224,12 +224,13 @@ header.header_pagina
         opacity: 1
     figure
         width: 100%
-        height: 600px
+        height: 500px
         position: absolute
         top: 0
         left: 0
         background-position: center center
-        background-size: contain
+        background-size: cover
+        background-repeat: no-repeat
         display: none
         opacity: 0
         border-radius: 2px
@@ -270,7 +271,8 @@ header.header_pagina
         height: 80px
         line-height: 80px
         position: absolute
-        top: 300px
+        top: 50%
+		margin-top: -250px
         opacity: 0
         z-index: 2
         font-size: 40px
@@ -286,14 +288,10 @@ header.header_pagina
         background: url('../images/seta_direita.png') no-repeat
 
 
-#banner_principal figure 
-    background-repeat:  no-repeat
-    background-size: contain
-
 
 
 #sobre
-    width: calc(100% - 40px)
+    width: 100%
     display: flex
     align-items: flex-start
     justify-content: center
@@ -306,6 +304,12 @@ header.header_pagina
         width: 78px
         height: 115px
         background: url('../images/quadrado_sobre.png') no-repeat top left
+    .conteudo
+        width: 100%
+        max-width: 1000px
+        display: flex
+        align-items: flex-start
+        justify-content: center
     .esquerdo
         max-width: 400px
         display: flex
@@ -338,6 +342,37 @@ header.header_pagina
     .direito
         figure img
             height: 400px
+
+@media screen and (max-width: 1030px)
+    #sobre
+        padding: 0px 20px
+        .direito figure img
+            height: 340px
+        .esquerdo p
+            padding-right: 0px
+            justify-content: center
+@media screen and (max-width: 900px)
+    #sobre .direito
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 100
+        figure img
+            height: 270px
+    #sobre .conteudo
+        align-items: center
+        justify-content: center
+
+@media screen and (max-width: 800px)
+    #sobre .conteudo
+        flex-direction: column-reverse
+    #sobre .esquerdo
+        margin-top: 40px
+        align-items: center
+        justify-content: center
+        margin-right: 0px
+        p
+            text-align: center
 
 #especialidade
     width: 100%
@@ -382,12 +417,22 @@ header.header_pagina
             margin-bottom: 50px
             position: relative
             min-height: 320px
+            a
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0px
+                left: 0px
+                right: 0px
+                bottom: 0px
+                cursor: pointer
             figure img
+                height: 160px
                 border-top-left-radius: 20px
             h1
                 font-style: normal
                 font-weight: bold
-                font-size: 24px
+                font-size: 2.2em
                 line-height: 56px
                 color: #000000
                 padding: 0px 30px
@@ -398,7 +443,41 @@ header.header_pagina
                 line-height: 1.5em
                 color: #7D7987
                 padding: 0px 30px
+                
+@media screen and (max-width: 1000px)
+    #especialidade .conteudo
+        width: calc(100% - 100px)
+    #especialidade .conteudo article
+        col(2, 10px)
+        min-height: auto
+    #especialidade .conteudo article.ultimo
+        min-height: 320px
+    #especialidade .bg
+        width: 100%
+        background: url(../images/bg_especialidade.png) no-repeat center
 
+@media screen and (max-width: 800px)
+    #especialidade .conteudo article figure img
+        height: 130px
+@media screen and (max-width: 670px)
+    #especialidade .conteudo
+        width: 100%
+        justify-content: center
+    #especialidade .conteudo article 
+        width: calc(100% - 80px)
+    #especialidade .conteudo article figure
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+    #especialidade .conteudo article figure img
+        height: 160px
+    #especialidade .conteudo article.ultimo
+        min-height: 100px
+@media screen and (max-width: 400px)
+    #especialidade .conteudo article figure img
+        height: 100%
+        width: 100%
 
 #agenda
     width: 100%
@@ -440,6 +519,7 @@ header.header_pagina
             font-size: 18px
             line-height: 30px
             color: #FFFFFF
+            text-align: left
             &.margin
                 margin-top: 40px
                 margin-bottom: 40px
@@ -511,6 +591,26 @@ header.header_pagina
                 border-radius: 10px
                 margin-bottom: 30px
 
+@media screen and (max-width: 1225px)
+    #agenda .centro
+        padding: 0px 20px
+@media screen and (max-width: 870px)
+    #agenda .centro
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        .direito form
+            margin-top: 40px
+        .direito
+        .esquerdo
+            width: 100%
+            justify-content: center
+    #agenda .centro .direito form input, #agenda .centro .direito form textarea
+    #agenda .centro .direito form label
+    #agenda .centro .direito form button
+        width: 100%
+        max-width: calc(100% - 40px)
+
 #localizacao
     width: 100%
     display: flex
@@ -550,8 +650,17 @@ header.header_pagina
                 -o-transform: rotate(90deg)
                 transform: rotate(90deg)
         .direito
+            position: relative
             figure img
                 height: 393px
+            a
+                width: 100%
+                height: 100%
+                top: 0px
+                left: 0px
+                right: 0px
+                bottom: 0px
+                position: absolute
     .quadrado_footer
         position: absolute
         right: -50px
@@ -565,5 +674,15 @@ header.header_pagina
         -o-transform: rotate(90deg)
         transform: rotate(90deg)
 
+@media screen and (max-width: 1030px)
+    #localizacao .centro
+        padding: 0px 20px
+@media screen and (max-width: 940px)
+    #localizacao .centro
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        .direito
+            margin-top: 30px
 
 @import "template.styl"

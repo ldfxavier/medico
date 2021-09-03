@@ -28,21 +28,23 @@
 
 <section id="sobre">
 	<div class="quadrado"></div>
-	<article class="esquerdo">
-		<h1>DR. ANDRÉ NERI</h1>
-		<p>
-			Residência em Cardiologia no Instituto Dante Pazzanese de Cardiologia
-			Especialização em Arritmia Clínica e Marcapasso no Instituto do Coração (InCor) da Faculdade de Medicina da Universidade de São Paulo (FMUSP)
-			Título de Especialista em Cardiologia pela Sociedade Brasileira de Cardiologia
-			Membro da Sociedade Brasileira de Cardiologia
-		</p>
-		<a href="#">Saiba mais</a>
-	</article>
-	<article class="direito">
-		<figure>
-			<img src="<?= LINK_PADRAO ?>/images/foto_1.png" alt="">
-		</figure>
-	</article>
+	<div class="conteudo">
+		<article class="esquerdo">
+			<h1>DR. ANDRÉ NERI</h1>
+			<p>
+				Residência em Cardiologia no Instituto Dante Pazzanese de Cardiologia
+				Especialização em Arritmia Clínica e Marcapasso no Instituto do Coração (InCor) da Faculdade de Medicina da Universidade de São Paulo (FMUSP)
+				Título de Especialista em Cardiologia pela Sociedade Brasileira de Cardiologia
+				Membro da Sociedade Brasileira de Cardiologia
+			</p>
+			<a href="#">Saiba mais</a>
+		</article>
+		<article class="direito">
+			<figure>
+				<img src="<?= LINK_PADRAO ?>/images/foto_1.png" alt="">
+			</figure>
+		</article>
+	</div>
 </section>
 
 <section id="especialidade">
@@ -62,12 +64,13 @@
 				</figure>
 				<h1>Nariz</h1>
 				<p>Buy  your medicines with our mobile application with a simple delivery system</p>
+				<a href="#"></a>
 			</article>	
 		<?php
 			$i++;
 		}
 		?>
-		<article>
+		<article class="ultimo">
 			<div class="quadrado"></div>
 		</article>
 	</div>
@@ -128,6 +131,7 @@
 		<article class="direito">
 			<div class="mapa">
 				<figure>
+					<a href="https://www.google.com/maps/place/R.+Cincinato+Braga,+340+-+6%C2%BA+andar+-+Bela+Vista,+S%C3%A3o+Paulo+-+SP,+01333-010/data=!4m2!3m1!1s0x94ce59bc23f93033:0x85cba9b6ee454db5?sa=X&ved=2ahUKEwjE_Z_eyeHyAhU7q5UCHVy7D_QQ8gF6BAgMEAE" target="_blank"></a>
 					<img src="<?= LINK_PADRAO ?>/images/mapa.png" alt="">
 				</figure>
 			</div>

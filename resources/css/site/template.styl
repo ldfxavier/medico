@@ -1,5 +1,6 @@
 @import "../geral/mixins.styl"
 @import "../geral/variaveis.styl"
+@import "../geral/cor.styl"
 
 
 icone(site, 1)
@@ -56,6 +57,8 @@ body
                             font-weight: bold
         .bottom
             width: 100%
+            .mobile-menu-icon
+                display: none
             ul
                 width: 100%
                 display: flex
@@ -68,9 +71,76 @@ body
                     font-size: 1.5em
                     line-height: 23px
                     color: #7D7987
-                    &.active
+                    cursor: pointer
+                    &:hover
                         color: #1F1534
                         font-weight: bold
+                    a:hover
+                        color: #1F1534
+                        font-weight: bold
+
+
+@media screen and (max-width: 980px)
+    .header
+        height: 250px
+    .header .menu .topo
+        position: absolute
+        top: 0px
+        right: 0px
+        padding-top: 10px
+        padding-bottom: 10px
+        border-bottom: 1px solid #f4f9ff
+    .header .menu
+        justify-content: center
+    .header .centro
+        margin-top: 50px
+@media screen and (max-width: 760px)
+    .header .menu .topo ul li
+        margin-right: 10px
+    .header .menu .topo ul li img
+        height: 25px
+    .header .menu .topo ul li p
+        font-size: 1.2em
+    .header .menu .bottom
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        margin-right: 20px
+    /* MENU MOBILE */
+    .header
+        height: 190px
+    .header .menu .bottom .mobile-menu-icon
+        display: block
+        cursor: pointer
+        margin-right: 30px
+        i
+            font-size: 3.5em
+            line-height: 1.5em
+    .header .menu .bottom .menu-container
+        display: none
+    .header .centro a img
+        height: 130px
+    .header .menu .bottom .menu-container.ativo
+        width: 100%
+        display: flex
+        position: absolute
+        background-color: #fff
+        top: 190px
+        right: 0px
+        box-shadow__padrao()
+        ul
+            width: 100%
+            flex-direction: column
+            background-color: #fff
+            border-top: 2px solid $cor
+            li
+                margin-top: 20px
+                &:last-child
+                    padding-bottom: 20px
+
+@media screen and (max-width: 500px)
+    .header .menu .topo ul li p
+        display: none
 
 
 footer
@@ -80,6 +150,19 @@ footer
     justify-content:center
     background-color: #17567F
     margin-top: 80px
+    position: relative
+    .quadrado
+        width: 90px
+        height: 115px
+        position: absolute
+        left: 10px
+        bottom: -10px
+        background: url('../images/quadrado_footer.png') no-repeat bottom left
+        -webkit-transform: rotate(90deg)
+        -moz-transform: rotate(90deg)
+        -ms-transform: rotate(90deg)
+        -o-transform: rotate(90deg)
+        transform: rotate(90deg)
     .centro
         width: 100%
         max-width: 1200px
@@ -143,3 +226,24 @@ footer
                     text-align: left
 
 
+
+@media screen and (max-width: 960px)
+    footer .centro
+        padding: 0px 20px
+        max-width: 620px
+    footer .centro article
+        col(2, 10px)
+        &.texto
+            align-items: flex-start
+            justify-content: flex-start
+
+@media screen and (max-width: 600px)
+    footer .centro article
+        width: 100%
+    footer .centro article.redes ul
+        width: 100%
+    footer .centro
+        max-width: 400px
+        flex-direction: column
+        article
+            min-height: auto

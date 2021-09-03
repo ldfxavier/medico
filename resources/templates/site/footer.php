@@ -5,7 +5,7 @@
 </main>
 
 <footer>
-
+	<div class="quadrado"></div>
 	<div class="centro">
 		<article class="redes">
 			<ul>

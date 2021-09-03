@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="author" content="Dr André Neri" />
+    <meta name="author" content="Dr André Neri  - Otorrinolaringologista" />
     <meta name="robots" content="<?=$header_robots;?>">
-    <meta name="description" content="Site Dr André Neri" />
+    <meta name="description" content="Dr André Neri - Otorrinolaringologista" />
 
     <meta name="twitter:card" value="summary">
     <meta name="twitter:site" content="<?=$header_url;?>">
     <meta name="twitter:title" content="<?=$header_titulo;?>">
-    <meta name="twitter:description" content="Site Dr André Neri">
+    <meta name="twitter:description" content="Dr André Neri - Otorrinolaringologista">
     <meta name="twitter:creator" content="<?=$header_titulo;?>">
     <meta name="twitter:image" content="<?=$header_imagem;?>">
 
     <meta property="og:title" content="<?=$header_titulo;?>" />
     <meta property="og:url" content="<?=$header_url;?>" />
     <meta property="og:image" content="<?=$header_imagem;?>" />
-    <meta property="og:description" content="Site Dr André Neri" />
+    <meta property="og:description" content="Dr André Neri - Otorrinolaringologista" />
 
     <?php if (!empty($header_favicon)): ?>
     <link rel="icon" href="<?=$header_favicon;?>" type="image/png">
@@ -65,13 +65,16 @@
 						</ul>
 					</div>
 					<div class="bottom">
-						<ul>
-							<li class="active">Home</li>
-							<li> <a href="#sobre">Dr André Neri</a> </li>
-							<li> <a href="#especialidade">Especialidades</a> </li>
-							<li> <a href="#agenda">Agendamentos</a> </li>
-							<li> <a href="#localizacao">Localização</a> </li>
-						</ul>
+						<div class="mobile-menu-icon"><i  data-font="&#xf0c9;" aria-hidden="true" class="color_cor"></i></div>
+						<div class="menu-container ativo">
+							<ul>
+								<li class="active"><a href="#conteudo_principal">Home</a> </li>
+								<li> <a href="#sobre">Dr André Neri</a> </li>
+								<li> <a href="#especialidade">Especialidades</a> </li>
+								<li> <a href="#agenda">Agendamentos</a> </li>
+								<li> <a href="#localizacao">Localização</a> </li>
+							</ul>
+						</div>
 					</div>
 
 				</nav>

@@ -46,6 +46,23 @@ $(function() {
         });
     }).scroll();
 
+	$(".header .menu .bottom .mobile-menu-icon").click(function(e) {
+		e.preventDefault();
+
+		$('.menu-container').toggleClass('ativo');
+
+	});
+
+	   // Ação quando a janela mudar de tamanho
+	$(window).resize(function() {
+
+        if ($(window).width() <= 760 && !$('.header .menu .bottom .menu-container').hasClass('ativo')) {
+
+			$('.header .menu .bottom .menu-container').removeClass('ativo');
+
+        } 
+
+    });
 
 
 });
