@@ -31,11 +31,6 @@
 <div class="linha">
 	<fieldset>
 		<div class="legenda">DADOS</div>
-		<label>Título:</label>
-		<input type="text" data-tamanho="<?= $coluna->titulo->tamanho ?>" name="titulo" value="<?= P::r($r, 'titulo'); ?>" placeholder="Digite um título">
-
-		<label>Texto:</label>
-		<input type="text" data-tamanho="<?= $coluna->texto->tamanho ?>" name="texto" value="<?= P::r($r, 'texto'); ?>" placeholder="Digite um texto">
 
 		<label>Data inicio:</label>
 		<?= Form::datahora('data_postagem_inicio', P::r($r, 'data->postagem_inicio->valor'), null, true); ?>
@@ -62,21 +57,10 @@
 		<div class="legenda">CONFIGURAÇÕES</div>
 		<label>Ordem:</label>
 		<input type="text" name="ordem" value="<?= P::r($r, 'ordem'); ?>" placeholder="Digite uma ordem">
-		<label>Onde o banner será publicado:</label>
-
-        <?php if(TEMPLATE == 'unareg'): ?>
-            <?php
-                $Status = new StatusModel;
-                echo Form::select('tipo', ['' => 'Escolha o tipo', 1 => 'Rotativo'], P::r($r, 'tipo->valor'));
-            ?>
-        <?php else: ?>
-		<?php
-			$Status = new StatusModel;
-			echo Form::select('tipo', $Status->select('banner', 'tipo', array('' => 'Escolha uma opção')), P::r($r, 'tipo->valor'));
-		?>
-        <?php endif; ?>
+		
 		<label>Status:</label>
 		<?php
+			$Status = new StatusModel;
 			echo Form::select('status', $Status->select('banner', 'status', array('' => 'Escolha uma opção')), P::r($r, 'status->valor'));
 		?>
 	</fieldset>

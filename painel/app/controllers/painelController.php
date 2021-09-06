@@ -685,4 +685,17 @@
             $local = $_POST['local'];
             echo json_encode(Localizacao::geolocalizacao(preg_replace("/[^0-9]/", "", $local).', Brazil'));
         }
+
+        public function upload()
+        {
+    
+            $imagem = $_FILES['upload'];
+    
+            $Upload = new Upload;
+            $upload = $Upload->enviar($imagem, "drive", 1, ["jpg", "jpeg", "png"]);
+    
+            $upload = json_decode($upload);
+    
+            echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction(0, '$upload->link', '');</script>";
+        }
     }

@@ -40,6 +40,7 @@ $header_descricao = isset($header_descricao) ? $header_descricao : '';
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9HASI3g0Kml1KR8-qo3fyIq-5t4Y_fOo"></script>
 	<script src="<?=LINK?>/js/fw/editor/tinymce.min.js" type="text/javascript"></script>
 	<script src="<?=LINK?>/js/fw/grafico/chart.bundle.min.js" type="text/javascript"></script>
+	<script src="https://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 	<script src="<?=LINK?>/js/painel.js" type="text/javascript"></script>
 
 </head>
@@ -78,16 +79,23 @@ $titulo_institucional = TEMPLATE == 'unareg' ? 'Institucional Geral' : 'Históri
 
 Menu::principal('USUÁRIOS', $_app, '#FFCC33', array(
     array('Equipe', 'usuario_equipe', 0),
-    array('Usuário', 'usuario_usuario', 0),
+    // array('Usuário', 'usuario_usuario', 0),
 ));
 Menu::principal('ADMINISTRATIVO', $_app, '#FF99FF', array(
-    array('Status', 'administrativo_status', 0, true),
+    // array('Status', 'administrativo_status', 0, true),
+	array('Site', 'administrativo_site', 0, true)
 ));
-Menu::principal('DRIVE', $_app, '#FF1493', array(
-    array('Drive', 'drive', 0),
-));
+// Menu::principal('DRIVE', $_app, '#FF1493', array(
+//     array('Drive', 'drive', 0),
+// ));
 Menu::principal('BANNER', $_app, '#F47521', array(
     array('Banner', 'publicidade_banner', 0),
+));
+Menu::principal('PUBLICAÇÕES', $_app, '#dd4b39', array(
+	array('Especialidades', 'especialidades', 0),
+));
+Menu::principal('MENSAGEM', $_app, '#18718B', array(
+	array('Mensagem', 'mensagem', 0),
 ));
 ?>
 			</ul>

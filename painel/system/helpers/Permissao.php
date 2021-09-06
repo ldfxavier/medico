@@ -49,6 +49,16 @@ class Permissao
                 'per_administrativo_status_deletar' => 'Deletar área',
             ),
         ),
+		'administrativo_site' => array(
+			'titulo' => 'Site',
+			'tabela' => 'site',
+			'model' => 'SiteModel',
+			'permissao' => 'per_administrativo_site',
+			'lista' => array(
+				'per_administrativo_site_visualizar' => 'Visualizar lista',
+				'per_administrativo_site_editar' => 'Editar dados'
+			)
+		),
         'usuario_equipe' => array(
             'titulo' => 'Equipe',
             'tabela' => 'equipe',
@@ -76,6 +86,32 @@ class Permissao
                 'per_usuario_usuario_download' => 'Download lista usuário',
             ),
         ),
+        'especialidades' => array(
+            'titulo' => 'Especialidades',
+            'tabela' => 'especialidades',
+            'model' => 'EspecialidadesModel',
+            'permissao' => 'per_especialidades',
+            'lista' => array(
+                'per_especialidades_visualizar' => 'Visualziar lista',
+                'per_especialidades_detalhe' => 'Detalhe',
+                'per_especialidades_add' => 'Adicionar',
+                'per_especialidades_editar' => 'Editar',
+                'per_especialidades_deletar' => 'Deletar',
+                'per_especialidades_download' => 'Download lista usuário',
+            ),
+        ),
+		'mensagem' => array(
+			'titulo' => 'Mensagem',
+			'tabela' => 'mensagem',
+			'model' => 'MensagemModel',
+			'permissao' => 'per_mensagem',
+			'lista' => array(
+				'per_mensagem_visualizar' => 'Visualizar lista',
+				'per_mensagem_detalhe' => 'Detalhe da mensagem',
+				'per_mensagem_editar' => 'Editar mensagem',
+				'per_mensagem_deletar' => 'Deletar mensagem'
+			)
+		),
         'arquivo' => array(
             'tabela' => 'arquivo',
             'model' => 'ArquivoModel',

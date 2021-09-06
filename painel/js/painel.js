@@ -2895,10 +2895,18 @@ $(function() {
           if ($(this).attr("data-editor") == 1)
             valor = tinyMCE.get(nome).getContent();
           else valor = $(this).val();
+          if($(this).attr('data-ckeditor') == 1) valor = CKEDITOR.instances.editor_texto.getData();
+          else if($(this).attr('data-ckeditor') == 2) valor = CKEDITOR.instances.editor_texto2.getData();
+          else if($(this).attr('data-ckeditor') == 3) valor = CKEDITOR.instances.editor_texto3.getData();
+          else valor = $(this).val();
           dados[nome] = valor;
         } else if (false == false && $(this).attr("data-falso") == undefined) {
           if ($(this).attr("data-editor") == 1)
             valor = tinyMCE.get(nome).getContent();
+          else valor = $(this).val();
+          if($(this).attr('data-ckeditor') == 1) valor = CKEDITOR.instances.editor_texto.getData();
+          else if($(this).attr('data-ckeditor') == 2) valor = CKEDITOR.instances.editor_texto2.getData();
+          else if($(this).attr('data-ckeditor') == 3) valor = CKEDITOR.instances.editor_texto3.getData();
           else valor = $(this).val();
           dados[nome] = valor;
         }
@@ -4581,4 +4589,9 @@ $(function() {
     );
     return false;
   });
+});
+
+CKEDITOR.replace("editor_texto", {
+  height: 300,
+  filebrowserUploadUrl: $('#PAINEL').val() + "/upload"
 });

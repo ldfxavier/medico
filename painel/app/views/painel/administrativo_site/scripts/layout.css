@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.app_geral_lista ul.ul_lista li .td:nth-child(2) {
+	width: calc(100% - 250px);
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(3) {
+	width: 150px;
+}
