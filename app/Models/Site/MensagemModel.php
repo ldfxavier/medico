@@ -50,7 +50,7 @@
                 $dados = [
 					'titulo' => 'CONTATO',
 					'nome' => 'SITE',
-                    'email' =>  MAIL_USUARIO,
+                    'email' =>  MAIL_ENVIO,
 					'mensagem' => "<p><b>Nova mensagem do contato do site.</b></p><br><p>Nome: {$nome}</p> <p>Telefone: {$telefone}</p> <p>E-mail: {$email}</p> <p>Mensagem: {$texto}</p>"
                 ];
 
