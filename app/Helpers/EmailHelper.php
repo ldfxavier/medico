@@ -19,29 +19,21 @@
 
 		private $girar_email = [
 			[
-				'host' => 'mail.marktclub.com.br',
-				'porta' => 587,
-				'login' => 'nao-responda@marktclub.com.br',
-				'senha' => 'Email@2016',
-				'envio' => ['NÃO RESPONDA', 'nao-responda@marktclub.com.br'],
-				'resposta' => ['NÃO RESPONDA', 'atendimento@marktclub.com.br']
+				'host' => '',
+				'porta' => '',
+				'login' => '',
+				'senha' => '',
+				'envio' => ['NÃO RESPONDA', ''],
+				'resposta' => ['NÃO RESPONDA', '']
 			],
 			[
-				'host' => 'mail.marktclub.com.br',
-				'porta' => 587,
-				'login' => 'nao-responda2@marktclub.com.br',
-				'senha' => 'Email@2016',
-				'envio' => ['NÃO RESPONDA', 'nao-responda@marktclub.com.br'],
-				'resposta' => ['NÃO RESPONDA', 'atendimento@marktclub.com.br']
-			],
-			[
-				'host' => 'mail.marktclub.com.br',
-				'porta' => 587,
-				'login' => 'nao-responda3@marktclub.com.br',
-				'senha' => 'Email@2016',
-				'envio' => ['NÃO RESPONDA', 'nao-responda@marktclub.com.br'],
-				'resposta' => ['NÃO RESPONDA', 'atendimento@marktclub.com.br']
-			],
+				'host' => '',
+				'porta' => '',
+				'login' => '',
+				'senha' => '',
+				'envio' => ['NÃO RESPONDA', ''],
+				'resposta' => ['NÃO RESPONDA', '']
+			]
 		];
 
         public function __construct($array = []){

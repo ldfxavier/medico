@@ -120,7 +120,7 @@ endif;
 				endif;
 			?>
 			<div class="link">
-				<a href="<?= $dado->link_agendamento ?>">AGENDAR</a>
+				<a href="<?= $dado->link_agendamento ?>"  target="_blank">AGENDAR</a>
 			</div>
 		</article>
 		<article class="direito">

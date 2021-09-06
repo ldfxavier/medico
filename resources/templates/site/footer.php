@@ -37,7 +37,7 @@
 						<span class="bold">Whatsapp</span>
 						<span><?= $dado->whatsapp->valor ?></span>
 					</p>
-					<a class="link" href="<?= $dado->whatsapp->link ?>"></a>
+					<a class="link" href="<?= $dado->whatsapp->link ?>"  target="_blank"></a>
 				</li>
 			<?php
 				endif;
@@ -62,7 +62,7 @@
 			<?php
 				if (isset($dado->twitter) && !empty($dado->twitter)):
 			?>	
-			<li><a href="<?= $dado->twitter ?>"><img src="<?= LINK_PADRAO?>/images/twitter_footer.png" alt=""></a></li>
+			<li><a href="<?= $dado->twitter ?>"  target="_blank"><img src="<?= LINK_PADRAO?>/images/twitter_footer.png" alt=""></a></li>
 			<?php
 				endif;
 			?>

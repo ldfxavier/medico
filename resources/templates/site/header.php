@@ -58,7 +58,7 @@
 									<span class="color_cor azul">Whatsapp</span>
 									<span class="opaco"><?= $dado->whatsapp->valor ?></span>
 								</p>
-								<a class="link" href="<?= $dado->whatsapp->link ?>"></a>
+								<a class="link" href="<?= $dado->whatsapp->link ?>"  target="_blank"></a>
 							</li>
 							<?php
 								endif;
