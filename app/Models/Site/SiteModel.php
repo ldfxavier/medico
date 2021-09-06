@@ -64,7 +64,34 @@
 
 			return $array[0];
 
+       
+		}
+		
+		public function sobre(){
+			
+
+			$busca = $this->select()->campo(['cod', 'sobre'])->get();
+
+			if(!$this->validar_erro($busca)):
+				return [];
+			endif;
+			
+			$array = [];
+
+			foreach($busca as $r):
+				$converter = new Converter;
+
+				$array[] = (Object)[
+					'id' => $r->cod,
+					'sobre' => $r->sobre,
+				];
+
+			endforeach;
+
+			return $array[0];
+
         }
+        
         
 
 	}

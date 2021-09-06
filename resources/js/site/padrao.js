@@ -18,6 +18,13 @@ $(function() {
     });
 
 
+    $(".abre_popup_sobre").click(function(e) {
+        e.preventDefault();
+        let url = $(this).attr("data-href");
+        Pagina.abrir(url);
+    });
+
+
 
     //MENU ICON
     //ANIMA AO CLICAR NO lINK

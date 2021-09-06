@@ -745,14 +745,14 @@ header.header_pagina
         &.fechar
             color: #666
     h1
-        font-size: 1.8em
+        font-size: 2em
         color: $cor
         flex-grow: 1
         flex-basis: 0%
         font-weight: bold
 @media screen and (max-width: 1000px)
     .header-popup .h1_voltar
-        font-size: 1.4em
+        font-size: 1.8em
 
 
 
@@ -783,6 +783,27 @@ header.header_pagina
         p
             font-size: 1.5em
             line-height: 1.5em
-            
-
+        .container_video
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin-bottom: 20px
+        .container_video iframe
+            width: 100%
+            max-width: 600px
+            min-height: 400px  
+        .container_imagem
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin-bottom: 20px
+			
+@media screen and (max-width: 600px)
+	.bloco-popup__botao .bloco-popup__conteudo .container_imagem img
+		width: 100%
+                    
 @import "template.styl"

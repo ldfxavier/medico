@@ -12,7 +12,11 @@ Route::grupo('index', function () {
         'css' => 'login,login_cadastro'
     ]);
 
-    Route::view('popup_especialidade', '/popup/especialidade', 'Index@popup_especialidade', [
+    Route::view('popup_especialidade', '/popup/especialidade/{url}', 'Index@popup_especialidade', [
+        'get' => ['ajax'],
+    ]);
+
+    Route::view('popup_sobre', '/popup/sobre', 'Index@popup_sobre', [
         'get' => ['ajax'],
     ]);
 

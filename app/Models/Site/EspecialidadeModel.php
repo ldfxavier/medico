@@ -27,7 +27,7 @@
 			
 			$agora = date('Y-m-d H:i:s');
 
-			$busca = $this->select()->campo(['cod', 'imagem', 'titulo', 'texto', 'video',  'data_postagem_inicio', 'status'])->where([
+			$busca = $this->select()->campo(['cod', 'imagem', 'titulo', 'texto', 'video',  'data_postagem_inicio', 'status', 'url'])->where([
 				['status', 1],
 				['data_postagem_inicio', '<=', $agora],
 			])->order('data_postagem_inicio', 'ASC')->get();
@@ -44,6 +44,7 @@
 					'id' => $r->cod,
 					'titulo' => $r->titulo,
 					'texto' => $r->texto,
+					'url' => $r->url,
 					'imagem' => LINK_ARQUIVO.'/especialidades/'.$r->imagem,
 					'status' => $r->status,
 					'video' => (new Video)->link($r->video)->iframe(),
@@ -54,6 +55,52 @@
 			return $array;
 
         }
-        
+
+
+
+		private function montar($dado){
+
+			if($dado):
+
+
+				$Data = new Data;
+
+				$r = $dado;
+
+				$imagem = (isset($r->imagem) && !empty($r->imagem)) ? LINK_ARQUIVO.'/especialidades/'.$r->imagem : "";
+			
+				
+				return (Object)[
+					'id' => $r->cod,
+					'titulo' => $r->titulo,
+					'texto' => $r->texto,
+					'imagem' => LINK_ARQUIVO.'/especialidades/'.$r->imagem,
+					'data' => (object)[
+						'postagem' => $Data->valor($r->data_postagem_inicio)->formato('d/m/Y \à\s H:i')
+					],
+					'video' => (new Video)->link($r->video)->iframe(),
+				];
+
+			endif;
+
+			return [];
+
+		}
+
+		public function url($url){
+
+			$busca = $this->select()->campo(['cod', 'imagem', 'titulo', 'texto', 'video',  'data_postagem_inicio', 'status', 'url'])
+			->where([
+				['status', 1]
+			])->where(['url', $url])
+			->get()[0] ?? [];
+
+			if(!$busca):
+				return [];
+			endif;
+
+			return $this->montar($busca);
+
+		}
 
 	}

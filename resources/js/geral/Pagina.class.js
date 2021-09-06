@@ -10,6 +10,7 @@ class Pagina {
 		this._incluir_html();
 		this._carregar_pagina(link, data_post);
 		$('body').css('overflow-y', 'hidden');
+		$('html').css('overflow-y', 'hidden');
 	}
 	fechar(){
 		this._fechar_pagina();

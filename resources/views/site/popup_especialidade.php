@@ -2,15 +2,22 @@
 
     <header class="header-popup">	
 		<i class="voltar mobile botao_fechar" data-font="&#xe804;"></i>
-		<h1 class="h1_voltar">ESPECIALIDADES</h1>
+		<h1 class="h1_voltar"><?= $dado->titulo ?></h1>
 		<i class="fechar desktop botao_fechar" data-font="&#xe80e;"></i>
 	</header>
     <article class="bloco-popup__conteudo">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur eum deleniti. Sint error earum nisi vero, nihil provident ipsa hic labore. Pariatur minima, eum quia consectetur ratione quam? Laboriosam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur eum deleniti. Sint error earum nisi vero, nihil provident ipsa hic labore. Pariatur minima, eum quia consectetur ratione quam? Laboriosam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur eum deleniti. Sint error earum nisi vero, nihil provident ipsa hic labore. Pariatur minima, eum quia consectetur ratione quam? Laboriosam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur eum deleniti. Sint error earum nisi vero, nihil provident ipsa hic labore. Pariatur minima, eum quia consectetur ratione quam? Laboriosam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur eum deleniti. Sint error earum nisi vero, nihil provident ipsa hic labore. Pariatur minima, eum quia consectetur ratione quam? Laboriosam!</p>
+		<?php if(!empty($dado->imagem)): ?>
+		<div class="container_imagem">
+			<img src="<?= $dado->imagem ?>" alt="">
+		</div>
+		<?php endif; ?>
+		<?php if(!empty($dado->video)): ?>
+		<div class="container_video">
+			<?= $dado->video ?>
+		</div>
+		<?php endif; ?>
+
+		<?= $dado->texto ?>
     </article>
 
 </div>

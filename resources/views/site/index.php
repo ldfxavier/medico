@@ -52,13 +52,13 @@ endif;
 			<h1>DR. ANDRÉ NERI</h1>
 
 			<?php
-				if (isset($dado->sobre) && !empty($dado->sobre)):
+				if (isset($dado->sobre_chamada) && !empty($dado->sobre_chamada)):
 			?>
-			<?= $dado->sobre ?>
+			<?= $dado->sobre_chamada ?>
 			<?php
 				endif;
 			?>
-			<a href="#">Saiba mais</a>
+			<a href="#"  data-href="<?= LINK_PADRAO . '/popup/sobre'; ?>"  class="abre_popup_sobre" >Saiba mais</a>
 		</article>
 		<article class="direito">
 			<?php
@@ -91,7 +91,7 @@ endif;
 			</figure>
 			<h1><?= $e->titulo ?></h1>
 			<p><?= $e->texto ?></p>
-			<a href="#"></a>
+			<a href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' . '/' . $e->url; ?>"  class="abre_popup_especialidade"></a>
 		</article>	
 		<?php
 		endforeach;

@@ -20,9 +20,23 @@ class Index extends Controller
     }
     
 
-	public function popup_especialidade(){
+	public function popup_especialidade($url){
 			
-		return View('!site.popup_especialidade');
+		$url = (new Especialidade)->url($url);
+
+		return View('!site.popup_especialidade', [
+			'dado' => $url
+		]);
+
+	}
+	public function popup_sobre(){
+			
+		$sobre = (new Site)->sobre();
+
+
+		return View('!site.popup_sobre', [
+			'dado' => $sobre
+		]);
 
 	}
 
