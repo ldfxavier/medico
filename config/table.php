@@ -13,5 +13,8 @@ return [
     |
 	*/
 
-	'usuario_cliente' => 'usuario_cliente'
+	'usuario_cliente' => 'usuario_cliente',
+	'publicidade_banner' => 'publicidade_banner',
+	'site' => 'site',
+	'especialidades' => 'especialidades'
 ];

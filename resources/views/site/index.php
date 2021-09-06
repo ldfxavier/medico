@@ -1,47 +1,75 @@
+<?php
+if (isset($banner) && !empty($banner)):
+	?>
 <section class="bloco_banner--padrao " id="banner_principal">
 
-	<figure style="background-image: url(<?= LINK_PADRAO;?>/images/banner.png)">
-	<!-- 	<header>
-			<h1>titulo</h1>
-			<p>texto</p>
+	<?php
+	if (isset($banner) && !empty($banner)):
+		foreach ($banner as $b):
+	?>
+	<figure style="background-image: url(<?=$b->imagem;?>)">
+		<?php if(!empty($b->titulo) || !empty($b->texto)): ?>
+		<header>
+			<h1><?=$b->titulo;?></h1>
+			<p><?=$b->texto;?></p>
 		</header>
-		<a href="#" ></a> -->
+		<?php endif; ?>
+		<a href="<?=$b->url->link;?>" target="<?=$b->url->target;?>"></a>
 	</figure>
-	<figure style="background-image: url(<?= LINK_PADRAO;?>/images/banner.png)">
-	<!-- 	<header>
-			<h1>titulo</h1>
-			<p>texto</p>
-		</header>
-		<a href="#" ></a> --></figure>
+	<?php
+	endforeach;
+	endif;
+	?>
 
 	<i class="controlador prev" id="banner_principal_prev"></i>
 	<i class="controlador next" id="banner_principal_next"></i>
 
+	<?php
+	if (isset($banner) && !empty($banner)):
+		?>
 	<ul class="controle" id="controle">
-		<li data-id="0" class="hover"></li>
-		<li data-id="1"></li>
+	<?php
+		foreach ($banner as $i => $v):
+	?>  
+		<li data-id="<?= $i ?>" class="<?= $i == 0 ? 'hover' : ''; ?>"></li>
+	<?php
+		endforeach;
+	?>
 	</ul>
+	<?php
+	endif;
+	?>
 
 </section>
-
+<?php
+endif;
+?>
 
 <section id="sobre">
 	<div class="quadrado"></div>
 	<div class="conteudo">
 		<article class="esquerdo">
 			<h1>DR. ANDRÉ NERI</h1>
-			<p>
-				Residência em Cardiologia no Instituto Dante Pazzanese de Cardiologia
-				Especialização em Arritmia Clínica e Marcapasso no Instituto do Coração (InCor) da Faculdade de Medicina da Universidade de São Paulo (FMUSP)
-				Título de Especialista em Cardiologia pela Sociedade Brasileira de Cardiologia
-				Membro da Sociedade Brasileira de Cardiologia
-			</p>
+
+			<?php
+				if (isset($dado->sobre) && !empty($dado->sobre)):
+			?>
+			<?= $dado->sobre ?>
+			<?php
+				endif;
+			?>
 			<a href="#">Saiba mais</a>
 		</article>
 		<article class="direito">
+			<?php
+				if (isset($dado->imagem) && !empty($dado->imagem)):
+			?>
 			<figure>
-				<img src="<?= LINK_PADRAO ?>/images/foto_1.png" alt="">
+				<img src="<?= $dado->imagem ?>" alt="">
 			</figure>
+			<?php
+				endif;
+			?>
 		</article>
 	</div>
 </section>
@@ -54,21 +82,22 @@
 	</div>
 	<div class="conteudo">
 		<?php
-		$i = 1;
-		while ($i <= 5) {
+		if (isset($especialidade) && !empty($especialidade)):
+			foreach ($especialidade as $e):
 		?>
-			<article>
-				<figure>
-					<img src="<?= LINK_PADRAO ?>/images/nariz.png" alt="">
-				</figure>
-				<h1>Nariz</h1>
-				<p>Buy  your medicines with our mobile application with a simple delivery system</p>
-				<a href="#"></a>
-			</article>	
+		<article>
+			<figure>
+				<img src="<?= $e->imagem ?>" alt="">
+			</figure>
+			<h1><?= $e->titulo ?></h1>
+			<p><?= $e->texto ?></p>
+			<a href="#"></a>
+		</article>	
 		<?php
-			$i++;
-		}
+		endforeach;
+		endif;
 		?>
+
 		<article class="ultimo">
 			<div class="quadrado"></div>
 		</article>
@@ -82,15 +111,17 @@
 				<h1>Agende sua consulta</h1>
 				<div class="linha"></div>
 			</div>
-			<ul>
-				<li>CONSULTA PRESENCIAL</li>
-				<li>- Consulta Particular</li>
-				<li>- Consulta Particular + Eletrocardiograma</li>
-				<li>₪ CONSULTA ONLINE POR VIDEOCHAMADA (TELEMEDICINA)</li>
-				<li>- Consulta Particular </li>
-			</ul>
-			<p class="margin">Para mais informações sobre Consulta Online, clique aqui.</p>
-			<p>OBS: Mesmo que não façamos parte da rede credenciada de Planos de Saúde, você pode se consultar. São fornecidos Recibos para solicitar Reembolso do valor pago para os Planos de Saúde/Convênios. Se você tiver dúvidas, entre em contato com seu convênio ou conosco.</p>
+
+			<?php
+				if (isset($dado->agendamento) && !empty($dado->agendamento)):
+			?>
+				<?= $dado->agendamento ?>
+			<?php
+				endif;
+			?>
+			<div class="link">
+				<a href="<?= $dado->link_agendamento ?>">AGENDAR</a>
+			</div>
 		</article>
 		<article class="direito">
 			<form action="" method="post">
@@ -120,17 +151,22 @@
 	<div class="centro">
 		<article class="esquerdo">
 			<div class="quadrado"></div>
-			<ul>
-				<li>Rua Cincinato Braga, 340 - 6º Andar</li>
-				<li>Bela Vista</li>
-				<li>São Paulo - SP</li>
-			</ul>
+
+			<?php
+				if (isset($dado->endereco) && !empty($dado->endereco)):
+			?>
+				<ul>
+					<li><?= $dado->endereco ?></li>
+				</ul>
+			<?php
+				endif;
+			?>
 			
 		</article>
 		<article class="direito">
 			<div class="mapa">
 				<figure>
-					<a href="https://www.google.com/maps/place/R.+Cincinato+Braga,+340+-+6%C2%BA+andar+-+Bela+Vista,+S%C3%A3o+Paulo+-+SP,+01333-010/data=!4m2!3m1!1s0x94ce59bc23f93033:0x85cba9b6ee454db5?sa=X&ved=2ahUKEwjE_Z_eyeHyAhU7q5UCHVy7D_QQ8gF6BAgMEAE" target="_blank"></a>
+					<a href=<?= $dado->mapa ?> target="_blank"></a>
 					<img src="<?= LINK_PADRAO ?>/images/mapa.png" alt="">
 				</figure>
 			</div>

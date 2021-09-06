@@ -4,7 +4,7 @@ namespace App\Controllers\Site;
 
 use App\Helpers\Auth;
 use App\Helpers\Validar;
-use App\Models\Site\UsuarioCliente;
+use App\Models\Site\{UsuarioCliente, PublicidadeBanner, Site, Especialidade};
 use System\Controller;
 
 class Index extends Controller
@@ -12,7 +12,11 @@ class Index extends Controller
 
     public function index()
     {
-        return View("site.index");
+        return View("site.index", [
+			'banner' => (new PublicidadeBanner)->home(),
+			'dado' => (new Site)->home(),
+			'especialidade' => (new Especialidade)->home()
+		]);
     }
     
 

@@ -1,7 +1,7 @@
 
 
 			<div id="widget_wpp" class="fadeInDown">
-				<a href="https://api.whatsapp.com/send/?phone=5561998404040" target="_blank">
+				<a href="<?= $dado->whatsapp->link ?>" target="_blank">
 					<i data-font="&#xe82d;"></i>
 				</a>
 			</div>
@@ -14,51 +14,93 @@
 	<div class="centro">
 		<article class="redes">
 			<ul>
-				<li>
-					<img src="<?= LINK_PADRAO ?>/images/email_footer.png" alt="email">
-					<p>
-						<span class="bold">E-mail</span>
-						<span>cirurgiasoto@gmail.com</span>
-					</p>
-				</li>
+
+			<?php
+				if (isset($dado->email) && !empty($dado->email)):
+			?>
+			<li>
+				<img src="<?= LINK_PADRAO ?>/images/email_footer.png" alt="email">
+				<p>
+					<span class="bold">E-mail</span>
+					<span><?= $dado->email?></span>
+				</p>
+			</li>
+			<?php
+				endif;
+			?>
+			<?php
+				if (isset($dado->whatsapp->valor) && !empty($dado->whatsapp->valor)):
+			?>
 				<li>
 					<img src="<?= LINK_PADRAO ?>/images/whatsapp_footer.png" alt="whatsapp">
 					<p>
 						<span class="bold">Whatsapp</span>
-						<span>+55 61 99840 4040</span>
+						<span><?= $dado->whatsapp->valor ?></span>
 					</p>
-					<a class="link" href="https://api.whatsapp.com/send/?phone=5561998404040"></a>
+					<a class="link" href="<?= $dado->whatsapp->link ?>"></a>
 				</li>
+			<?php
+				endif;
+			?>
 			</ul>
 			<ul class="rede_linha">
-				<li><a href="https://www.facebook.com/doutorandreneri/" target="_blank"><img src="<?= LINK_PADRAO?>/images/facebook_footer.png" alt=""></a></li>
-				<li><a href="https://www.instagram.com/dr.andreneri"  target="_blank"><img src="<?= LINK_PADRAO?>/images/instagram_footer.png" alt=""></a></li>
-				<li><a href=""><img src="<?= LINK_PADRAO?>/images/twitter_footer.png" alt=""></a></li>
-				<li><a href="https://www.youtube.com/channel/UCmeSrxPegFc1PT2hWvIIYQA"  target="_blank"><img src="<?= LINK_PADRAO?>/images/youtube_footer.png" alt=""></a></li>
+
+			<?php
+				if (isset($dado->facebook) && !empty($dado->facebook)):
+			?>
+			<li><a href="<?= $dado->facebook ?>" target="_blank"><img src="<?= LINK_PADRAO?>/images/facebook_footer.png" alt=""></a></li>
+			<?php
+				endif;
+			?>
+			<?php
+				if (isset($dado->instagram) && !empty($dado->instagram)):
+			?>
+			<li><a href="<?= $dado->instagram ?>"  target="_blank"><img src="<?= LINK_PADRAO?>/images/instagram_footer.png" alt=""></a></li>
+			<?php
+				endif;
+			?>
+			<?php
+				if (isset($dado->twitter) && !empty($dado->twitter)):
+			?>	
+			<li><a href="<?= $dado->twitter ?>"><img src="<?= LINK_PADRAO?>/images/twitter_footer.png" alt=""></a></li>
+			<?php
+				endif;
+			?>
+			<?php
+				if (isset($dado->youtube) && !empty($dado->youtube)):
+			?>
+			<li><a href="<?= $dado->youtube ?>"  target="_blank"><img src="<?= LINK_PADRAO?>/images/youtube_footer.png" alt=""></a></li>
+			<?php
+				endif;
+			?>
 			</ul>
 		</article>
 		<article class="texto">
 			<div class="conteudo">
 				<h3>Institucional</h3>
-				<p>Dr. André Neri</p>
-				<p>Blog</p>
-				<p>Agendamentos</p>
+				<p><a href="#sobre">Dr. André Neri</a></p>
+				<p><a href="#agenda">Agendamentos</a></p>
 			</div>
 		</article>
 		<article class="texto">
 			<div class="conteudo">
 				<h3>Especialidades</h3>
-				<p>Nariz</p>
-				<p>Orelha</p>
-				<p>Garganta</p>
-				<p>Cirurgia laser</p>
+				<?php
+				if (isset($especialidade) && !empty($especialidade)):
+					foreach ($especialidade as $t):
+				?>
+				<p><?= $t->titulo ?></p>
+				<?php
+					endforeach;
+				endif;
+				?>
 			</div>
 		</article>
 		<article class="texto">
 			<div class="conteudo">
 				<h3>Contatos</h3>
-				<p>+55 61 99840 4040</p>
-				<p>cirurgiasoto@gmail.com</p>
+				<p><?= $dado->telefone ?></p>
+				<p><?= $dado->email ?></p>
 			</div>
 		</article>
 	</div>

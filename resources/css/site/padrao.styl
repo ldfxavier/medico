@@ -24,7 +24,7 @@ body
     font-size: 62.5%
     overflow-x: hidden
 a
-    cursor: pointer
+    cursor: pointer !important
     text-decoration: none
 
 icone(site, 1)
@@ -457,6 +457,11 @@ header.header_pagina
                 line-height: 1.5em
                 color: #7D7987
                 padding: 0px 30px
+                overflow: hidden
+                text-overflow: ellipsis
+                display: -webkit-box
+                -webkit-line-clamp: 3
+                -webkit-box-orient: vertical
                 
 @media screen and (max-width: 1000px)
     #especialidade .conteudo
@@ -537,6 +542,16 @@ header.header_pagina
             &.margin
                 margin-top: 40px
                 margin-bottom: 40px
+        .link
+            margin-top: 50px
+        .link a
+            padding: 10px 40px
+            background:#fff
+            border-radius: 55px
+            font-size: 1.4em
+            color:#17567f
+            &:hover
+                filter: brightness(0.9)
     .centro .direito
         width: 50%
         display: flex

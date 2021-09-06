@@ -36,33 +36,71 @@
 				<nav class="menu">
 					<div class="topo">
 						<ul>
+							<?php
+								if (isset($dado->email) && !empty($dado->email)):
+							?>
 							<li>
 								<img src="<?= LINK_PADRAO ?>/images/email.png"" alt="">
 								<p>
 									<span class="color_cor azul">E-mail</span>
-									<span class="opaco">cirurgiasoto@gmail.com</span>
+									<span class="opaco"><?= $dado->email ?></span>
 								</p>
 							</li>
+							<?php
+								endif;
+							?>
+							<?php
+								if (isset($dado->whatsapp->valor) && !empty($dado->whatsapp->valor)):
+							?>
 							<li>
 								<img src="<?= LINK_PADRAO ?>/images/whatsapp.png"" alt="">
 								<p>
 									<span class="color_cor azul">Whatsapp</span>
-									<span class="opaco">+55 61 99840 4040</span>
+									<span class="opaco"><?= $dado->whatsapp->valor ?></span>
 								</p>
-								<a class="link" href="https://api.whatsapp.com/send/?phone=5561998404040"></a>
+								<a class="link" href="<?= $dado->whatsapp->link ?>"></a>
 							</li>
+							<?php
+								endif;
+							?>
+							<?php
+								if (isset($dado->youtube) && !empty($dado->youtube)):
+							?>
 							<li>
-								<a href="https://www.youtube.com/channel/UCmeSrxPegFc1PT2hWvIIYQA"  target="_blank""><img src="<?= LINK_PADRAO ?>/images/youtube.png"" alt=""></a>
+								<a href="<?= $dado->youtube ?>"  target="_blank""><img src="<?= LINK_PADRAO ?>/images/youtube.png"" alt=""></a>
 							</li>
+							<?php
+								endif;
+							?>
+							<?php
+								if (isset($dado->facebook) && !empty($dado->facebook)):
+							?>
 							<li>
-								<a href="https://www.facebook.com/doutorandreneri/" target="_blank"><img src="<?= LINK_PADRAO ?>/images/facebook.png"" alt=""></a>
+								<a href="<?= $dado->facebook ?>" target="_blank"><img src="<?= LINK_PADRAO ?>/images/facebook.png"" alt=""></a>
 							</li>
+							<?php
+								endif;
+							?>
+							<?php
+								if (isset($dado->instagram) && !empty($dado->instagram)):
+							?>
 							<li>
-								<a href="https://www.instagram.com/dr.andreneri"  target="_blank"><img src="<?= LINK_PADRAO ?>/images/instagram.png"" alt=""></a>
+								<a href="<?= $dado->instagram ?>"  target="_blank"><img src="<?= LINK_PADRAO ?>/images/instagram.png"" alt=""></a>
 							</li>
+							<?php
+								endif;
+							?>
+							<?php
+								if (isset($dado->twitter) && !empty($dado->twitter)):
+							?>
 							<li>
+								<a href="<?= $dado->instagram ?>"   target="_blank">
 								<img src="<?= LINK_PADRAO ?>/images/twitter.png"" alt="">
+							</a>
 							</li>
+							<?php
+								endif;
+							?>
 						</ul>
 					</div>
 					<div class="bottom">
@@ -71,7 +109,7 @@
 							<ul>
 								<li class="active"><a href="#conteudo_principal">Home</a> </li>
 								<li> <a href="#sobre">Dr André Neri</a> </li>
-								<li> <a  href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' ?>"  class="abre_popup_especialidade">Especialidades</a> </li>
+								<li> <a  href="#especialidade" >Especialidades</a> </li>
 								<li> <a href="#agenda">Agendamentos</a> </li>
 								<li> <a href="#localizacao">Localização</a> </li>
 							</ul>
