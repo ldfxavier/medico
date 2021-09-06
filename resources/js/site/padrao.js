@@ -81,4 +81,42 @@ $(function() {
     });
 
 
+	$('#botao_enviar_contato').click(function(e){
+		e.preventDefault();
+
+		Loading.show();
+
+		let form = $(this).closest('form');
+
+		$.post(form.attr('action'), {
+			ajax:true,
+			nome:$('input[name=nome]', form).val(),
+			telefone:$('input[name=telefone]', form).val(),
+			email:$('input[name=email]', form).val(),
+			mensagem:$('textarea[name=mensagem]', form).val()
+		}, function(resposta){
+
+			if(resposta.erro == false){
+				$('input, textarea', form).val('');
+				Alerta.mensagem('Dados enviado!', 'Mensagem enviada com sucesso, em breve retornaremos o contato.');
+			}
+
+		}, 'json').fail(function(resposta){
+
+			resposta = JSON.parse(resposta.responseText);
+			
+			if(resposta.erro == true){
+				Alerta.mensagem(resposta.titulo, resposta.texto);
+			}
+
+		}).always(function(){
+
+			Loading.hide();
+
+		});
+
+	});
+	
+
+
 });

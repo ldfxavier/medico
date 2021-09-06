@@ -20,9 +20,9 @@ Route::grupo('index', function () {
         'get' => ['ajax'],
     ]);
 
+	Route::post('salvar', '/contato', 'Index@salvar', [
+		'post' => ['ajax', 'nome', 'mensagem', 'telefone', 'email']
+	]);
 
-    Route::post('salvar_cadastro', '/cadastro/salvar', 'Index@salvar_cadastro', [
-        'post' => ['login' ,'senha' ,'confirmar_senha' ,'nome' ,'cpf' ,'email' ,'confirmar_email', 'cep' ,'logradouro' ,'numero' ,'complemento' ,'referencia' ,'bairro' ,'cidade' ,'estado', 'telefone', 'celular'],
-    ]);
 });
 

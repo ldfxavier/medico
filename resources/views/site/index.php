@@ -124,7 +124,7 @@ endif;
 			</div>
 		</article>
 		<article class="direito">
-			<form action="" method="post">
+			<form action="<?= LINK.\Route::link('post.index.salvar') ?>" method="post">
 				<h1>Preencha os campos abaixo:</h1>
 				<label for="nome">Nome</label>
 				<input type="text" placeholder="Nome" name="nome" id="nome">
@@ -136,8 +136,8 @@ endif;
 				<input type="text" data-mascara="telefone"   placeholder="telefone"  name="telefone" id="telefone">
 				
 				<label for="telefone">Mensagem</label>
-				<textarea placeholder="Sua mensagem" name="" id="" cols="30" rows="10"></textarea>
-				<button>Enviar</button>
+				<textarea placeholder="Sua mensagem" name="mensagem" id="" cols="30" rows="10"></textarea>
+				<button id="botao_enviar_contato">Enviar</button>
 			</form>
 		</article>
 	</div>
