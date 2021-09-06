@@ -743,7 +743,8 @@ header.header_pagina
         font-size: 2em
         cursor: pointer
         &.fechar
-            color: #666
+        &:after
+            color: $cor
     h1
         font-size: 2em
         color: $cor
@@ -801,9 +802,9 @@ header.header_pagina
             justify-content: center
             align-items: center
             margin-bottom: 20px
-			
+            
 @media screen and (max-width: 600px)
-	.bloco-popup__botao .bloco-popup__conteudo .container_imagem img
-		width: 100%
+    .bloco-popup__botao .bloco-popup__conteudo .container_imagem img
+        width: 100%
                     
 @import "template.styl"

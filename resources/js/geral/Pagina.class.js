@@ -84,6 +84,7 @@ class Pagina {
 		pagina.removeClass('fw_pagina_abrir');
 		pagina.addClass('fw_pagina_fechar');
 		$('body').css('overflow', 'auto');
+		$('html').css('overflow', 'auto');
 		setTimeout(function(){
 			pagina.remove();
 		}, 505);
