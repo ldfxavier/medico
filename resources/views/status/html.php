@@ -1,7 +1,4 @@
 
-<?php
-	$logo = isset($_SESSION['CLUBE']) && isset($_SESSION['CLUBE']->imagem->logo) ? $_SESSION['CLUBE']->imagem->logo : '';
-?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -15,10 +12,7 @@
 <body>
 
 <div id="pagina_status">
-	<?php if(!empty($logo)): ?>
-	<figure><a href="<?= LINK ?>"><img src="<?= $logo ?>" alt="[]"></a></figure>
-	<?php endif; ?>
-
+	<figure><a href="<?= LINK ?>"><img src="<?= LINK_PADRAO ?>/images/logo.png" alt="[]"></a></figure>
 	<i>!</i>
 	<header>
 		<h1 class="titulo"><?= $codigo ?></h1>

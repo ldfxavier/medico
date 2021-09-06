@@ -157,8 +157,6 @@ border-color: #17567F;
 <input type="hidden" name="LINK_PADRAO" id="LINK" value="<?=LINK_PADRAO;?>">
 <input type="hidden" name="PAINEL" id="PAINEL" value="<?=LINK_PAINEL;?>">
 <input type="hidden" name="ARQUIVO" id="ARQUIVO" value="<?=LINK_ARQUIVO;?>">
-<input type="hidden" name="COR" id="COR" value="<?=$_SESSION['CLUBE']->cor;?>">
-<input type="hidden" name="LINK_LOCATION" id="LINK_LOCATION" value="<?= $_SESSION['LINK_LOCATION'] ?? LINK ?>">
 </form>
 
 </body>
