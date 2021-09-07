@@ -84,7 +84,7 @@
 		</article>
 		<article class="texto">
 			<div class="conteudo">
-				<h3>Especialidades</h3>
+				<h3><a href="#especialidade">Especialidades</a></h3>
 				<?php
 				if (isset($especialidade) && !empty($especialidade)):
 					foreach ($especialidade as $t):
