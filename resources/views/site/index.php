@@ -166,7 +166,7 @@ endif;
 		<article class="direito">
 			<div class="mapa">
 				<figure>
-					<a href=<?= $dado->mapa ?> target="_blank"></a>
+					<a href="<?= $dado->mapa ?>" target="_blank"></a>
 					<img src="<?= LINK_PADRAO ?>/images/mapa.png" alt="">
 				</figure>
 			</div>
