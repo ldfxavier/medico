@@ -125,7 +125,7 @@ endif;
 		</article>
 		<article class="direito">
 			<form action="<?= LINK.\Route::link('post.index.salvar') ?>" method="post">
-				<h1>Preencha os campos abaixo:</h1>
+				<h1>DÚVIDAS / SUGESTÕES / RECLAMAÇÕES:</h1>
 				<label for="nome">Nome</label>
 				<input type="text" placeholder="Nome" name="nome" id="nome">
 
