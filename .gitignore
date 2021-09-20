@@ -16,3 +16,4 @@ package-lock.json
 /painel/node_modules
 /resources/css/geral/cor.styl
 /public/.well-known
+/public/images/wetransfer
