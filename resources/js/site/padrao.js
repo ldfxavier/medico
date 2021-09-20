@@ -8,7 +8,15 @@ $(function() {
         next: '#banner_principal_prev',
         tempo: 8
     });
-
+    $.banner({
+        id: '#banner_principal_localiza',
+        imagem: 'figure',
+        controle: '#controle',
+        prev: '#banner_principal_localiza_next',
+        next: '#banner_principal_localiza_prev',
+        tempo: 5
+    });
+	
     Pagina = new Pagina();
 
     $(".abre_popup_especialidade").click(function(e) {

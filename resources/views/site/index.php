@@ -165,10 +165,31 @@ endif;
 		</article>
 		<article class="direito">
 			<div class="mapa">
-				<figure>
-					<a href="<?= $dado->mapa ?>" target="_blank"></a>
-					<img src="<?= LINK_PADRAO ?>/images/mapa.png" alt="">
-				</figure>
+				<section class="bloco_banner--padrao localiza " id="banner_principal_localiza">
+
+					<?php
+					if (isset($banner_localiza) && !empty($banner_localiza)):
+						foreach ($banner_localiza as $b_l):
+					?>
+					<figure style="background-image: url(<?=$b_l->imagem;?>)">
+						<?php if(!empty($b_l->titulo) || !empty($b_l->texto)): ?>
+						<header>
+							<h1><?=$b_l->titulo;?></h1>
+							<p><?=$b_l->texto;?></p>
+						</header>
+						<?php endif; ?>
+						<a href="<?=$b_l->url->link;?>" target="<?=$b_l->url->target;?>"></a>
+					</figure>
+					<?php
+					endforeach;
+					endif;
+					?>
+
+					<i class="controlador prev" id="banner_principal_localiza_prev"></i>
+					<i class="controlador next" id="banner_principal_localiza_next"></i>
+
+				</section>
+
 			</div>
 		</article>
 		<div class="quadrado_footer"></div>

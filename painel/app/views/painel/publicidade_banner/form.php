@@ -53,6 +53,15 @@
 </div>
 
 <div class="linha">
+	<fieldset>
+		<div class="legenda">Local</div>
+
+		<label>Local:</label>
+		<?= Form::select('local', ['' => 'Escolha um local:', '1' => 'Topo', '2' => 'Localização'], P::r($r, 'local')); ?>
+	</fieldset>
+</div>
+
+<div class="linha">
 	<fieldset class="bloco_checkbox_todos" id="bloco_equipe_permissao">
 		<div class="legenda">CONFIGURAÇÕES</div>
 		<label>Ordem:</label>

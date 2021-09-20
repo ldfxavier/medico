@@ -13,7 +13,8 @@ class Index extends Controller
     public function index()
     {
         return View("site.index", [
-			'banner' => (new PublicidadeBanner)->home(),
+			'banner' => (new PublicidadeBanner)->topo(),
+			'banner_localiza' => (new PublicidadeBanner)->localizacao(),
 			'dado' => (new Site)->home(),
 			'especialidade' => (new Especialidade)->home()
 		]);

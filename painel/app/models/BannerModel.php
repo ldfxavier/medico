@@ -19,6 +19,7 @@
                             'valor' => $r->imagem,
                             'link' => ARQUIVO.'/banner/'.$r->imagem
                         ),
+						'local' => $r->local,
 						'data' => (object)array(
                             'postagem_inicio' => (object)array(
                                 'br' => Converter::data($r->data_postagem_inicio, 'd/m/Y'),

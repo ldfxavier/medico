@@ -34,12 +34,49 @@
 			return true;
 
 		}
-		public function home(){
+		public function topo(){
 			
 			$agora = date('Y-m-d H:i:s');
 
 			$busca = $this->select()->campo(['cod', 'imagem', 'titulo', 'texto', 'link', 'target'])->where([
 				['status', 1],
+				['local', 1],
+				['data_postagem_inicio', '<=', $agora],
+				['data_postagem_final', '>=', $agora]
+			])->order('ordem', 'ASC')->get();
+
+			if(!$this->validar_erro($busca)):
+				return [];
+			endif;
+			
+			$array = [];
+
+			foreach($busca as $r):
+
+				$array[] = (Object)[
+					'id' => $r->cod,
+					'titulo' => $r->titulo,
+					'texto' => $r->texto,
+					'imagem' => LINK_ARQUIVO.'/banner/'.$r->imagem,
+					'url' => (object)[
+						'target' => $r->target,
+						'link' => $r->link
+					],
+				];
+
+			endforeach;
+
+			return $array;
+
+        }
+
+		public function localizacao(){
+			
+			$agora = date('Y-m-d H:i:s');
+
+			$busca = $this->select()->campo(['cod', 'imagem', 'titulo', 'texto', 'link', 'target'])->where([
+				['status', 1],
+				['local', 2],
 				['data_postagem_inicio', '<=', $agora],
 				['data_postagem_final', '>=', $agora]
 			])->order('ordem', 'ASC')->get();
