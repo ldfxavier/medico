@@ -98,9 +98,15 @@ endif;
 		endif;
 		?>
 
+		<?php
+		if (isset($especialidade) && count($especialidade)  == 2 ):
+		?>
 		<article class="ultimo">
 			<div class="quadrado"></div>
 		</article>
+		<?php
+		endif;
+		?>
 	</div>
 </section>
 

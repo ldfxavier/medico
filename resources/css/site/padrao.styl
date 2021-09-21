@@ -196,7 +196,6 @@ header.header_pagina
     width: 100%
     height: 500px
     position: relative
-    margin-bottom: 20px
     &:hover .controlador
         opacity: 1
     &.localiza
@@ -319,11 +318,14 @@ header.header_pagina
     align-items: flex-start
     justify-content: center
     position: relative
-    margin-top: 100px
+    padding-top: 150px
+    padding-bottom: 50px
+    background-color: #b3b4b5
+    background-image: linear-gradient(315deg, #FFFFFF 70%,  #b3b4b5 100%)
     .quadrado
         position: absolute
         left: 0
-        top: -80px
+        top: 40px
         width: 78px
         height: 115px
         background: url('../images/quadrado_sobre.png') no-repeat top left
@@ -405,6 +407,9 @@ header.header_pagina
     flex-direction: column
     position: relative
     margin-top: 100px
+    padding-bottom: 100px
+    background-color: #b3b4b5
+    background-image: linear-gradient(-200deg,  #FFFFFF 50%,  #b3b4b5 90%)
     .bg
         position: absolute
         left: 0px
@@ -514,7 +519,6 @@ header.header_pagina
     justify-content: center
     flex-direction: column
     position: relative
-    margin-top: 100px
     background-color: #17567F
     .centro
         width: 100%
@@ -690,8 +694,12 @@ header.header_pagina
                 transform: rotate(90deg)
         .direito
             width: 500px
-            height: 350px
+            height: 360px
             position: relative
+            border: double 5px transparent
+            background-image: linear-gradient(white,white), linear-gradient(to right, #b3b4b5, #A4A5A7)
+            background-clip: padding-box, border-box
+            background-origin: border-box
             figure img
                 height: 393px
             a
