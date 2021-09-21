@@ -19,7 +19,7 @@ body
     overflow-x:hidden
 
 body
-    background: #FFFFFF
+    background: #d7d7d7
     font-family: 'Mulish', sans-serif
     font-size: 62.5%
     overflow-x: hidden
@@ -194,13 +194,17 @@ header.header_pagina
 
 .bloco_banner--padrao
     width: 100%
-    height: 500px
+    height: 505px
     position: relative
+    border-top: 5px solid #D7D7D7
+    box-shadow__padrao--suave()
     &:hover .controlador
         opacity: 1
     &.localiza
         width: 100%
         height: 400px
+        box-shadow: none
+        border-top: none
     .controle
         position: absolute
         margin: 0 auto
@@ -318,10 +322,8 @@ header.header_pagina
     align-items: flex-start
     justify-content: center
     position: relative
-    padding-top: 150px
+    padding-top: 170px
     padding-bottom: 50px
-    background-color: #b3b4b5
-    background-image: linear-gradient(315deg, #FFFFFF 70%,  #b3b4b5 100%)
     .quadrado
         position: absolute
         left: 0
@@ -408,8 +410,7 @@ header.header_pagina
     position: relative
     margin-top: 100px
     padding-bottom: 100px
-    background-color: #b3b4b5
-    background-image: linear-gradient(-200deg,  #FFFFFF 50%,  #b3b4b5 90%)
+    background: linear-gradient(0deg, #D7D7D7, #FFFFFF 90%) no-repeat
     .bg
         position: absolute
         left: 0px
@@ -660,7 +661,8 @@ header.header_pagina
     justify-content: center
     flex-direction: column
     position: relative
-    margin-top: 100px
+    padding-top: 100px
+    background: linear-gradient(0deg, #FFFFFF, #D7D7D7 90%) no-repeat
     .centro
         width: 100%
         max-width: 1000px
