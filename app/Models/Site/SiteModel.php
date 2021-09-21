@@ -91,6 +91,32 @@
 			return $array[0];
 
         }
+		
+		public function galeria(){
+			
+
+			$FotoGaleria = new GeralFoto('site/galeria');
+			$busca = $this->select()->campo(['cod'])->get();
+
+			if(!$this->validar_erro($busca)):
+				return [];
+			endif;
+			
+			$array = [];
+
+			foreach($busca as $r):
+				$converter = new Converter;
+
+				$array[] = (Object)[
+					'id' => $r->cod,
+					'lista' => $FotoGaleria->listar_galeria($r->cod, 'site'),
+				];
+
+			endforeach;
+
+			return $array[0];
+
+        }
         
         
 

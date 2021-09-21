@@ -17,5 +17,6 @@ return [
 	'publicidade_banner' => 'publicidade_banner',
 	'site' => 'site',
 	'especialidades' => 'especialidades',
-	'mensagem' => 'mensagem'
+	'mensagem' => 'mensagem',
+	'geral_foto' => 'geral_foto'
 ];

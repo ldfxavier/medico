@@ -818,5 +818,50 @@ header.header_pagina
 @media screen and (max-width: 600px)
     .bloco-popup__botao .bloco-popup__conteudo .container_imagem img
         width: 100%
+
+
+
+#parceiro
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    margin-top: 100px
+    .lista
+        width: 100%
+        max-width: 1200px
+        display: flex
+        align-items: flex-start
+        flex-wrap: wrap
+        justify-content: center
+        margin-top: 100px
+        article
+            col(7, 10px)
+            height: 120px
+            padding: 20px
+            figure    
+                width: 100%
+                max-width: 110px
+                margin: 0 auto
+                height: 100%
+                background-size: 80%
+                background-position: center center
+                background-repeat: no-repeat
+                background-color: #fff
+                z-index: 1
+
+@media screen and (max-width: 800px)
+    #parceiro .lista article
+        col(4,10px)
+
+@media screen and (max-width: 500px)
+    #parceiro .lista article
+        col(3,10px)
+
+@media screen and (max-width: 400px)
+    #parceiro .lista article
+        col(2,10px)
+
                     
 @import "template.styl"

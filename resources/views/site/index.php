@@ -195,3 +195,21 @@ endif;
 		<div class="quadrado_footer"></div>
 	</div>
 </section>
+
+<section id="parceiro">
+	<div class="lista">
+
+		<?php
+		if (isset($galeria) && !empty($galeria)):
+			foreach ($galeria->lista as $g):
+		?>
+		<article>
+            <figure style="background-image: url(<?= $g->imagem ?>)">
+            </figure>
+        </article>
+		<?php
+		endforeach;
+		endif;
+		?>
+	</div>				
+</section>

@@ -16,6 +16,7 @@ class Index extends Controller
 			'banner' => (new PublicidadeBanner)->topo(),
 			'banner_localiza' => (new PublicidadeBanner)->localizacao(),
 			'dado' => (new Site)->home(),
+			'galeria' => (new Site)->galeria(),
 			'especialidade' => (new Especialidade)->home()
 		]);
     }

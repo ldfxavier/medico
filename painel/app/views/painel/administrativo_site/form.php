@@ -90,4 +90,9 @@
 		<input type="text" name="whatsapp" value="<?= P::r($r, 'whatsapp');?>" placeholder="Digite a url do seu WhatsApp">
 
 	</fieldset>
+
+	<fieldset>
+		<div class="legenda">GALERIA</div>
+		<?= Form::imagem_lista($_app, $cod, "Enviar imagem", P::r($r, 'galeria'), "site/galeria", "jpg/jpeg/png"); ?>
+	</fieldset>
 </div>

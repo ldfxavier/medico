@@ -7,6 +7,7 @@
             $array = array();
             if($dados):
                 $Status = new StatusModel;
+				$Foto = new FotoModel;
                 foreach($dados as $r):
                     $array[] = (object)array(
                         'id' => $r->id,
@@ -15,6 +16,7 @@
                             'link' => !empty($r->imagem) ? ARQUIVO.'/perfil/'.$r->imagem : '',
                             'valor' => $r->imagem
                         ),
+                        'galeria' => $Foto->galeria($r->cod, "site/galeria"),
                         'mapa' => $r->mapa,
                         'endereco' => $r->endereco,
                         'telefone' => (object)[
