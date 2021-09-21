@@ -42,7 +42,7 @@
 			$busca = $this->select()->campo(['foto_titulo', 'imagem'])->where([
 				['status', 1],
 				['vinculo', $id_vinculo]
-			])->order('id', 'DESC')->get();
+			])->order('id', 'ASC')->get();
 
 			if(!$this->validar_busca($busca)):
 				return [];
