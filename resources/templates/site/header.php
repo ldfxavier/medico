@@ -111,6 +111,7 @@
 								<li> <a href="#sobre">Dr André Neri</a> </li>
 								<li> <a  href="#especialidade" >Especialidades</a> </li>
 								<li> <a href="#agenda">Agendamentos</a> </li>
+								<li> <a href="#agenda">Telemedicina</a> </li>
 								<li> <a href="#localizacao">Localização</a> </li>
 							</ul>
 						</div>
