@@ -73,18 +73,55 @@ body
                 display: flex
                 align-items: center
                 justify-content: flex-end
+                position: relative
                 li
                     display: flex
                     align-items: center
+                    flex-direction: column
                     margin-right: 20px
                     font-size: 1.5em
                     line-height: 23px
                     color: #7D7987
                     cursor: pointer
+                    position: relative
+                    ul.sub
+                        display: none !important
+                    ul.sub.ativo
+                        width: 300px
+                        display: flex !important
+                        align-items: center !important
+                        justify-content: center !important
+                        flex-direction: column
+                        position: absolute
+                        top: 30px
+                        z-index: 9999
+                        background: #FFF
+                        padding: 20px 20px
+                        box-shadow__padrao()
+                        border-bottom-left-radius: 3px
+                        border-bottom-right-radius: 3px
+                        li
+                            width: 100%
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            flex-direction: column
+                            font-size: 1em
+                            line-height: 40px
+                            color: #7D7987
+                            margin-right: 0px !important
+                            border-bottom: 1px solid #CCC
+                            &:last-of-type
+                                border-bottom: none
+                    cursor: pointer
                     &:hover
                         color: #1F1534
                         font-weight: bold
+                    p i
+                        padding-left: 10px
+                    p:hover
                     a:hover
+                        font-size: 0.98em
                         color: #1F1534
                         font-weight: bold
 
@@ -103,7 +140,7 @@ body
         justify-content: center
     .header .centro
         margin-top: 50px
-@media screen and (max-width: 760px)
+@media screen and (max-width: 870px)
     .header .menu .topo ul li
         margin-right: 10px
     .header .menu .topo ul li img
@@ -144,9 +181,19 @@ body
             background-color: #fff
             border-top: 2px solid $cor
             li
+                width: 100%
                 margin-top: 20px
                 &:last-child
                     padding-bottom: 20px
+                ul.sub.ativo
+                    width: 100%
+                    max-width: 100%
+                    position: relative
+                    top: 0px
+                    padding: 0px 20px
+                    box-shadow: none
+                    box-shadow__bottom()
+                    border-left: 15px solid #17567f
 
 @media screen and (max-width: 500px)
     .header .menu .topo ul li p

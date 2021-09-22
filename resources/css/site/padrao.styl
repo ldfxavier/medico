@@ -373,12 +373,15 @@ header.header_pagina
 @media screen and (max-width: 1030px)
     #sobre
         padding: 0px 20px
+        margin-top: 100px
         .direito figure img
             height: 340px
         .esquerdo p
             padding-right: 0px
             justify-content: center
 @media screen and (max-width: 900px)
+    #sobre
+        margin-top: 100px
     #sobre .direito
         display: flex
         align-items: center
@@ -605,7 +608,6 @@ header.header_pagina
     flex-direction: column
     position: relative
     padding-top: 100px
-    background: linear-gradient(0deg, #FFFFFF, #D7D7D7 90%) no-repeat
     .centro
         width: 100%
         max-width: 1000px
@@ -613,7 +615,7 @@ header.header_pagina
         align-items: flex-start
         justify-content: space-between
         margin-top: 50px
-        margin-bottom: 80px
+        margin-bottom: 100px
         position: relative
         .esquerdo
             max-width: 350px
@@ -822,7 +824,8 @@ header.header_pagina
     justify-content: center
     flex-direction: column
     position: relative
-    background-color: #b3b4b5
+    background:  #C9C9C9
+    background: linear-gradient(to left, #D9D9D9,  #C9C9C9) 
     .centro
         width: 100%
         max-width: 1000px
@@ -840,8 +843,10 @@ header.header_pagina
         text-align: left
         .titulo_padrao_esquerdo
             max-width: 100%
+            .linha:after
+                background: $cor
         h1
-            color: #FFF
+            color: $cor
             font-weight: bold
             margin-top: 0px
         ul
@@ -849,14 +854,15 @@ header.header_pagina
             li
                 display: flex
                 flex-direction: column
-                color: #FFF
+                color: $cor
                 font-size: 18px
+                font-weight: bold
                 line-height: 30px
                 margin-bottom: 20px
         p
             font-size: 18px
             line-height: 30px
-            color: #FFFFFF
+            color: #333
             text-align: left
             &.margin
                 margin-top: 40px

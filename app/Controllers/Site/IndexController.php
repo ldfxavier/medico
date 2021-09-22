@@ -4,7 +4,7 @@ namespace App\Controllers\Site;
 
 use App\Helpers\Auth;
 use App\Helpers\Validar;
-use App\Models\Site\{UsuarioCliente, PublicidadeBanner, Site, Especialidade, Mensagem};
+use App\Models\Site\{UsuarioCliente, PublicidadeBanner, Site, Especialidade, Mensagem, Formulario, Telemedicina};
 use System\Controller;
 
 class Index extends Controller
@@ -15,6 +15,11 @@ class Index extends Controller
         return View("site.index", [
 			'banner' => (new PublicidadeBanner)->topo(),
 			'banner_localiza' => (new PublicidadeBanner)->localizacao(),
+			'legislacao' => (new Telemedicina)->local(1),
+			'como_funciona' => (new Telemedicina)->local(2),
+			'termo' => (new Formulario)->url(1),
+			'declaracao' => (new Formulario)->url(2),
+			'iata' => (new Formulario)->url(3),
 			'dado' => (new Site)->home(),
 			'galeria' => (new Site)->galeria(),
 			'especialidade' => (new Especialidade)->home()
@@ -38,6 +43,16 @@ class Index extends Controller
 
 		return View('!site.popup_sobre', [
 			'dado' => $sobre
+		]);
+
+	}
+
+	public function popup_telemedicina($url){
+			
+		$url = (new Telemedicina)->url($url);
+
+		return View('!site.popup_telemedicina', [
+			'dado' => $url
 		]);
 
 	}

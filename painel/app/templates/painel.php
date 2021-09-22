@@ -93,6 +93,8 @@ Menu::principal('BANNER', $_app, '#F47521', array(
 ));
 Menu::principal('PUBLICAÇÕES', $_app, '#dd4b39', array(
 	array('Especialidades', 'especialidades', 0),
+	array('Telemedicina', 'telemedicina', 0),
+	array('Formulário', 'formulario', 0),
 ));
 Menu::principal('MENSAGEM', $_app, '#18718B', array(
 	array('Mensagem', 'mensagem', 0),

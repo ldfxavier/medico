@@ -18,5 +18,7 @@ return [
 	'site' => 'site',
 	'especialidades' => 'especialidades',
 	'mensagem' => 'mensagem',
-	'geral_foto' => 'geral_foto'
+	'geral_foto' => 'geral_foto',
+	'telemedicina' => 'telemedicina',
+	'formulario' => 'formulario'
 ];

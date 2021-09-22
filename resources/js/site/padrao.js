@@ -70,12 +70,38 @@ $(function() {
         });
     }).scroll();
 
-    $(".header .menu .bottom .mobile-menu-icon").click(function(e) {
-        e.preventDefault();
+    $(".header .menu .bottom .mobile-menu-icon").click(function(e){
+		e.stopPropagation();
 
         $('.menu-container').toggleClass('ativo');
 
     });
+
+
+	var dropButton = document.querySelectorAll('.header .menu .bottom ul li.sub');
+
+	function fechaItemAberto() {
+		abreMenu = document.querySelectorAll('.header .menu .bottom ul li.sub ul');
+		abreMenu.forEach(function(menus) {
+		  menus.classList.remove('ativo');
+		});  
+	}
+  
+	dropButton.forEach(function(btn) {
+  
+	  btn.addEventListener('click', function(e) {
+		e.stopPropagation();
+		var 
+			dropConteudo = btn.querySelector('.header .menu .bottom ul li.sub ul'),
+			abre = !dropConteudo.classList.contains('ativo');
+		fechaItemAberto();
+		if (abre) {
+		  dropConteudo.classList.add('ativo');      
+		}
+	  });
+  
+	});
+
 
        // Ação quando a janela mudar de tamanho
     $(window).resize(function() {

@@ -65,7 +65,7 @@ class Permissao
             'model' => 'EquipeModel',
             'permissao' => 'per_usuario_equipe',
             'lista' => array(
-                'per_usuario_equipe_visualizar' => 'Visualziar lista',
+                'per_usuario_equipe_visualizar' => 'Visualizar lista',
                 'per_usuario_equipe_detalhe' => 'Detalhe da equipe',
                 'per_usuario_equipe_add' => 'Adicionar equipe',
                 'per_usuario_equipe_editar' => 'Editar equipe',
@@ -78,7 +78,7 @@ class Permissao
             'model' => 'UsuarioModel',
             'permissao' => 'per_usuario_usuario',
             'lista' => array(
-                'per_usuario_usuario_visualizar' => 'Visualziar lista',
+                'per_usuario_usuario_visualizar' => 'Visualizar lista',
                 'per_usuario_usuario_detalhe' => 'Detalhe do usuário',
                 'per_usuario_usuario_add' => 'Adicionar usuário',
                 'per_usuario_usuario_editar' => 'Editar usuário',
@@ -92,12 +92,35 @@ class Permissao
             'model' => 'EspecialidadesModel',
             'permissao' => 'per_especialidades',
             'lista' => array(
-                'per_especialidades_visualizar' => 'Visualziar lista',
+                'per_especialidades_visualizar' => 'Visualizar lista',
                 'per_especialidades_detalhe' => 'Detalhe',
                 'per_especialidades_add' => 'Adicionar',
                 'per_especialidades_editar' => 'Editar',
                 'per_especialidades_deletar' => 'Deletar',
                 'per_especialidades_download' => 'Download lista usuário',
+            ),
+        ),
+        'telemedicina' => array(
+            'titulo' => 'Telemedicina',
+            'tabela' => 'telemedicina',
+            'model' => 'TelemedicinaModel',
+            'permissao' => 'per_telemedicina',
+            'lista' => array(
+                'per_telemedicina_visualizar' => 'Visualizar lista',
+                'per_telemedicina_detalhe' => 'Detalhe',
+                'per_telemedicina_add' => 'Adicionar',
+                'per_telemedicina_editar' => 'Editar',
+            ),
+        ),
+        'formulario' => array(
+            'titulo' => 'Formulário',
+            'tabela' => 'formulario',
+            'model' => 'FormularioModel',
+            'permissao' => 'per_formulario',
+            'lista' => array(
+                'per_formulario_visualizar' => 'Visualizar lista',
+                'per_formulario_detalhe' => 'Detalhe',
+                'per_formulario_editar' => 'Editar',
             ),
         ),
 		'mensagem' => array(

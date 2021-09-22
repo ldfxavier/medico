@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+.app_geral_add .cabecalho_data {
+	width: 200px;
+	float: left;
+}
+.app_geral_add .cabecalho_fonte {
+	width: calc(100% - 210px);
+	float: right;
+}
+.app_geral_add .imagem_social {
+	width: 100%;
+	max-width: 476px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	display: table;
+}
+.app_geral_add .imagem_social .bloco_imagem {
+	width: 100%;
+	max-width: 476px;
+	position: relative;
+	float: left;
+	margin-bottom: 0;
+}
+
+.app_geral_add .imagem_social .dados {
+	width: 100%;
+	position: relative;
+	float: left;
+	color: #999;
+	padding: 0 10px 10px 10px;
+	border-right: 1px solid #F0F0F0;
+	border-bottom: 1px solid #F0F0F0;
+	border-left: 1px solid #F0F0F0;
+}
+.app_geral_add .imagem_social.ativo .dados {
+	color: #333;
+}
+.app_geral_add .imagem_social .dados .titulo_sub {
+	width: 100%;
+	line-height: 1.5em;
+	float: left;
+	margin-top: 4px;
+	font-size: 1.8em;
+	font-weight: bold;
+}
+.app_geral_add .imagem_social .dados .texto {
+	width: 100%;
+	line-height: 1.5em;
+	float: left;
+	font-size: 1.3em;
+}
+.app_geral_add .imagem_social .dados .dominio {
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+	font-size: 1.1em;
+	color: #333;
+}
+
+.app_geral_lista ul.ul_lista li .td:nth-child(2) {
+	width: calc(100% - 250px);
+}
+.app_geral_lista ul.ul_lista li .td:nth-child(3) {
+	width: 100px;
+}
+
+
+@media screen and (max-width: 900px) {
+
+}

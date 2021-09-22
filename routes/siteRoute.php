@@ -20,6 +20,11 @@ Route::grupo('index', function () {
         'get' => ['ajax'],
     ]);
 
+    Route::view('popup_telemedicina', '/popup/telemedicina/{url}', 'Index@popup_telemedicina', [
+        'get' => ['ajax'],
+    ]);
+
+
 	Route::post('salvar', '/contato', 'Index@salvar', [
 		'post' => ['ajax', 'nome', 'mensagem', 'telefone', 'email']
 	]);

@@ -110,8 +110,61 @@
 								<li class="active"><a href="#conteudo_principal">Home</a> </li>
 								<li> <a href="#sobre">Dr André Neri</a> </li>
 								<li> <a  href="#especialidade" >Especialidades</a> </li>
-								<li> <a href="#agenda">Agendamentos</a> </li>
-								<li> <a href="#agenda">Telemedicina</a> </li>
+								<li class="sub"> 
+									<p>Telemedicina <i data-font="&#xe81e;"></i></p>
+									<ul class="sub">
+
+										<?php
+											if (isset($legislacao) && !empty($legislacao)):
+										?>
+										<li><a href="#" data-href="<?= LINK_PADRAO . '/popup/telemedicina' . '/' . $legislacao->id; ?>"  class="abre_popup_especialidade"><?= $legislacao->titulo ?></a></li>
+										<?php
+											endif;
+										?>
+										<?php
+											if (isset($como_funciona) && !empty($como_funciona)):
+										?>
+										<li><a href="#" data-href="<?= LINK_PADRAO . '/popup/telemedicina' . '/' . $como_funciona->id; ?>"  class="abre_popup_especialidade"><?= $como_funciona->titulo ?></a></li>
+										<?php
+											endif;
+										?>
+										<li><a href="#agenda">Marque a sua consulta</a></li>
+									</ul>
+								</li>
+
+								<?php
+									if (isset($termo) && !empty($termo) || isset($declaracao) && !empty($declaracao) ||  isset($iata) && !empty($iata)):
+								?>
+								<li class="sub"> 
+									<p>Formulário <i data-font="&#xe81e;"></i></p>
+									<ul class="sub">
+
+									<?php
+										if (isset($termo) && !empty($termo)):
+									?>
+									<li><a href="<?= $termo->link ?>" target="_blank"><?= $termo->titulo ?></a></li>
+									<?php
+										endif;
+									?>
+									<?php
+										if (isset($declaracao) && !empty($declaracao)):
+									?>
+									<li><a href="<?= $declaracao->link ?>" target="_blank"><?= $declaracao->titulo ?></a></li>
+									<?php
+										endif;
+									?>
+									<?php
+										if (isset($iata) && !empty($iata)):
+									?>
+									<li><a href="<?= $iata->link ?>" target="_blank"><?= $iata->titulo ?></a></li>
+									<?php
+										endif;
+									?>
+									</ul>
+								</li>
+									<?php
+										endif;
+									?>
 								<li> <a href="#localizacao">Localização</a> </li>
 							</ul>
 						</div>
