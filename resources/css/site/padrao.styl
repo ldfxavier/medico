@@ -930,6 +930,9 @@ header.header_pagina
                 border-radius: 10px
                 margin-bottom: 30px
 
+@media screen and (max-width: 1125px)
+    #contato .centro
+        padding: 0px 20px 80px 20px
 @media screen and (max-width: 870px)
     #contato .centro
         align-items: center
@@ -941,6 +944,18 @@ header.header_pagina
         .esquerdo
             width: 100%
             justify-content: center
+        .esquerdo
+            align-items: center
+            p
+                text-align: center
+            .titulo_padrao_esquerdo
+                align-items: center
+                justify-content: center
+                .linha
+                    align-items: center
+                    justify-content: center
+                    &:after
+                        left: auto
     #contato .centro .direito form input, #contato .centro .direito form textarea
     #contato .centro .direito form label
     #contato .centro .direito form button
