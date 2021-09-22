@@ -125,26 +125,11 @@ endif;
 			<?php
 				endif;
 			?>
+		</article>
+		<article class="direito">
 			<div class="link">
 				<a href="<?= $dado->link_agendamento ?>"  target="_blank">AGENDAR</a>
 			</div>
-		</article>
-		<article class="direito">
-			<form action="<?= LINK.\Route::link('post.index.salvar') ?>" method="post">
-				<h1>Dúvidas / Sugestões / Reclamações:</h1>
-				<label for="nome">Nome</label>
-				<input type="text" placeholder="Nome" name="nome" id="nome">
-
-				<label for="email">E-mail</label>
-				<input type="text"  placeholder="E-mail"  name="email" id="email">
-
-				<label for="telefone">Telefone para contato</label>
-				<input type="text" data-mascara="telefone"   placeholder="telefone"  name="telefone" id="telefone">
-				
-				<label for="telefone">Mensagem</label>
-				<textarea placeholder="Sua mensagem" name="mensagem" id="" cols="30" rows="10"></textarea>
-				<button id="botao_enviar_contato">Enviar</button>
-			</form>
 		</article>
 	</div>
 </section>
@@ -201,6 +186,69 @@ endif;
 		<div class="quadrado_footer"></div>
 	</div>
 </section>
+
+
+<section id="contato">
+	<div class="centro">
+		<article class="esquerdo">
+			<div class="titulo_padrao_esquerdo">
+				<h1>Contato</h1>
+				<div class="linha"></div>
+			</div>
+
+			<ul>
+				<?php
+					if (isset($dado->email) && !empty($dado->email)):
+				?>
+				<li>
+					<p>
+						<span class="bold">E-mail:</span>
+					</p>
+					<p>
+						<span><?= $dado->email?></span>
+					</p>
+				</li>
+				<?php
+					endif;
+				?>
+				<?php
+					if (isset($dado->whatsapp->valor) && !empty($dado->whatsapp->valor)):
+				?>
+					<li>
+						<p>
+							<span class="bold">Whatsapp:</span>
+							
+						</p>
+						<p>
+						<span><?= $dado->whatsapp->valor ?></span>
+						</p>
+						<a class="link" href="<?= $dado->whatsapp->link ?>"  target="_blank"></a>
+					</li>
+				<?php
+					endif;
+				?>
+			</ul>
+		</article>
+		<article class="direito">
+			<form action="<?= LINK.\Route::link('post.index.salvar') ?>" method="post">
+				<h1>Dúvidas / Sugestões / Reclamações:</h1>
+				<label for="nome">Nome</label>
+				<input type="text" placeholder="Nome" name="nome" id="nome">
+
+				<label for="email">E-mail</label>
+				<input type="text"  placeholder="E-mail"  name="email" id="email">
+
+				<label for="telefone">Telefone para contato</label>
+				<input type="text" data-mascara="telefone"   placeholder="telefone"  name="telefone" id="telefone">
+				
+				<label for="telefone">Mensagem</label>
+				<textarea placeholder="Sua mensagem" name="mensagem" id="" cols="30" rows="10"></textarea>
+				<button id="botao_enviar_contato">Enviar</button>
+			</form>
+		</article>
+	</div>
+</section>
+
 
 <section id="parceiro">
 	<div class="lista">

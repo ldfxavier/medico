@@ -556,83 +556,26 @@ header.header_pagina
             &.margin
                 margin-top: 40px
                 margin-bottom: 40px
+    .centro .direito
+        width: 50%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
         .link
+            height: 380px
+            display: flex
+            align-items: center
+            justify-content: center
             margin-top: 50px
         .link a
-            padding: 10px 40px
+            padding: 20px 60px
             background:#fff
             border-radius: 55px
             font-size: 1.4em
             color:#17567f
             &:hover
                 filter: brightness(0.9)
-    .centro .direito
-        width: 50%
-        display: flex
-        align-items: flex-end
-        justify-content: flex-end
-        form
-            width: 100%
-            max-width: 430px
-            display: flex
-            align-items: center
-            justify-content: center
-            flex-direction: column
-            background-color: #fff
-            box-shadow: 5px 10px 50px rgba(51, 51, 51, 0.2)
-            border-radius: 20px
-            z-index: 400
-            h1
-                font-family: 'Ubuntu', sans-serif
-                font-style: normal
-                font-weight: normal
-                font-size: 20px
-                line-height: 30px
-                letter-spacing: 0.04em
-                padding: 20px 0px
-                color: #333333
-            label
-                width: 100%
-                max-width: 340px
-                font-family: 'Ubuntu', sans-serif
-                font-style: normal
-                font-weight: normal
-                font-size: 16px
-                line-height: 30px
-                letter-spacing: 0.04em
-                color: #999999
-                text-align: left
-            input
-            textarea
-                width: 100%
-                max-width: 340px
-                height: 40px
-                opacity: 0.4
-                border: 1px solid #666666
-                box-sizing: border-box
-                border-radius: 10px
-                font-size: 16px
-                font-family: 'Ubuntu', sans-serif
-                line-height: 26px
-                text-align: center
-                letter-spacing: 0.04em
-                color: #333
-                margin-bottom: 20px
-                text-align: left
-                padding-left: 20px
-            textarea
-                height: 95px
-                padding-top: 10px
-            button
-                width: 340.81px
-                height: 46.67px
-                background: #17567F
-                font-family: 'Ubuntu', sans-serif
-                color: #FFFFFF
-                font-size: 16px
-                line-height: 26px
-                border-radius: 10px
-                margin-bottom: 30px
 
 @media screen and (max-width: 1225px)
     #agenda .centro
@@ -642,8 +585,9 @@ header.header_pagina
         align-items: center
         justify-content: center
         flex-direction: column
-        .direito form
-            margin-top: 40px
+        .direito .link
+            margin-top: 50px
+            height: auto
         .direito
         .esquerdo
             width: 100%
@@ -837,7 +781,6 @@ header.header_pagina
     align-items: center
     justify-content: center
     position: relative
-    margin-top: 100px
     .lista
         width: 100%
         max-width: 1200px
@@ -845,7 +788,6 @@ header.header_pagina
         align-items: flex-start
         flex-wrap: wrap
         justify-content: center
-        margin-top: 100px
         article
             col(7, 10px)
             height: 120px
@@ -872,6 +814,138 @@ header.header_pagina
 @media screen and (max-width: 400px)
     #parceiro .lista article
         col(2,10px)
+
+
+#contato
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    position: relative
+    background-color: #b3b4b5
+    .centro
+        width: 100%
+        max-width: 1000px
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        margin-top: 80px
+        padding-bottom: 80px
+    .centro .esquerdo
+        width: 50%
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        flex-direction: column
+        text-align: left
+        .titulo_padrao_esquerdo
+            max-width: 100%
+        h1
+            color: #FFF
+            font-weight: bold
+            margin-top: 0px
+        ul
+            margin-top: 40px
+            li
+                display: flex
+                flex-direction: column
+                color: #FFF
+                font-size: 18px
+                line-height: 30px
+                margin-bottom: 20px
+        p
+            font-size: 18px
+            line-height: 30px
+            color: #FFFFFF
+            text-align: left
+            &.margin
+                margin-top: 40px
+                margin-bottom: 40px
+    .centro .direito
+        width: 50%
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        form
+            width: 100%
+            max-width: 430px
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            background-color: #FFFFFF
+            box-shadow: 5px 10px 50px rgba(51, 51, 51, 0.2)
+            border-radius: 20px
+            z-index: 400
+            h1
+                font-family: 'Ubuntu', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 20px
+                line-height: 30px
+                letter-spacing: 0.04em
+                padding: 20px 0px
+                color: #333333
+            label
+                width: 100%
+                max-width: 340px
+                font-family: 'Ubuntu', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 30px
+                letter-spacing: 0.04em
+                color: #999999
+                text-align: left
+            input
+            textarea
+                width: 100%
+                max-width: 340px
+                height: 40px
+                opacity: 0.4
+                border: 1px solid #666666
+                box-sizing: border-box
+                border-radius: 10px
+                font-size: 16px
+                font-family: 'Ubuntu', sans-serif
+                line-height: 26px
+                text-align: center
+                letter-spacing: 0.04em
+                color: #333
+                margin-bottom: 20px
+                text-align: left
+                padding-left: 20px
+            textarea
+                height: 95px
+                padding-top: 10px
+            button
+                width: 340.81px
+                height: 46.67px
+                background: #17567F
+                font-family: 'Ubuntu', sans-serif
+                color: #FFFFFF
+                font-size: 16px
+                line-height: 26px
+                border-radius: 10px
+                margin-bottom: 30px
+
+@media screen and (max-width: 870px)
+    #contato .centro
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        .direito form
+            margin-top: 40px
+        .direito
+        .esquerdo
+            width: 100%
+            justify-content: center
+    #contato .centro .direito form input, #contato .centro .direito form textarea
+    #contato .centro .direito form label
+    #contato .centro .direito form button
+        width: 100%
+        max-width: calc(100% - 40px)
 
                     
 @import "template.styl"
