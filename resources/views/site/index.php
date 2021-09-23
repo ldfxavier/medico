@@ -212,17 +212,17 @@ endif;
 					endif;
 				?>
 				<?php
-					if (isset($dado->whatsapp->valor) && !empty($dado->whatsapp->valor)):
+					if (isset($dado->telefone) && !empty($dado->telefone)):
 				?>
 					<li>
 						<p>
-							<span class="bold">Whatsapp:</span>
+							<span class="bold">Telefone:</span>
 							
 						</p>
 						<p>
-						<span><?= $dado->whatsapp->valor ?></span>
+						<span><?= $dado->telefone ?></span>
 						</p>
-						<a class="link" href="<?= $dado->whatsapp->link ?>"  target="_blank"></a>
+						<a class="link" href="<?= $dado->telefone ?>"  target="_blank"></a>
 					</li>
 				<?php
 					endif;
