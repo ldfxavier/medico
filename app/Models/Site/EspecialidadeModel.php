@@ -43,7 +43,7 @@
 				$array[] = (Object)[
 					'id' => $r->cod,
 					'titulo' => $r->titulo,
-					'texto' => $r->texto,
+					'texto' => mb_strimwidth($r->texto, 0, 180, "..."),
 					'url' => $r->url,
 					'imagem' => LINK_ARQUIVO.'/especialidades/'.$r->imagem,
 					'status' => $r->status,

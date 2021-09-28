@@ -338,10 +338,10 @@ header.header_pagina
         align-items: flex-start
         justify-content: center
     .esquerdo
-        max-width: 400px
+        width: 100%
         display: flex
-        align-items: flex-start
-        justify-content: flex-start
+        align-items:  flex-start
+        justify-content: center
         position: relative
         flex-direction: column
         margin-right: 30px
@@ -351,15 +351,28 @@ header.header_pagina
             font-size: 3.5em
             line-height: 56px
             color: #000
-        p
-            font-style: normal
-            font-weight: 300
-            font-size: 1.7em
-            line-height: 32px
-            color: #7D7987
-            padding-right: 70px
-            margin-top: 20px
-        a
+        .texto
+            width: 100%  
+            clear: both
+            p
+                font-style: normal
+                font-weight: 300
+                font-size: 1.7em
+                line-height: 32px
+                color: #7D7987
+            img
+                width: auto
+                float: right
+                height: 400px
+                padding-left: 10px
+                padding-bottom: 10px
+        .link
+            width: 100% 
+            display: flex
+            align-items:  center
+            justify-content: center
+            margin-top: 40px
+        .link a
             padding: 10px 40px
             background: #17567F
             border-radius: 55px
@@ -378,7 +391,6 @@ header.header_pagina
             height: 340px
         .esquerdo p
             padding-right: 0px
-            justify-content: center
 @media screen and (max-width: 900px)
     #sobre
         margin-top: 100px
@@ -458,6 +470,11 @@ header.header_pagina
                 right: 0px
                 bottom: 0px
                 cursor: pointer
+            figure
+                height: 160px
+                border-top-left-radius: 20px
+                background-position: center center
+                background-size: cover
             figure img
                 height: 160px
                 border-top-left-radius: 20px
@@ -465,9 +482,9 @@ header.header_pagina
                 font-style: normal
                 font-weight: bold
                 font-size: 2.2em
-                line-height: 56px
+                line-height: 1.5em
                 color: #000000
-                padding: 0px 30px
+                padding: 10px 30px
             p
                 font-style: normal
                 font-weight: 300
@@ -496,7 +513,7 @@ header.header_pagina
         background: url(../images/bg_especialidade.png) no-repeat center
 
 @media screen and (max-width: 800px)
-    #especialidade .conteudo article figure img
+    #especialidade .conteudo article figure
         height: 130px
 @media screen and (max-width: 670px)
     #especialidade .conteudo
@@ -505,18 +522,12 @@ header.header_pagina
     #especialidade .conteudo article 
         width: calc(100% - 80px)
     #especialidade .conteudo article figure
-        height: 100%
+        height: 160px
         display: flex
         align-items: center
         justify-content: center
-    #especialidade .conteudo article figure img
-        height: 160px
     #especialidade .conteudo article.ultimo
         min-height: 100px
-@media screen and (max-width: 400px)
-    #especialidade .conteudo article figure img
-        height: 100%
-        width: 100%
 
 #agenda
     width: 100%

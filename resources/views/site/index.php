@@ -44,32 +44,33 @@ if (isset($banner) && !empty($banner)):
 <?php
 endif;
 ?>
+<div>
 
 <section id="sobre">
 	<div class="quadrado"></div>
 	<div class="conteudo">
 		<article class="esquerdo">
 			<h1>DR. ANDRÉ NERI</h1>
+			<div class="texto">
+				<?php
+					if (isset($dado->imagem) && !empty($dado->imagem)):
+				?>
+					<img src="<?= $dado->imagem ?>" alt="">
+				<?php
+					endif;
+				?>
+				<?php
+					if (isset($dado->sobre_chamada) && !empty($dado->sobre_chamada)):
+				?>
+				<?= $dado->sobre_chamada ?>
+				<?php
+					endif;
+				?>
 
-			<?php
-				if (isset($dado->sobre_chamada) && !empty($dado->sobre_chamada)):
-			?>
-			<?= $dado->sobre_chamada ?>
-			<?php
-				endif;
-			?>
-			<a href="#"  data-href="<?= LINK_PADRAO . '/popup/sobre'; ?>"  class="abre_popup_sobre" >Saiba mais</a>
-		</article>
-		<article class="direito">
-			<?php
-				if (isset($dado->imagem) && !empty($dado->imagem)):
-			?>
-			<figure>
-				<img src="<?= $dado->imagem ?>" alt="">
-			</figure>
-			<?php
-				endif;
-			?>
+			</div>
+			<div class="link">
+				<a href="#"  data-href="<?= LINK_PADRAO . '/popup/sobre'; ?>"  class="abre_popup_sobre" >Saiba mais</a>
+			</div>
 		</article>
 	</div>
 </section>
@@ -86,11 +87,13 @@ endif;
 			foreach ($especialidade as $e):
 		?>
 		<article>
-			<figure>
-				<img src="<?= $e->imagem ?>" alt="">
+			<figure style="background-image: url(<?= $e->imagem ?>)">
+				<!-- <img src="<?= $e->imagem ?>" alt=""> -->
 			</figure>
 			<h1><?= $e->titulo ?></h1>
-			<p><?= $e->texto ?></p>
+			<div class="texto">
+				<p><?= $e->texto ?></p>
+			</div>
 			<a href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' . '/' . $e->url; ?>"  class="abre_popup_especialidade"></a>
 		</article>	
 		<?php
@@ -98,15 +101,9 @@ endif;
 		endif;
 		?>
 
-		<?php
-		if (isset($especialidade) && count($especialidade)  == 2 ):
-		?>
 		<article class="ultimo">
 			<div class="quadrado"></div>
 		</article>
-		<?php
-		endif;
-		?>
 	</div>
 </section>
 

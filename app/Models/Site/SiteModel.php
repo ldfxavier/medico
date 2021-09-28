@@ -46,7 +46,7 @@
 					'email' => $r->email,
 					'email_formulario' => $r->email_formulario,
 					'sobre' => $r->sobre,
-					'sobre_chamada' => $r->sobre_chamada,
+					'sobre_chamada' =>  $r->sobre_chamada,
 					'agendamento' => $r->agendamento,
 					'facebook' => $r->facebook,
 					'instagram' => $r->instagram,
