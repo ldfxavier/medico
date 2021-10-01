@@ -26,16 +26,18 @@ if (isset($banner) && !empty($banner)):
 
 	<?php
 	if (isset($banner) && !empty($banner)):
-		?>
-	<ul class="controle" id="controle">
-	<?php
-		foreach ($banner as $i => $v):
-	?>  
-		<li data-id="<?= $i ?>" class="<?= $i == 0 ? 'hover' : ''; ?>"></li>
-	<?php
-		endforeach;
 	?>
-	</ul>
+	<div class="controler">
+		<ul class="controle" id="controle">
+		<?php
+			foreach ($banner as $i => $v):
+		?>  
+			<li data-id="<?= $i ?>" class="<?= $i == 0 ? 'hover' : ''; ?>"></li>
+		<?php
+			endforeach;
+		?>
+		</ul>
+	</div>
 	<?php
 	endif;
 	?>

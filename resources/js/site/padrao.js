@@ -83,30 +83,30 @@ $(function() {
 	function fechaItemAberto() {
 		abreMenu = document.querySelectorAll('.header .menu .bottom ul li.sub ul');
 		abreMenu.forEach(function(menus) {
-		  menus.classList.remove('ativo');
+			menus.classList.remove('ativo');
 		});  
 	}
-  
+
 	dropButton.forEach(function(btn) {
-  
-	  btn.addEventListener('click', function(e) {
+
+		btn.addEventListener('click', function(e) {
 		e.stopPropagation();
 		var 
 			dropConteudo = btn.querySelector('.header .menu .bottom ul li.sub ul'),
 			abre = !dropConteudo.classList.contains('ativo');
 		fechaItemAberto();
 		if (abre) {
-		  dropConteudo.classList.add('ativo');      
+			dropConteudo.classList.add('ativo');      
 		}
-	  });
-  
+		});
+
 	});
 
 
        // Ação quando a janela mudar de tamanho
     $(window).resize(function() {
 
-        if ($(window).width() <= 760 && !$('.header .menu .bottom .menu-container').hasClass('ativo')) {
+        if ($(window).width() <= 760) {
 
             $('.header .menu .bottom .menu-container').removeClass('ativo');
 

@@ -205,12 +205,20 @@ header.header_pagina
         height: 400px
         box-shadow: none
         border-top: none
-    .controle
+    .controler
+        width: 100%
+        display: flex
+        align-content: center
+        justify-content: center
         position: absolute
-        margin: 0 auto
         bottom: -40px
-        left: 50%
-        display: table
+    .controle
+        position: relative
+        margin: 0 auto
+        display: flex
+        align-content: center
+        justify-content: center
+        line-height: 80px
         z-index: 10
     .controle li 
         width: 12px
@@ -299,6 +307,32 @@ header.header_pagina
         top: 40%
     .bloco_banner--padrao .controlador.next
         left: 0px
+
+    
+@media screen and (max-width: 1200px)
+    .bloco_banner--padrao
+        height: 400px
+    .bloco_banner--padrao figure
+        height: 400px
+        background-size: cover
+@media screen and (max-width: 1000px)
+    .bloco_banner--padrao
+        height: 300px
+    .bloco_banner--padrao figure
+        height: 300px
+        background-size: cover
+@media screen and (max-width: 800px)
+    .bloco_banner--padrao
+        height: 300px
+    .bloco_banner--padrao figure
+        height: 300px
+        background-size:  cover
+@media screen and (max-width: 600px)
+    .bloco_banner--padrao
+        height: 300px
+    .bloco_banner--padrao figure
+        height: 300px
+        background-size: contain
 
 #widget_wpp
     position: fixed
@@ -693,6 +727,9 @@ header.header_pagina
         justify-content: center
         .direito
             margin-top: 30px
+@media screen and (max-width: 600px)
+    #localizacao .centro .direito
+        width: 100%
 
 
 .mobile
