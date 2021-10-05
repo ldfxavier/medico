@@ -519,12 +519,15 @@ header.header_pagina
                 line-height: 1.5em
                 color: #000000
                 padding: 10px 30px
+            .texto ul li
+            .texto ol li
+            .texto h1
             p
-                font-style: normal
-                font-weight: 300
-                font-size: 16px
-                line-height: 1.5em
-                color: #7D7987
+                font-style: normal !important
+                font-weight: 300 !important
+                font-size: 16px !important
+                line-height: 1.5em !important
+                color: #7D7987 !important
                 padding: 0px 30px
                 overflow: hidden
                 text-overflow: ellipsis
@@ -798,9 +801,6 @@ header.header_pagina
     .bloco-popup__conteudo
         color: #666
         padding: 10px
-        p
-            font-size: 1.5em
-            line-height: 1.5em
         .container_video
             width: 100%
             display: flex
@@ -819,6 +819,122 @@ header.header_pagina
             justify-content: center
             align-items: center
             margin-bottom: 20px
+        
+.bloco_texto div
+    font-size: 1.7em
+    line-height: 1.5em
+.bloco_texto h1
+    font-size: 2.5em
+    line-height: 1.5em
+.bloco_texto h2
+    font-size: 2em
+    line-height: 1.5em
+.bloco_texto h3
+    font-size: 1.8em
+    line-height: 1.5em
+.bloco_texto pre
+    font-size: 1.7em
+    line-height: 1.5em
+    white-space: pre-wrap
+    word-wrap: break-word
+    -moz-tab-size: 4
+    tab-size: 4
+.bloco_texto p .marker
+    background-color:yellow
+.bloco_texto p
+    font-size: 1.7em
+    line-height: 1.7em
+.bloco_texto p big
+.bloco_texto a big
+    font-size: larger
+.bloco_texto p small
+.bloco_texto a small
+    font-size: smaller
+.bloco_texto p tt
+.bloco_texto p code
+.bloco_texto p kbd
+.bloco_texto p samp
+.bloco_texto a tt
+.bloco_texto a code
+.bloco_texto a kbd
+.bloco_texto a samp
+    font-family: monospace
+.bloco_texto p var    
+.bloco_texto a var  
+.bloco_texto p cite    
+.bloco_texto a cite  
+    font-style: italic
+.bloco_texto p del    
+.bloco_texto a del
+.bloco_texto p s    
+.bloco_texto a s    
+    text-decoration: line-through
+.bloco_texto p ins    
+.bloco_texto a ins   
+    text-decoration: underline
+.bloco_texto p q::before
+.bloco_texto p q::after
+.bloco_texto a q::before
+.bloco_texto a q::after
+    content: '"'
+.bloco_texto ul 
+    list-style-type: disc
+    margin-left: 20px
+.bloco_texto ul li
+    line-height: 1.5em
+    font-size: 1.7em
+    padding: 5px 0px
+.bloco_texto ol 
+    list-style-type: numeric
+    margin-left: 20px
+.bloco_texto ol li
+    line-height: 1.5em
+    font-size: 1.7em
+.bloco_texto table caption
+    line-height: 1.5em
+    font-size: 1.7em
+.bloco_texto table tbody tr td
+    border: 1px solid #ccc
+    vertical-align: middle
+    font-size: 1.3em
+    padding: 5px
+    p
+        font-size: 1em
+        padding: 5px
+    td
+        font-size: 1em
+        padding: 5px
+.bloco_texto strong a
+.bloco_texto strong p
+.bloco_texto p strong
+.bloco_texto a strong
+    font-weight: bold
+
+.bloco_texto  blockquote
+	font-style: italic
+	font-family: Georgia, Times, "Times New Roman", serif
+	padding: 2px 0
+	border-style: solid
+	border-color: #ccc
+	border-width: 0
+	margin-left: 20px
+	margin-right: 8px
+	padding-left: 20px
+	padding-top: 10px
+	padding-bottom: 10px
+	padding-right: 8px
+	border-left-width: 5px
+	p
+		line-height: 1.5em
+
+@media screen and (max-width: 1000px)
+    .bloco_texto p a img
+    .bloco_texto p img
+    .bloco_texto a img
+    .bloco_texto img
+        max-width: 100%
+    .bloco_texto table 
+        width: 100%
             
 @media screen and (max-width: 600px)
     .bloco-popup__botao .bloco-popup__conteudo .container_imagem img

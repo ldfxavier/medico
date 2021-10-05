@@ -16,8 +16,9 @@
 			<?= $dado->video ?>
 		</div>
 		<?php endif; ?>
-
+		<div class="bloco_texto">
 		<?= $dado->texto ?>
+		</div>
     </article>
 
 </div>

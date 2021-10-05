@@ -64,7 +64,9 @@ endif;
 				<?php
 					if (isset($dado->sobre_chamada) && !empty($dado->sobre_chamada)):
 				?>
-				<?= $dado->sobre_chamada ?>
+				<div class="bloco_texto">
+					<?= $dado->sobre_chamada ?>
+				</div>
 				<?php
 					endif;
 				?>

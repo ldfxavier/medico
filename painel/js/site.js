@@ -389,13 +389,12 @@ $(function(){
         if(options){
             $.extend(settings, options);
         }
-
         if(settings.barra == 'completa'){
-            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media table | codesample code fullscreen | pageembed';
+            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media table | codesample code fullscreen | pageembed | fontsizeselect | anchor';
         }else if(settings.barra == 'tabela'){
-            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media | table | pageembed' ;
+            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media | table | pageembed | fontsizeselect | anchor' ;
         }else if(settings.barra == 'normal'){
-            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media | pageembed' ;
+            var barra = 'undo redo | bold italic underline | removeformat | forecolor backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink | image media | pageembed | fontsizeselect | anchor' ;
         }else {
             var barra = 'bold italic | removeformat | link unlink';
         }
