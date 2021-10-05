@@ -96,7 +96,7 @@ endif;
 			</figure>
 			<h1><?= $e->titulo ?></h1>
 			<div class="texto">
-				<p><?= $e->texto ?></p>
+				<p><?= strip_tags($e->texto); ?></p>
 			</div>
 			<a href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' . '/' . $e->url; ?>"  class="abre_popup_especialidade"></a>
 		</article>	
