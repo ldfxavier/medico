@@ -36,7 +36,7 @@ $(function() {
 
     //MENU ICON
     //ANIMA AO CLICAR NO lINK
-    $('a[href^="#"]').on('click', function(e) {
+    $('.header .menu .bottom .menu-container.ativo ul li a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         var id = $(this).attr('href'),
             targetOffset = $(id).offset().top;
