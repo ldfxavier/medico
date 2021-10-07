@@ -7,7 +7,7 @@
 	$_titulo = 'FORMULÁRIOS';
 
 	// Botões
-	$add = false;
+	$add = true;
 	$relatorio = false;
 	$download = false;
 	$deletar = true;

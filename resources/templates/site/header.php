@@ -133,32 +133,18 @@
 								</li>
 
 								<?php
-									if (isset($termo) && !empty($termo) || isset($declaracao) && !empty($declaracao) ||  isset($iata) && !empty($iata)):
+									if (isset($formulario) && !empty($formulario)):
 								?>
 								<li class="sub"> 
 									<p>Formulário <i data-font="&#xe81e;"></i></p>
 									<ul class="sub">
 
 									<?php
-										if (isset($termo) && !empty($termo)):
+										foreach($formulario as $f):
 									?>
-									<li><a href="<?= $termo->link ?>" target="_blank"><?= $termo->titulo ?></a></li>
+									<li><a href="<?= $f->link ?>" target="_blank"><?= $f->titulo ?></a></li>
 									<?php
-										endif;
-									?>
-									<?php
-										if (isset($declaracao) && !empty($declaracao)):
-									?>
-									<li><a href="<?= $declaracao->link ?>" target="_blank"><?= $declaracao->titulo ?></a></li>
-									<?php
-										endif;
-									?>
-									<?php
-										if (isset($iata) && !empty($iata)):
-									?>
-									<li><a href="<?= $iata->link ?>" target="_blank"><?= $iata->titulo ?></a></li>
-									<?php
-										endif;
+										endforeach;
 									?>
 									</ul>
 								</li>

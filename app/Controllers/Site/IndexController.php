@@ -17,9 +17,7 @@ class Index extends Controller
 			'banner_localiza' => (new PublicidadeBanner)->localizacao(),
 			'legislacao' => (new Telemedicina)->local(1),
 			'como_funciona' => (new Telemedicina)->local(2),
-			'termo' => (new Formulario)->url(1),
-			'declaracao' => (new Formulario)->url(2),
-			'iata' => (new Formulario)->url(3),
+			'formulario' => (new Formulario)->url(),
 			'dado' => (new Site)->home(),
 			'galeria' => (new Site)->galeria(),
 			'especialidade' => (new Especialidade)->home()

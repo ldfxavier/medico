@@ -118,6 +118,7 @@ class Permissao
             'model' => 'FormularioModel',
             'permissao' => 'per_formulario',
             'lista' => array(
+                'per_formulario_add' => 'Adicionar',
                 'per_formulario_visualizar' => 'Visualizar lista',
                 'per_formulario_detalhe' => 'Detalhe',
                 'per_formulario_editar' => 'Editar',

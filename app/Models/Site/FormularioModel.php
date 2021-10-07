@@ -23,30 +23,27 @@
 		private function montar_pequeno($dado){
 			
 			$array = [];
-			
-			if($dado):
 
-				$r = $dado;
-				
-				return (Object)[
+			foreach($dado as $r):
+
+				$array[] = (Object)[
 					'id' => $r->cod,
 					'titulo' => $r->titulo,
 					'link' => LINK_ARQUIVO.'/formulario/'.$r->arquivo
 				];
 
-			endif;
+			endforeach;
 
-			return [];
+			return $array;
 		}
 
-		public function url($url){
+		public function url(){
 
 			$busca = $this->select()->campo(['cod', 'titulo', 'arquivo', 'data_criacao', 'status', 'local'])
 			->where([
-				['status', 1],
-				['local', $url]
+				['status', 1]
 			])
-			->get()[0] ?? [];
+			->get() ?? [];
 
 			if(!$busca):
 				return [];
