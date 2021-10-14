@@ -99,7 +99,7 @@ endif;
 			<div class="texto">
 				<p><?= strip_tags($e->texto); ?></p>
 			</div>
-			<a href="#" data-href="<?= LINK_PADRAO . '/popup/especialidade' . '/' . $e->url; ?>"  class="abre_popup_especialidade"></a>
+			<a href="#" data-href="<?= LINK . Route::link('index.popup_especialidade').'/'.$e->url; ?>"  class="abre_popup_especialidade"></a>
 		</article>	
 		<?php
 		endforeach;
