@@ -42,10 +42,11 @@
         </fieldset>
 
 
-        <fieldset class="lista">
-            <label>Texto:</label>
-            <?= Form::editor('texto', P::r($r, 'texto'), 'normal'); ?>      
-        </fieldset>
+		<fieldset>
+			<div class="legenda">TEXTOS</div>
+			<label>Texto:</label>
+			<textarea data-ckeditor="1" name="texto" id="editor_texto" class="form-control ckeditor"><?= P::r($r, 'texto'); ?></textarea>
+		</fieldset>
 
 		<div class="linha">
 			<fieldset>
